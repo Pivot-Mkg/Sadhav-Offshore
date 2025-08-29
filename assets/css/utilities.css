@@ -1,0 +1,76 @@
+/*
+ * Sadhav Offshore - Utility Classes
+ * --------------------------------
+ * - Container
+ * - Grid System
+ * - Spacing & Sizing
+ * - Text Alignment
+ * - Visibility
+ */
+
+/* Layout */
+.container {
+    /* width: 100%;
+    max-width: var(--container-max-width); */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+/* Grid System */
+.grid {
+    display: grid;
+    gap: var(--space-8);
+}
+
+.grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--2-cols-even {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .grid--4-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid--2-cols,
+    .grid--2-cols-even,
+    .grid--3-cols,
+    .grid--4-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Text Utilities */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Visibility */
+.is-hidden {
+    display: none !important;
+}

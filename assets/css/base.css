@@ -1,0 +1,241 @@
+/*
+ * Sadhav Offshore - Base Styles
+ * --------------------------------
+ * - Google Fonts import
+ * - CSS custom properties (:root) for brand system
+ * - Global resets and base element styling
+ * - Print styles
+ */
+
+/* 1. FONT IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@600;700&family=Montserrat:wght@600;700&display=swap");
+
+/* 2. CSS CUSTOM PROPERTIES (TOKENS) */
+:root {
+  /* Brand Color Palette */
+  --sadhav-light-blue: #b3e4f9;
+  --sadhav-red: #e30613;
+  --sadhav-blue: #003f87;
+
+  /* Grayscale Palette */
+  --color-gray-900: #111827;
+  --color-gray-600: #4b5563;
+  --color-gray-200: #e5e7eb;
+  --color-gray-50: #f8fafc;
+  --color-white: #ffffff;
+
+  /* Utility Colors */
+  --color-error: #d93025;
+  --color-success: #1e8e3e;
+
+  /* Semantic Colors */
+  --color-primary: var(--sadhav-blue);
+  --color-secondary: var(--sadhav-light-blue);
+  --color-accent: var(--sadhav-red);
+  --color-heading: var(--sadhav-blue);
+  --color-text: var(--color-gray-600);
+  --color-text-strong: var(--color-gray-900);
+  --color-background: var(--color-white);
+  --color-background-light: var(--color-gray-50);
+  --color-border: var(--color-gray-200);
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-accent);
+
+  /* Typography */
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-heading: "Manrope", "Montserrat", sans-serif;
+
+  /* Sizing & Spacing Scale (4px base) */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+
+  /* Borders & Shadows */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Transitions */
+  --transition-short: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+
+  /* Layout */
+  --container-max-width: 1280px;
+  --container-padding: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: var(--space-4);
+  }
+}
+
+/* 3. GLOBAL RESETS & BASE STYLES */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color var(--transition-short);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  /* text-decoration: underline; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-heading);
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0 0 1.5rem;
+  font-size: 1rem !important;
+  font-weight: 300;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+/* 4. PRINT STYLES */
+@media print {
+  body {
+    font-size: 12pt;
+    color: #000;
+    background-color: #fff;
+  }
+
+  .site-header,
+  .site-footer,
+  .page-header .breadcrumb,
+  .hero__actions,
+  .back-to-top,
+  .form,
+  .testimonial-slider__controls,
+  .logo-carousel,
+  .project-filters {
+    display: none !important;
+  }
+
+  .section,
+  .page-header {
+    padding: 2rem 0;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  a[href^="/"]::after,
+  a[href^="#"]::after {
+    content: "";
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+}
+
+@media (max-width: 750px) {
+  p {
+    margin: 0 0 1rem;
+    /* text-align: left!important; */
+  }
+  h2 {
+    font-size: 1.5rem;
+    /* text-align: left!important; */
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+}

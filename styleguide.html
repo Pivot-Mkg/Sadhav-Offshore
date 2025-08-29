@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide | Sadhav Offshore</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <style>
+        .styleguide-section { padding: 2rem; border-bottom: 1px solid var(--color-border); }
+        .swatch { width: 100px; height: 100px; border-radius: 0.25rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .swatch-group { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .swatch-item { text-align: center; }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="site-header">
+        <div class="container-fluid px-4 container">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <div class="d-flex align-items-center">
+                    <a href="/" class="site-header__logo" aria-label="Sadhav Offshore - Home">
+                        <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
+                    </a>
+                </div>
+                <div class="d-flex align-items-center">
+                    <nav class="site-header__nav" aria-label="Main Navigation">
+                        <button class="site-header__menu-toggle" aria-expanded="false" aria-controls="main-menu"
+                            aria-label="Toggle menu">
+                            <span class="hamburger">
+                                <span class="hamburger__line"></span>
+                                <span class="hamburger__line"></span>
+                                <span class="hamburger__line"></span>
+                            </span>
+                        </button>
+                        <div class="site-header__menu-wrapper">
+                            <button class="site-header__close-menu" aria-label="Close menu">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <ul class="site-header__menu" id="main-menu">
+                                <li><a href="about.html" >About</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Projects</a></li>
+                                <li><a href="#">Partners</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#" >Blog</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li class="mobile-only"><a href="#"
+                                        class="button button--primary button--lg w-100">Enquire Now</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="styleguide-section">
+            <div class="container">
+                <h2>Colors</h2>
+                <div class="swatch-group">
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--sadhav-blue);"></div>
+                        <p>--sadhav-blue<br>#003F87</p>
+                    </div>
+                     <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--sadhav-red);"></div>
+                        <p>--sadhav-red<br>#E30613</p>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--sadhav-light-blue);"></div>
+                        <p>--sadhav-light-blue<br>#B3E4F9</p>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--color-gray-900);"></div>
+                        <p>--color-gray-900<br>#111827</p>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--color-gray-600);"></div>
+                        <p>--color-gray-600<br>#4B5563</p>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--color-gray-200);"></div>
+                        <p>--color-gray-200<br>#E5E7EB</p>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--color-gray-50);"></div>
+                        <p>--color-gray-50<br>#F8FAFC</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="styleguide-section">
+            <div class="container">
+                <h2>Typography</h2>
+                <h1 style="font-family: var(--font-heading);">Heading 1 (Manrope / Montserrat)</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <p style="font-family: var(--font-body);">Body Text (Inter): Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+                <a href="#">This is a link</a>
+            </div>
+        </section>
+        
+        <section class="styleguide-section">
+            <div class="container">
+                <h2>Buttons</h2>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <button class="button">Default Button</button>
+                    <button class="button button--primary">Primary Button</button>
+                    <button class="button button--secondary">Secondary Button</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="styleguide-section">
+            <div class="container">
+                 <h2>Cards</h2>
+                <div class="grid grid--3-cols">
+                    <div class="card">
+                        <h3 class="card__title">Card Title</h3>
+                        <p>This is a standard card component used for summarizing content like services or blog posts.</p>
+                        <a href="#" class="card__link">Learn More</a>
+                    </div>
+                     <div class="card">
+                        <h3 class="card__title">Another Card</h3>
+                        <p>It provides a consistent look and feel across different sections of the website.</p>
+                        <a href="#" class="card__link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
