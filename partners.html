@@ -1,20 +1,551 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Partners | Sadhav Offshore</title>
-    <meta name="description" content="Discover the key partners and OEMs that collaborate with Sadhav Offshore to deliver excellence in the maritime industry.">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partners & Service Partners | Sadhav</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="description"
+        content="Sadhav partners with global leaders like Kongsberg Maritime, OES Group, and Durastic to provide expert marine services, including waterjet maintenance, antifouling solutions, and specialized decking." />
+    <meta property="og:title" content="Partners & Service Partners | Sadhav" />
+    <meta property="og:description"
+        content="Explore our partnerships with leading marine technology and service providers." />
+    <meta property="og:type" content="website" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/utilities.css">
-    <script src="assets/js/main.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/index.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #0c1b2a;
+            --muted: #5b6b7a;
+            --border: #dee2e6;
+            --table-stripe: #f8f9fa;
+            --accent: #003f87;
+            /* Sadhav Blue Primary */
+            --accent-secondary: #e30613;
+            /* Sadhav Red */
+            --accent-fg: #ffffff;
+
+            --spacing-xs: 8px;
+            --spacing-sm: 12px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-xxl: 56px;
+        }
+
+        /* Global Styles */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        /* Tabs */
+        .service-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .service-tabs li {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            padding-top: 7px;
+            padding-bottom: 7px;
+            border: 1px solid var(--accent);
+            border-radius: 999px;
+            cursor: pointer;
+            font-weight: 500;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+            text-align: center;
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .service-tabs li:hover {
+            background-color: rgba(0, 63, 135, 0.05);
+        }
+
+        .service-tabs li.active {
+            background-color: var(--accent);
+            color: var(--accent-fg);
+            border-color: var(--accent);
+        }
+
+        .service-tabs li:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Tab Content */
+        .service-content .sidebar-side {
+            display: none;
+        }
+
+        .service-content {
+            background: rgba(0, 63, 135, 0.1);
+            padding: 20px;
+            border-radius: 16px;
+        }
+
+        .service-content .sidebar-side.active {
+            display: block;
+        }
+
+        .services-detail .inner-box {
+            /* Styles removed to eliminate the "box look". Spacing is handled by inner elements. */
+        }
+
+        /* .lower-content .text {
+            color: var(--muted);
+        } */
+
+        .lower-content .text .bold-text {
+            color: var(--fg);
+        }
+
+        /* .lower-content>*:not(:last-child) {
+            margin-bottom: var(--spacing-xl);
+        } */
+
+        /* Media (Images/Videos) */
+        /* .video-box,
+        .image {
+            margin: var(--spacing-lg) 0;
+
+        } */
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: var(--spacing-lg) 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-bottom: 1px solid var(--border);
+            vertical-align: baseline;
+        }
+
+        th {
+            font-weight: 600;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: var(--table-stripe);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .service-tabs {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .video-box {
+                max-width: 100% !important;
+            }
+        }
+
+        .title-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .title-box img {
+            height: 120px;
+            width: auto;
+        }
+
+        .title-box h2 {
+            /* margin: 0 auto; */
+            padding: 0 20px;
+            text-align: center;
+            height: auto;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            flex-grow: 0;
+        }
+
+        .media-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5%;
+            align-items: stretch;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .video-box,
+        .image-box {
+            flex: 0 0 40%;
+            max-width: 40%;
+        }
+
+        .image-box {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 767px) {
+
+            .video-box,
+            .image-box {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* Service Cards */
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card-header {
+            background: #003f87;
+            color: white;
+            padding: 1.25rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .service-card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card ul {
+            /* margin: 0 0 1rem 1rem; */
+            padding-left: 1rem;
+        }
+
+        .service-card ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .service-card ul li:before {
+            content: "•";
+            color: #003f87;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .service-card .btn {
+            margin-top: auto;
+            align-self: flex-start;
+            background: #003f87;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.25rem;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .service-card .btn:hover {
+            background: #002b5e;
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .service-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e1e4e8;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card-header {
+            background: #1A68B0;
+            color: white;
+            padding: 10px;
+        }
+
+        .service-card-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .service-card-body {
+            padding: 1.25rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+            margin-bottom: 0;
+        }
+
+        .service-features li {
+            position: relative;
+            /* padding-left: 1.5rem; */
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .service-features li:before {
+            content: "•";
+            color: #1A68B0;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .service-description {
+            margin: 1rem 0 0 0;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .service-cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .logo-carousel {
+            width: 100%;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .logo-carousel__track {
+            display: flex;
+            animation: scroll 40s linear infinite;
+            width: calc(150px * 38);
+            /* width * number of logos */
+        }
+
+        .logo-carousel__track img {
+            height: 60px;
+            width: 150px;
+            margin: 0 20px;
+            object-fit: contain;
+            /* filter: grayscale(100%); */
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .logo-carousel__track img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-150px * 19));
+                /* width * number of logos / 2 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-carousel__track img {
+                width: 120px;
+                margin: 0 15px;
+            }
+
+            .logo-carousel__track {
+                animation-duration: 30s;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
+    <!-- navbar here start  -->
+    <nav class="navbar navbar-expand-lg site-header">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="./about.html" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./about.html#our-story">About Sadhav Offshore </a></li>
+                            <li><a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a></li>
+                            <li><a class="dropdown-item" href="./about.html#">corporate ethics</a></li>
+                            <li><a class="dropdown-item" href="./about.html#management-team">management team</a></li>
+                            <li><a class="dropdown-item" href="./about.html#">our group companies </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            OEM Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair </a>
+                            </li>
+                            <li><a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel
+                                    Construction</a></li>
+                            <li><a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore
+                                    Engineering</a></li>
+                            <li><a class="dropdown-item" href="./services/OEM-Tie-Ups.html">OEM Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./careers.html">Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Infra
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Floting Dry Dock </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Paradip Slipway </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Paradip Drydock </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="button button--primary button--lg w-100">Enquire Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar here end -->
+
     <header class="site-header" id="site-header">
         <div class="container-fluid px-4 container">
             <div class="d-flex justify-content-between align-items-center w-100">
@@ -42,14 +573,14 @@
                                 </svg>
                             </button>
                             <ul class="site-header__menu" id="main-menu">
-                                <li><a href="about.html" >About</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#" aria-current="page">Partners</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#" >Blog</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="partners.html">Partners</a></li>
+                                <li><a href="careers.html">Careers</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="contact.html">Contact</a></li>
                                 <li class="mobile-only"><a href="#"
                                         class="button button--primary button--lg w-100">Enquire Now</a></li>
                             </ul>
@@ -60,3 +591,933 @@
         </div>
     </header>
 
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="hero has-video-bg position-relative">
+            <div class="hero__video-wrapper position-absolute w-100 h-100">
+                <!-- Video placeholder, assuming file exists at this path -->
+                <video playsinline autoplay muted loop poster="assets/images/25106040.jpg"
+                    class="hero__video w-100 h-100 object-fit-cover">
+                    <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="hero__overlay position-absolute w-100 h-100"></div>
+            <div class="container position-relative z-index-1 h-100 d-flex align-items-center">
+                <div class="row justify-content-center text-center">
+                    <div class="col-12 col-lg-10 col-xl-10">
+                        <h1 class="hero__title  ">Pioneering Offshore Engineering Solutions Since 1992</h1>
+                        <p class="hero__subtitle lead mb-5">Delivering excellence and reliability in marine and
+                            subsea
+                            services across the globe.</p>
+                        <div class="hero__actions d-flex flex-wrap justify-content-center gap-3">
+                            <!-- <a href="about.html" class="button button--primary button--lg">Learn More</a> -->
+                            <a href="#" class="button button--secondary button--lg">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+
+            <header class="mt-5">
+                <h1>Partners & Service Partners</h1>
+                <p>
+                    Collaborations that strengthen propulsion, protection, training, and lifecycle support across marine
+                    and offshore operations.
+                </p>
+            </header>
+
+            <!-- START: TABS -->
+            <div id="serv-tab" class="container-fluid mt-5">
+                <div class="row justify-content-center">
+                    <ul class="tabs service-tabs" role="tablist">
+                        <!-- Tab items will be here -->
+                        <li id="serv-1" data-id="0" role="tab" aria-controls="panel-0" aria-selected="true" tabindex="0"
+                            class="active">
+                            Kongsberg Waterjet Services
+                        </li>
+                        <li id="serv-2" data-id="1" role="tab" aria-controls="panel-1" aria-selected="false"
+                            tabindex="-1">
+                            OES GROUP
+                        </li>
+                        <li id="serv-3" data-id="2" role="tab" aria-controls="panel-2" aria-selected="false"
+                            tabindex="-1">
+                            DURASTIC
+                        </li>
+                        <li id="serv-4" data-id="3" role="tab" aria-controls="panel-3" aria-selected="false"
+                            tabindex="-1">
+                            DECK-RITE
+                        </li>
+                        <li id="serv-5" data-id="4" role="tab" aria-controls="panel-4" aria-selected="false"
+                            tabindex="-1">
+                            BELL IMMERSIVE TECHNOLOGIES
+                        </li>
+                        <li id="serv-6" data-id="5" role="tab" aria-controls="panel-5" aria-selected="false"
+                            tabindex="-1">
+                            AMCO
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END: TABS -->
+
+            <!-- START: TAB CONTENT -->
+            <div class="service-content">
+                <!-- Content for Kongsberg Waterjet Services -->
+                <div class="sidebar-side active" data-content="0" id="panel-0" role="tabpanel" aria-labelledby="serv-1"
+                    tabindex="0">
+                    <div class="services-detail">
+                        <div class="inner-box">
+                            <div class="lower-content">
+                                <div class="title-box ">
+                                    <img src="assets/images/Partner_logos/kongsberg_logo.png"
+                                        alt="Kongsberg Maritime Logo">
+                                    <h3 class="p-3 bg-white rounded-2 shadow-sm">Kongsberg Maritime</h3>
+                                </div>
+                                <div class="text">
+                                    <p class="bold-text team-text">
+                                        Sadhav is proud to partner with Kongsberg Maritime to
+                                        support Kamewa waterjet systems on Indian Coast Guard
+                                        vessels. Kongsberg Maritime is a global leader in marine
+                                        technology with a comprehensive portfolio of propulsion and
+                                        control solutions.
+                                    </p>
+                                    <p>
+                                        Since signing the Service Partner agreement in 2018 (with
+                                        Rolls-Royce Marine AS, now Kongsberg Maritime), our service
+                                        teams have completed extensive factory training in Sweden
+                                        and on-the-job programs to deliver repairs, maintenance, and
+                                        routine overhauls for Kamewa waterjet propulsion.
+                                    </p>
+                                    <p>
+                                        As the Indian Coast Guard’s PAC Representative for Kongsberg
+                                        Maritime, Sadhav teams undertake defect rectification and
+                                        scheduled maintenance on Kamewa S2 and S3 waterjets across
+                                        the Eastern Seaboard and the Andaman & Nicobar region.
+                                    </p>
+                                </div>
+                                <div class="media-row">
+                                    <div class="video-box">
+                                        <div class="youtube-container"
+                                            style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 16px;">
+                                            <img src="./assets/images/partners/thumbnail_new.webp"
+                                                alt="Kongsberg Maritime video" class="youtube-poster"
+                                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; object-fit: cover;"
+                                                onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
+                                            <div
+                                                style="position: absolute; bottom: 10px; right: 10px; width: 50px; height: 50px; background: rgb(0 63 135); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 5v14l11-7z" />
+                                                </svg>
+                                            </div>
+                                            <iframe width="560" height="315"
+                                                src="https://www.youtube.com/embed/wPVbT5yj6ak?si=V8kr_00v5H16FlcV"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none;">
+                                            </iframe>
+                                        </div>
+                                        <!-- <a href="https://www.youtube.com/watch?v=wPVbT5yj6ak" target="_blank" style="display: block; margin-top: 10px; text-align: center;">Watch the Kongsberg Maritime video</a> -->
+                                    </div>
+                                    <div class="image-box">
+                                        <img src="assets/images/partners/kongsberg_1.webp"
+                                            alt="Kongsberg Kamewa waterjet service support" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content for OES GROUP -->
+                <div class="sidebar-side" data-content="1" id="panel-1" role="tabpanel" aria-labelledby="serv-2"
+                    tabindex="0">
+                    <div class="services-detail">
+                        <div class="inner-box">
+                            <div class="lower-content">
+                                <div class="title-box">
+                                    <img src="assets/images/Partner_logos/OES-logo.png" alt="OES Group Logo">
+                                    <h3 class="p-3 bg-white rounded-2 shadow-sm">OES Group</h3>
+                                </div>
+                                <h3>Service Partner to OES Group</h3>
+
+                                <div class="service-cards-container">
+                                    <!-- Antifouling Services Card -->
+                                    <div class="service-card">
+                                        <div class="service-card-header">
+                                            <h3>ANTIFOULING SERVICES</h3>
+                                        </div>
+                                        <div class="service-card-body">
+                                            <ul class="service-features">
+                                                <li>CBAF - Copper-Based Antifouling (ICAF/MGPS)</li>
+                                                <li>UAF - Ultrasonic Antifouling</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Cathodic Protection Services Card -->
+                                    <div class="service-card">
+                                        <div class="service-card-header">
+                                            <h3>CATHODIC PROTECTION SERVICES</h3>
+                                        </div>
+                                        <div class="service-card-body">
+                                            <ul class="service-features">
+                                                <li>ICCP - Impressed Current Cathodic Protection</li>
+                                                <li>Micro ICCP - compact ICCP solution for small vessels</li>
+                                                <li>SA - Sacrificial (Galvanic) Anodes</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CBAF Section -->
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <h3>CBAF - Copper-Based Antifouling (ICAF/MGPS)</h3>
+                                        <p>
+                                            CBAF protects sea chests, strainers, and box coolers by
+                                            releasing controlled copper ions that inhibit early-stage
+                                            marine growth. By disrupting nutrient uptake at the
+                                            cellular level, the system effectively reduces fouling and
+                                            preserves heat-exchange performance.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img src="./assets/images/partners/Services - Engineering/CBAF.webp"
+                                            alt="Copper-based antifouling (ICAF/MGPS) protection diagram"
+                                            class="img-fluid w-100 rounded shadow">
+                                    </div>
+                                </div>
+
+                                <!-- UAF Section -->
+                                <div class="row align-items-center flex-md-row-reverse">
+                                    <div class="col-md-6">
+                                        <h3>UAF - Ultrasonic Antifouling</h3>
+                                        <p>
+                                            Ultrasonic Antifouling offers an eco-friendly,
+                                            low-maintenance alternative to copper systems. Tuned
+                                            ultrasonic frequencies prevent biofilm formation on wetted
+                                            surfaces without harming marine life. Developed with marine
+                                            biologists, the method reduces downtime and operating costs
+                                            while remaining environmentally considerate.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="./assets/images/partners/Services - Engineering/UAF_1.png"
+                                                    alt="Ultrasonic antifouling transducer installation"
+                                                    class="img-fluid w-100 rounded shadow mb-2">
+                                            </div>
+                                            <div class="col-12">
+                                                <img src="./assets/images/partners/Services - Engineering/UAF_2.png"
+                                                    alt="Ultrasonic antifouling control unit"
+                                                    class="img-fluid w-100 rounded shadow">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ICCP Section -->
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <h3>ICCP - Impressed Current Cathodic Protection</h3>
+                                        <p>
+                                            ICCP replaces sacrificial anodes with a controlled,
+                                            power-assisted system that delivers consistent hull
+                                            protection. While the initial investment is higher, ICCP
+                                            provides strong lifetime ROI through reduced drag, fewer
+                                            anode replacements, and stable corrosion control across
+                                            operating environments.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img src="./assets/images/partners/Services - Engineering/ICCP.png"
+                                            alt="Impressed Current Cathodic Protection system schematic"
+                                            class="img-fluid w-100 rounded shadow">
+                                    </div>
+                                </div>
+
+                                <div class="service-cards-container">
+                                    <!-- Antifouling Services Card -->
+                                    <div class="service-card">
+                                        <div class="service-card-header">
+                                            <h3>Micro ICCP</h3>
+                                        </div>
+                                        <div class="service-card-body">
+                                            <ul class="service-features">
+                                                <li>Compact ICCP engineered for smaller vessels at lower
+                                                    lifecycle cost.</li>
+                                                <li>Downsized anodes and low-amp rectifiers deliver optimal
+                                                    protection with minimal maintenance.</li>
+                                                <li>Reduces hull drag and supports improved fuel efficiency;
+                                                    environmentally considerate.</li>
+                                                <li>Rapidly becoming the preferred choice for small craft
+                                                    across applications.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Cathodic Protection Services Card -->
+                                    <div class="service-card">
+                                        <div class="service-card-header">
+                                            <h3>M-ICCP vs GACP System Comparison</h3>
+                                        </div>
+                                        <div class="service-card-body">
+                                            <ul class="service-features">
+                                                <li> Vessel particulars:</li>
+                                                <li>LOA: 33 m</li>
+                                                <li>Breadth (mid): 13.5 m</li>
+                                                <li>Design draught: 5.4 m</li>
+                                                <li>Area of operation: North Sea</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- SA Section -->
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <h3>SA - Sacrificial (Galvanic) Anodes</h3>
+                                        <p>
+                                            We supply and service sacrificial anodes for vessels, ports,
+                                            and offshore assets. By attaching a more reactive metal to
+                                            the structure, galvanic anodes corrode preferentially,
+                                            shielding the hull and systems. Proper specification and
+                                            placement ensure continuous protection throughout service
+                                            intervals.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img src="./assets/images/partners/Services - Engineering/SA.jpg"
+                                            alt="Sacrificial galvanic anodes on hull"
+                                            class="img-fluid w-100 rounded shadow">
+                                    </div>
+                                </div>
+
+                                <style>
+                                    /* Add some spacing and styling */
+                                    .row {
+                                        /* margin-bottom: 3rem; */
+                                        padding: 1.5rem 0;
+                                    }
+
+                                    img {
+                                        max-width: 100%;
+                                        height: auto;
+                                    }
+
+                                    /* Add subtle border between sections */
+                                    .row:not(:last-child) {
+                                        border-bottom: 1px solid #eee;
+                                    }
+                                </style>
+
+                                <div class="text">
+                                    <h3>
+                                        Product difference of OES Antifouling with Other like Sonihull antifouling
+                                        system
+                                    </h3>
+                                    <div class="table-wrapper">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>OES ANTIFOULING</th>
+                                                    <th>SONIHULL ANTIFOULING</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        Maximum output up to 50 W for strong protection and
+                                                        efficiency
+                                                    </td>
+                                                    <td>
+                                                        Maximum output 6–25 W, may be insufficient in
+                                                        demanding conditions
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>European-sourced components</td>
+                                                    <td>Chinese-sourced components</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>12 V, 24 V, or 240 V inputs</td>
+                                                    <td>12 V, 24 V, or 240 V inputs</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Competitive pricing compared to Sonihull
+                                                    </td>
+                                                    <td>
+                                                        Higher pricing relative to OES
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Consistent product quality and responsive service
+                                                    </td>
+                                                    <td>
+                                                        Reported concerns regarding quality and service
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <p>
+                                        <small>Note: GACP figures reflect aluminium anodes. Using zinc
+                                            anodes increases cost due to higher material density and
+                                            mass requirements.</small>
+                                    </p>
+                                </div>
+
+                                <div class="text">
+                                    <h3>M-ICCP System vs GACP System Comparison</h3>
+                                    <div class="table-wrapper">
+                                        <table class="table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Comparative Data</th>
+                                                    <th scope="col">M-ICCP SYSTEM</th>
+                                                    <th scope="col">GACP SYSTEM</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Initial Cost</th>
+                                                    <td><strong>Initial Cost:</strong><br>€5,000.00 System<br>€1,500.00
+                                                        Install</td>
+                                                    <td><strong>Initial Cost:</strong><br>€4,000.00<br>€1,500.00 Install
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Weight Installed on Hull</th>
+                                                    <td><strong>Weight Installed on Hull:</strong> 0.03 ton</td>
+                                                    <td><strong>Weight Installed on Hull:</strong> 1 ton Aluminium Zinc
+                                                        Indium</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Dry Dock Replacement Cost</th>
+                                                    <td><strong>Dry Dock Replacement Cost:</strong> €0.00</td>
+                                                    <td><strong>Dry Dock Replacement Cost:</strong><br>€4,000.00 per
+                                                        cycle (material only)<br>Installation: €1,500.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Fuel Consumption (TFOC)<br>Environment</th>
+                                                    <td><strong>Fuel Consumption (TFOC):</strong> 1-3% Saving with
+                                                        Reduced Drag<br><strong>Environment:</strong>
+                                                        <20g Mixed Metal Oxide over 25 years</td>
+                                                    <td><strong>Fuel Consumption (TFOC):</strong> Increases due to
+                                                        Drag<br><strong>Environment:</strong> 5 tonnes Aluminium Zinc
+                                                        Indium alloy over 25 years</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Area of Operation<br>Lifetime Cost (25 years)</th>
+                                                    <td><strong>Area of Operation:</strong> No
+                                                        restrictions<br><strong>Lifetime Cost (25
+                                                            years):</strong><br>Capex: €5,000.00<br>Opex:
+                                                        €5,000.00<br>TOTAL: €10,000.00</td>
+                                                    <td><strong>Area of Operation:</strong> Restricted performance in
+                                                        changing environments<br><strong>Lifetime Cost (25
+                                                            years):</strong><br>Capex: €4,000.00<br>Opex: €22,000.00 (4
+                                                        dry dock replacements)<br>TOTAL: €26,000.00 (Excluding TFOC
+                                                        rise)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="text">
+                                    <h3>Valued Partners & Clients</h3>
+                                    <!-- Carousel placeholder -->
+                                    <div class="carousel">
+                                        <div class="logo-carousel">
+                                            <div class="logo-carousel__track">
+                                                <!-- First Set -->
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/B&M.png"
+                                                    alt="B&M">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/CAMMELL.png"
+                                                    alt="Cammell">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/CARNIVAL.png"
+                                                    alt="Carnival">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Chevron.png"
+                                                    alt="Chevron">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/DESSO.png"
+                                                    alt="Desso">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/DNV-GL.png"
+                                                    alt="DNV GL">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Forbo.png"
+                                                    alt="Forbo">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/HYUNDAI.png"
+                                                    alt="Hyundai">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Integral.png"
+                                                    alt="Integral">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/JBO.png"
+                                                    alt="JBO">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/KAEFER.png"
+                                                    alt="Kaefar">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/MAERSK.png"
+                                                    alt="Maersk">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Nexen.png"
+                                                    alt="Nexen">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Renewables.png"
+                                                    alt="Renewables">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/SVITZER.png"
+                                                    alt="Svitzer">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Stena_Line.png"
+                                                    alt="Stena Line">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Teesside University.png"
+                                                    alt="Teesside University">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Total.png"
+                                                    alt="Total">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/UKDOCKS.png"
+                                                    alt="UK Docks">
+                                                <!-- Duplicate set for seamless loop -->
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/B&M.png"
+                                                    alt="B&M">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/CAMMELL.png"
+                                                    alt="Cammell">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/CARNIVAL.png"
+                                                    alt="Carnival">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Chevron.png"
+                                                    alt="Chevron">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/DESSO.png"
+                                                    alt="Desso">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/DNV-GL.png"
+                                                    alt="DNV GL">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Forbo.png"
+                                                    alt="Forbo">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/HYUNDAI.png"
+                                                    alt="Hyundai">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Integral.png"
+                                                    alt="Integral">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/JBO.png"
+                                                    alt="JBO">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/KAEFER.png"
+                                                    alt="Kaefar">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/MAERSK.png"
+                                                    alt="Maersk">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Nexen.png"
+                                                    alt="Nexen">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Renewables.png"
+                                                    alt="Renewables">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/SVITZER.png"
+                                                    alt="Svitzer">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Stena_Line.png"
+                                                    alt="Stena Line">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Teesside University.png"
+                                                    alt="Teesside University">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/Total.png"
+                                                    alt="Total">
+                                                <img src="./assets/images/partners/Services - Engineering/Client Logos/UKDOCKS.png"
+                                                    alt="UK Docks">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content for DURASTIC -->
+                <div class="sidebar-side" data-content="2" id="panel-2" role="tabpanel" aria-labelledby="serv-3"
+                    tabindex="0">
+                    <div class="services-detail">
+                        <div class="inner-box">
+                            <div class="lower-content">
+                                <div class="title-box">
+                                    <img src="assets/images/Partner_logos/Durastic-logo.png" alt="Durastic Logo">
+                                    <h3 class="p-3 bg-white rounded-2 shadow-sm">Durastic</h3>
+                                </div>
+                                <div class="text">
+                                    <p class="bold-text team-text">
+                                        Durastic are global leaders in marine decking and flooring
+                                        systems, offering a comprehensive range of SOLAS and
+                                        IMO-certified solutions for the commercial, naval, and
+                                        offshore sectors. With over a century of experience,
+                                        Durastic products are renowned for their durability, fire
+                                        resistance, and acoustic performance.
+                                    </p>
+                                    <p>
+                                        As a certified service partner, Sadhav provides expert
+                                        installation, maintenance, and repair services for the full
+                                        line of Durastic underlays, screeds, and resin finishes. Our
+                                        trained technicians ensure that every application meets
+                                        rigorous international standards, from sound-dampening
+                                        floating floors in accommodation areas to heavy-duty,
+                                        anti-slip decking for work zones.
+                                    </p>
+                                    <p>
+                                        We support new builds and retrofits, delivering seamless,
+                                        long-lasting flooring solutions that enhance vessel safety,
+                                        comfort, and operational longevity. Trust Sadhav and
+                                        Durastic to protect your assets from the deck up.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content for DECK-RITE -->
+                <div class="sidebar-side" data-content="3" id="panel-3" role="tabpanel" aria-labelledby="serv-4"
+                    tabindex="0">
+                    <div class="services-detail">
+                        <div class="inner-box">
+                            <div class="lower-content">
+                                <div class="title-box">
+                                    <img src="assets/images/Partner_logos/Deck-logo.png" alt="Deck-Rite Logo">
+                                    <h3 class="p-3 bg-white rounded-2 shadow-sm">Deck-Rite</h3>
+                                </div>
+                                <div class="text">
+                                    <p class="bold-text team-text">
+                                        Deck-Rite specializes in high-performance marine outfitting,
+                                        providing turnkey solutions for accommodation and interior
+                                        spaces on vessels and offshore installations. Their
+                                        expertise covers everything from flooring and wall panels to
+                                        complete cabin modules, galleys, and wet units, all designed
+                                        to withstand the harsh maritime environment.
+                                    </p>
+                                    <p>
+                                        Our partnership with Deck-Rite allows us to offer clients
+                                        integrated outfitting services that combine aesthetic
+                                        quality with functional resilience. Sadhav’s project teams
+                                        work closely with vessel owners and shipyards to manage the
+                                        full lifecycle of interior projects, from initial design and
+                                        material selection to final installation and commissioning.
+                                    </p>
+                                    <p>
+                                        Whether upgrading existing accommodation to meet modern
+                                        standards or outfitting a new vessel, our collaboration
+                                        ensures projects are delivered on time and to the highest
+                                        quality, creating safe, compliant, and comfortable
+                                        environments for crew and personnel.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content for BELL IMMERSIVE TECHNOLOGIES -->
+                <div class="sidebar-side" data-content="4" id="panel-4" role="tabpanel" aria-labelledby="serv-5"
+                    tabindex="0">
+                    <div class="services-detail">
+                        <div class="inner-box">
+                            <div class="lower-content">
+                                <div class="title-box">
+                                    <img src="assets/images/Partner_logos/Bell-logo.png"
+                                        alt="Bell Immersive Technologies Logo">
+                                    <h3 class="p-3 bg-white rounded-2 shadow-sm">Bell Immersive Technologies</h3>
+                                </div>
+                                <div class="text">
+                                    <p class="bold-text team-text">
+                                        Bell Immersive is a premier provider of immersive learning technologies,
+                                        specializing in tailoring solutions for organizational transformation. Our
+                                        expert team crafts interactive learning solutions, encompassing e-learning
+                                        courses, mobile learning, blended learning, gamification, and instructor-led
+                                        training. Committed to innovation, cutting-edge technology, and impactful
+                                        outcomes, we help clients optimize workforce performance across diverse
+                                        industries, including Oil & Gas, education, pharmaceuticals, hospitality, IT,
+                                        telecommunications, government, defence, and banking. Elevate your
+                                        organization's practices and responsiveness to evolving learner needs with Bell
+                                        Immersive.
+                                    </p>
+
+                                    <h3 class="mt-4">Portfolio</h3>
+
+                                    <div class="service-cards-container">
+                                        <!-- E-Learning Card -->
+                                        <div class="service-card">
+                                            <div class="service-card-header">
+                                                <h3>E-Learning</h3>
+                                            </div>
+                                            <div class="service-card-body">
+                                                <ul class="service-features">
+                                                    <li>Gamification – Comic Based</li>
+                                                    <li>Gamification</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- 3D Animation Card -->
+                                        <div class="service-card">
+                                            <div class="service-card-header">
+                                                <h3>3D Animation</h3>
+                                            </div>
+                                            <div class="service-card-body">
+                                                <ul class="service-features">
+                                                    <li>Animation</li>
+                                                    <li>Interactive 3D Virtual Reality</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- AR/VR Card -->
+                                        <div class="service-card">
+                                            <div class="service-card-header">
+                                                <h3>AR/VR</h3>
+                                            </div>
+                                            <div class="service-card-body">
+                                                <ul class="service-features">
+                                                    <li>Virtual Reality Augmented Reality</li>
+                                                    <li>3D Simulator</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Data Analytics Card -->
+                                        <div class="service-card">
+                                            <div class="service-card-header">
+                                                <h3>Data Analytics</h3>
+                                            </div>
+                                            <div class="service-card-body">
+                                                <ul class="service-features">
+                                                    <li>Dashboards</li>
+                                                    <li>Frameworks</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Software Application Card -->
+                                        <div class="service-card">
+                                            <div class="service-card-header">
+                                                <h3>Software Application</h3>
+                                            </div>
+                                            <div class="service-card-body">
+                                                <ul class="service-features">
+                                                    <li>Paradigm ERM Tool</li>
+                                                    <li>AR Architecture Tool</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Autonomous Robot Card -->
+                                        <div class="service-card">
+                                            <div class="service-card-header">
+                                                <h3>Autonomous Robot</h3>
+                                            </div>
+                                            <div class="service-card-body">
+                                                <ul class="service-features">
+                                                    <li>Assets Integrity Management</li>
+                                                    <li>Emergency Response Management</li>
+                                                </ul>
+                                                <!-- <p class="service-description">
+                                                    Elevate your organization's practices and responsiveness with Bell
+                                                    Immersive while reducing the Cost, improving the Convenience and
+                                                    enhancing the Regulatory aspects.
+                                                </p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content for AMCO -->
+                <div class="sidebar-side" data-content="5" id="panel-5" role="tabpanel" aria-labelledby="serv-6"
+                    tabindex="0">
+                    <div class="services-detail">
+                        <div class="inner-box">
+                            <div class="lower-content">
+                                <div class="title-box">
+                                    <img src="assets/images/Partner_logos/amco-logo.png" alt="AMCO Logo">
+                                    <h3 class="p-3 bg-white rounded-2 shadow-sm">AMCO</h3>
+                                </div>
+                                <div class="text">
+                                    <p class="bold-text team-text">
+                                        More than 7,000 tons of non-ferrous metals are on permanent stock and ready to
+                                        order: Aluminium, copper and brass semi finished products. SuperSized Plates and
+                                        Special profiles for Shipbuilding and other construction needs are also
+                                        available. We deliver to all ports globally.
+                                        The product are per below as required size
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END: TAB CONTENT -->
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer bg-primary">
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row g-4">
+                        <!-- Company Info -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="footer-widget pe-lg-5" data-aos="fade-up">
+                                <a href="/" class="d-inline-block">
+                                    <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore"
+                                        class="img-fluid footer-logo">
+                                </a>
+                                <p class="mb-4 footer-about">Pioneering offshore solutions with a commitment to
+                                    excellence,
+                                    safety, and environmental responsibility since 1992.</p>
+                                <div class="social-links d-flex gap-3">
+                                    <a href="#" class="social-icon" aria-label="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="social-icon" aria-label="Twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-icon" aria-label="YouTube">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="col-6 col-md-6 col-lg-2">
+                            <div class="footer-widget" data-aos="fade-up" data-aos-delay="100">
+                                <h5 class="footer-title">Quick Links</h5>
+                                <ul class="footer-links">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Projects</a></li>
+                                    <li><a href="#">Partners</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Services Links -->
+                        <div class="col-6 col-md-6 col-lg-3">
+                            <div class="footer-widget" data-aos="fade-up" data-aos-delay="200">
+                                <h5 class="footer-title">Our Services</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">Offshore Support Vessels</a></li>
+                                    <li><a href="#">Subsea Operations</a></li>
+                                    <li><a href="#">Marine Construction</a></li>
+                                    <li><a href="#">Marine Survey & Inspection</a></li>
+                                    <li><a href="#">Crew Management</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget" data-aos="fade-up" data-aos-delay="300">
+                                <h5 class="footer-title">Contact Us</h5>
+                                <address class="footer-contact">
+                                    <div class="contact-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>123 Offshore Avenue, Mumbai,<br>Maharashtra 400001, India</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-phone-alt"></i>
+                                        <a href="tel:+912200000000">+91 22 0000 0000</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <a href="mailto:info@sadhavoffshore.com">info@sadhavoffshore.com</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                                    </div>
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom py-3">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            <p class="copyright">&copy; <span id="current-year"></span> Sadhav Offshore. All Rights
+                                Reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <ul class="footer-legal-links">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <!-- <li><a href="sitemap.html">Sitemap</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top" title="Back to top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </main>
+    <script src="./assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabsContainer = document.querySelector('.service-tabs');
+            const contentPanels = document.querySelectorAll('.service-content .sidebar-side');
+
+            const activateTab = (tab) => {
+                const contentId = tab.dataset.id;
+
+                // Deactivate all tabs and panels
+                tabsContainer.querySelectorAll('li').forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                    t.setAttribute('tabindex', '-1');
+                });
+                contentPanels.forEach(panel => {
+                    panel.classList.remove('active');
+                });
+
+                // Activate the selected tab and panel
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+                tab.setAttribute('tabindex', '0');
+
+                const activePanel = document.querySelector(`.service-content .sidebar-side[data-content="${contentId}"]`);
+                if (activePanel) {
+                    activePanel.classList.add('active');
+                }
+            };
+
+            tabsContainer.addEventListener('click', (e) => {
+                const clickedTab = e.target.closest('li');
+                if (clickedTab) {
+                    activateTab(clickedTab);
+                    clickedTab.focus();
+                }
+            });
+
+            tabsContainer.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    activateTab(e.target);
+                }
+            });
+        });
+    </script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+
+</html>

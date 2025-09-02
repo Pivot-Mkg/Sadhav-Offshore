@@ -707,3 +707,60 @@ function displayMessage(type, message, container) {
     container.innerHTML = `<div class="message ${type}">${message}</div>`;
     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+
+// navbar js start 
+$(document).ready(function () {
+    function handleDropdowns() {
+        if ($(window).width() >= 992) {
+            // Desktop: hover to open
+            $(".dropdown").off("mouseenter mouseleave click"); // clear old bindings
+            $(".dropdown").hover(
+                function () {
+                    $(".dropdown-menu").not($(this).find(".dropdown-menu")).slideUp(150);
+                    $(this).find(".dropdown-menu").stop(true, true).slideDown(150);
+                },
+                function () {
+                    $(this).find(".dropdown-menu").stop(true, true).slideUp(150);
+                }
+            );
+        } else {
+            // Mobile: click to open/close
+            $(".dropdown").off("mouseenter mouseleave"); // remove hover
+            $(".dropdown > a").off("click").on("click", function (e) {
+                e.preventDefault(); // stop navigation on first tap
+                let $menu = $(this).next(".dropdown-menu");
+
+                // close other open menus
+                $(".dropdown-menu").not($menu).slideUp(150);
+
+                // toggle this one
+                $menu.stop(true, true).slideToggle(150);
+            });
+        }
+    }
+
+    // Run on load + resize
+    handleDropdowns();
+    $(window).on("resize", handleDropdowns);
+
+    // Custom toggler for mobile collapse
+    $(".navbar-toggler").off("click").on("click", function () {
+        $("#navbarNavDropdown").slideToggle();
+    });
+});
+
+
+
+window.addEventListener("scroll", function() {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+
+// navbar js end
+

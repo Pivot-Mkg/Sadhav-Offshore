@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/utilities.css">
     <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
@@ -102,6 +103,77 @@
         </div>
     </header>
 
+    <!-- navbar here start  -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./about.html#our-story">About Sadhav Offshore </a></li>
+                            <li><a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a></li>
+                            <li><a class="dropdown-item" href="./about.html#">corporate ethics</a></li>
+                            <li><a class="dropdown-item" href="./about.html#management-team">management team</a></li>
+                            <li><a class="dropdown-item" href="./about.html#">our group companies </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            OEM Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair </a></li>
+                            <li><a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel Construction</a></li>
+                            <li><a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore Engineering</a></li>
+                            <li><a class="dropdown-item" href="./services/OEM-Tie-Ups.html">OEM Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./careers.html">Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Infra
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Floting Dry Dock </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Paradip Slipway </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Paradip Drydock </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="button button--primary button--lg w-100">Enquire Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar here end -->
+
+
     <main id="main-content">
         <!-- Hero Section -->
         <section class="hero has-video-bg position-relative">
@@ -109,7 +181,7 @@
                 <!-- Video placeholder, assuming file exists at this path -->
                 <video playsinline autoplay muted loop poster="assets/images/25106040.jpg"
                     class="hero__video w-100 h-100 object-fit-cover">
-                    <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+                    <source src="assets/images/bann" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -195,7 +267,8 @@
             <div class="container">
                 <div class="text-center" data-aos="fade-up">
                     <h2 class=" fw-bold mb-3">Our Core Services</h2>
-                    <p class="lead text-muted">Integrated solutions tailored to your operational needs.</p>
+                    <p class="lead text-muted" style="margin-bottom: 0;">Integrated solutions tailored to your
+                        operational needs.</p>
                 </div>
 
                 <div id="service-carousel" class="owl-carousel owl-theme">
@@ -208,8 +281,8 @@
                                 <h3 class="h4 mb-3">Offshore Support</h3>
                                 <p class="text-muted mb-4">Comprehensive support services for offshore operations
                                     including crew transfer, supply, and logistics.</p>
-                                <a href="#" class="btn btn-link text-primary text-decoration-none p-0">
-                                    Learn more <i class="ms-1">→</i>
+                                <a href="#" class="btn btn-link text-decoration-none p-0">
+                                    Learn more <i class="ms-1">❯</i>
                                 </a>
                             </div>
                         </div>
@@ -224,8 +297,8 @@
                                 <h3 class="h4 mb-3">Marine Construction</h3>
                                 <p class="text-muted mb-4">Expert marine construction services for ports, harbors, and
                                     offshore structures.</p>
-                                <a href="#" class="btn btn-link text-primary text-decoration-none p-0">
-                                    Learn more <i class="ms-1">→</i>
+                                <a href="#" class="btn btn-link text-decoration-none p-0">
+                                    Learn more <i class="ms-1">❯</i>
                                 </a>
                             </div>
                         </div>
@@ -240,8 +313,8 @@
                                 <h3 class="h4 mb-3">Subsea Operations</h3>
                                 <p class="text-muted mb-4">Specialized subsea services including inspection,
                                     maintenance, and repair.</p>
-                                <a href="#" class="btn btn-link text-primary text-decoration-none p-0">
-                                    Learn more <i class="ms-1">→</i>
+                                <a href="#" class="btn btn-link text-decoration-none p-0">
+                                    Learn more <i class="ms-1">❯</i>
                                 </a>
                             </div>
                         </div>

@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Detail | Sadhav Offshore</title>
+     <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta name="description" content="Details for the [Job Title] position at Sadhav Offshore. Learn more and apply now.">
     
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="assets/js/main.js" defer></script>
 
     <!-- TODO: Populate JSON-LD schema with dynamic data -->
@@ -82,6 +87,76 @@
             </div>
         </div>
     </header>
+
+   <!-- navbar here start  -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./about.html#our-story">About Sadhav Offshore </a></li>
+                            <li><a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a></li>
+                            <li><a class="dropdown-item" href="./about.html#">corporate ethics</a></li>
+                            <li><a class="dropdown-item" href="./about.html#management-team">management team</a></li>
+                            <li><a class="dropdown-item" href="./about.html#">our group companies </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            OEM Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair </a></li>
+                            <li><a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel Construction</a></li>
+                            <li><a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore Engineering</a></li>
+                            <li><a class="dropdown-item" href="./services/OEM-Tie-Ups.html">OEM Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./careers.html">Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Infra
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Floting Dry Dock </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Paradip Slipway </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Paradip Drydock </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="button button--primary button--lg w-100">Enquire Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar here end -->
 
     <main id="main-content">
         <section class="page-header animate-on-scroll">

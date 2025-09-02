@@ -50,7 +50,9 @@
 .footer-widget {
   margin-bottom: 1.5rem;
 }
-
+i {
+  font-style: normal;
+}
 .footer-logo {
   max-width: 180px;
   height: auto;
@@ -428,7 +430,7 @@ body {
   align-items: center;
 }
 
-.site-header__menu>li>a:not(.button) {
+.site-header__menu > li > a:not(.button) {
   font-family: var(--font-heading);
   font-weight: 600;
   color: var(--color-text-strong);
@@ -437,7 +439,7 @@ body {
   text-decoration: none;
 }
 
-.site-header__menu>li>a:not(.button)::after {
+.site-header__menu > li > a:not(.button)::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -450,8 +452,8 @@ body {
   transition: transform var(--transition-base);
 }
 
-.site-header__menu>li>a:not(.button):hover::after,
-.site-header__menu>li>a[aria-current="page"]:not(.button)::after {
+.site-header__menu > li > a:not(.button):hover::after,
+.site-header__menu > li > a[aria-current="page"]:not(.button)::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -618,7 +620,6 @@ main {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-
   .layout-overlap,
   .layout-overlap--reversed {
     grid-template-columns: 1fr;

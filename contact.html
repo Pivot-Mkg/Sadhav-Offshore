@@ -7,6 +7,7 @@
     <title>Contact Us | Sadhav Offshore</title>
     <meta name="description"
         content="Get in touch with Sadhav Offshore. We are here to answer your questions about our services and projects.">
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/stat-card.css">
     <link rel="stylesheet" href="/index.css">
     <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Font Awesome (icons used in footer/header) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Owl Carousel CSS -->
@@ -35,8 +37,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/carousel.js" defer></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".tab-content").hide()
+            $(".contact-map").hide()
+
+            $(".tab-content-active").show()
+            $(".tab-btn").click(function(){
+                $(".tab-btn").removeClass("tab-btn-active")
+                $(this).addClass("tab-btn-active")
+                console.log($(this).attr("for"))
+                $(".tab-content").hide()
+                $(`#${$(this).attr("for")}`).fadeToggle()
+                 $(".contact-map").hide()
+                $(`.${$(this).attr("for")}`).fadeToggle()
+                
+            })
+        })
+    </script>
+    <style>
+        .tab-btn-active {
+            background: #003f87 !important;
+            color: white;
+        }
+
+       .tab-btn-active:hover {
+        color: white!important;
+       }
+    </style>
 </head>
 
 <body>
@@ -87,6 +119,75 @@
         </div>
     </header>
 
+   <!-- navbar here start  -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./about.html#our-story">About Sadhav Offshore </a></li>
+                            <li><a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a></li>
+                            <li><a class="dropdown-item" href="./about.html#">corporate ethics</a></li>
+                            <li><a class="dropdown-item" href="./about.html#management-team">management team</a></li>
+                            <li><a class="dropdown-item" href="./about.html#">our group companies </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            OEM Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair </a></li>
+                            <li><a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel Construction</a></li>
+                            <li><a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore Engineering</a></li>
+                            <li><a class="dropdown-item" href="./services/OEM-Tie-Ups.html">OEM Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./careers.html">Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Infra
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Floting Dry Dock </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Paradip Slipway </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#">Paradip Drydock </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="button button--primary button--lg w-100">Enquire Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar here end -->
 
     <main id="main-content">
         <section class="hero position-relative"
@@ -199,17 +300,93 @@
                             </form>
                         </div>
                     </div>
+
+                    
+
                     <div class="col-lg-6" data-aos="fade-left">
                         <div class="contact-info-wrapper">
-                            <div class="contact-map">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2448.3610811258823!2d72.83063671178427!3d19.136087670889122!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e0!3m2!1sen!2sin!4v1756364462945!5m2!1sen!2sin"
-                                    width="100%" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
+                            
+                            <div class="contact-map contact-map-active location-mumbaiofficeaddress">
+                               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8495505896844!2d72.82647477497899!3d19.13597348208097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e1!3m2!1sen!2sin!4v1756721506674!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="contact-map location-mumbaiRegisteredAddress">
+                               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8495505896844!2d72.82647477497899!3d19.13597348208097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e1!3m2!1sen!2sin!4v1756721506674!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="contact-map location-vizag">
+                               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8495505896844!2d72.82647477497899!3d19.13597348208097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e1!3m2!1sen!2sin!4v1756721506674!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="contact-map location-paradip">
+                               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8495505896844!2d72.82647477497899!3d19.13597348208097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e1!3m2!1sen!2sin!4v1756721506674!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="contact-map location-dubai">
+                               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8495505896844!2d72.82647477497899!3d19.13597348208097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e1!3m2!1sen!2sin!4v1756721506674!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
 
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="location-tab-section">
+            <div class="container">
+                <div class="tab-btn-wrapper my-3 py-1 d-flex align-item-center gap-1 justify-content-center">
+                    <label for="location-mumbaiofficeaddress" class="btn tab-btn tab-btn-active">Mumbai</label>
+                    <!-- <label for="location-mumbaiRegisteredAddress" class="btn tab-btn">Mumbai(HO) Registered Address</label> -->
+                    <label for="location-vizag" class="btn tab-btn">Vizag</label>
+                    <label for="location-paradip" class="btn tab-btn">Paradip</label>
+                    <label for="location-dubai" class="btn tab-btn">Dubai (UAE)</label>
+                </div>
+                <div class="tab-content-wrapper py-3">
+                    <div class="tab-content col-5 m-auto text-center tab-content-active" id="location-mumbaiofficeaddress">
+                        <h1 class="tab-content-item tab-content-item-name">
+                            Mumbai Office Address 
+                        </h1>
+                        <p class="tab-content-item tab-content-item-address">
+                            618, Laxmi Plaza, New Link Road, Andheri West, Mumbai - 400053 Landline - 22-4000 33 55
+                        </p>
+                        <p class="tab-content-item tab-content-item-contact-number"></p>
+                    </div>
+
+                    <div class="tab-content col-5 m-auto text-center" id="location-mumbaiRegisteredAddress">
+                        <h1 class="tab-content-item tab-content-item-name">
+                            Mumbai(HO) Registered Address
+                        </h1>
+                        <p class="tab-content-item tab-content-item-address">
+                            "Carnac Bunder, 5th floor, 521, 3/4, Loha Bhavan, P Dmello Road,
+                             Chinchbunder, Mumbai, Maharashtra, 400009"
+                        </p>
+                        <p class="tab-content-item tab-content-item-contact-number"></p>
+                    </div>
+
+                    <div class="tab-content col-5 m-auto text-center" id="location-vizag">
+                        <h1 class="tab-content-item tab-content-item-name">
+                            Vizag
+                        </h1>
+                        <p class="tab-content-item tab-content-item-address">
+                           404, Krishna Towers, Yellammathota, Jagadamba, Visakhapatnam,Andhra Pradesh- 530020
+                        </p>
+                        <p class="tab-content-item tab-content-item-contact-number"></p>
+                    </div>
+
+                    <div class="tab-content col-5 m-auto text-center" id="location-paradip">
+                        <h1 class="tab-content-item tab-content-item-name">
+                            Paradip
+                        </h1>
+                        <p class="tab-content-item tab-content-item-address">
+                            Unit No. 12, Trade Center, “V” Point, Paradip,Odisha - 754142
+                        </p>
+                        <p class="tab-content-item tab-content-item-contact-number"></p>
+                    </div>
+                    <div class="tab-content col-5 m-auto text-center" id="location-dubai">
+                        <h1 class="tab-content-item tab-content-item-name">
+                            Dubai (UAE) - Subsidiary
+                        </h1>
+                        <p class="tab-content-item tab-content-item-address">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate aut illo officiis architecto a provident laudantium, beatae libero modi sequi sint rem itaque id neque! Voluptates sunt animi odit ut?
+                        </p>
+                        <p class="tab-content-item tab-content-item-contact-number">Contact No: +971 52 839 2745</p>
                     </div>
                 </div>
             </div>
@@ -277,7 +454,7 @@
         <div class="container text-center animate-on-scroll">
             <h2 class="cta-section__title">Ready to Start Your Next Project?</h2>
             <p class="cta-section__subtitle">Let's discuss how our expertise can bring your vision to life.</p>
-            <a href="rfq.html" class="button button--primary button--lg">Request a Quote</a>
+            <a href="rfq.html" class="button button--secondary button--lg">Request a Quote</a>
         </div>
     </section>
 
@@ -431,6 +608,25 @@
                 submitBtn.innerHTML = originalBtnText;
             }
         });
+
+          // Hook up all radios to update the address block
+
+  const cityEl = document.getElementById('city');
+  const addrEl = document.getElementById('address');
+
+  function updateAddress(radio){
+    cityEl.textContent = radio.dataset.city;
+    addrEl.textContent = radio.dataset.address;
+  }
+
+  radios.forEach(r => {
+    r.addEventListener('change', e => updateAddress(e.target));
+    // Allow Enter/Space on label to work via native label behavior
+  });
+
+  // On load, ensure the checked one is shown
+  const initial = document.querySelector('.loc-input:checked');
+  if (initial) updateAddress(initial);
     </script>
 </body>
 
