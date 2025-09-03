@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Sadhav Offshore</title>
-     <!-- Bootstrap 5.3 CSS -->
+    <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <meta name="description" content="A gallery showcasing company events, team activities, and life at Sadhav Offshore.">
+    <meta name="description"
+        content="A gallery showcasing company events, team activities, and life at Sadhav Offshore.">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Your existing stylesheets -->
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
@@ -17,76 +23,48 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="assets/js/main.js" defer></script>
 </head>
+
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-   <header class="site-header" id="site-header">
-        <div class="container-fluid px-4 container">
-            <div class="d-flex justify-content-between align-items-center w-100">
-                <div class="d-flex align-items-center">
-                    <a href="/" class="site-header__logo" aria-label="Sadhav Offshore - Home">
-                        <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
-                    </a>
-                </div>
-                <div class="d-flex align-items-center">
-                    <nav class="site-header__nav" aria-label="Main Navigation">
-                        <button class="site-header__menu-toggle" aria-expanded="false" aria-controls="main-menu"
-                            aria-label="Toggle menu">
-                            <span class="hamburger">
-                                <span class="hamburger__line"></span>
-                                <span class="hamburger__line"></span>
-                                <span class="hamburger__line"></span>
-                            </span>
-                        </button>
-                        <div class="site-header__menu-wrapper">
-                            <button class="site-header__close-menu" aria-label="Close menu">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                            <ul class="site-header__menu" id="main-menu">
-                                <li><a href="about.html" >About</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Partners</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#" >Blog</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li class="mobile-only"><a href="#"
-                                        class="button button--primary button--lg w-100">Enquire Now</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-   <!-- navbar here start  -->
+ <!-- navbar here start  -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="./index.html">
-                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
+                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px" />
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="menu-btn">
+                    <span class="bar top"></span>
+                    <span class="bar middle"></span>
+                    <span class="bar bottom"></span>
+                </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav gap-2">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             About Us
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./about.html#our-story">About Sadhav Offshore </a></li>
-                            <li><a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a></li>
-                            <li><a class="dropdown-item" href="./about.html#">corporate ethics</a></li>
-                            <li><a class="dropdown-item" href="./about.html#management-team">management team</a></li>
-                            <li><a class="dropdown-item" href="./about.html#">our group companies </a></li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#our-story">About Sadhav Offshore
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#corporate-ethics">Corporate Ethics</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#management-team">Management Team</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#group-companies">Group Companies
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -95,21 +73,30 @@
                             Services
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair </a></li>
-                            <li><a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel Construction</a></li>
-                            <li><a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore Engineering</a></li>
-                            <li><a class="dropdown-item" href="./services/OEM-Tie-Ups.html">Services</a></li>
+                            <li>
+                                <a class="dropdown-item" href="./services.html">All Services
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel
+                                    Construction</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore
+                                    Engineering</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/OEM-Tie-Ups.html">OEM Services</a>
+                            </li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./contact.html">Contact us</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="./careers.html">Career</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./partners.html">Partners</a>
+                        <a class="nav-link" href="project.html">Projects</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
@@ -117,16 +104,40 @@
                             Infra
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock </a></li>
-                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Slipway">Paradip Slipway </a></li>
-                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Drydock">Paradip Drydock </a></li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Paradip-Slipway">Paradip Slipway
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Paradip-Drydock">Paradip Drydock
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" href="./partners.html">Partners</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact us</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Insights
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./blog.html#all-articles">Articles & Features </a></li>
+                            <li><a class="dropdown-item" href="./blog.html#case-studies">Case Studies </a></li>
+                            <li><a class="dropdown-item" href="./blog.html#industry-insights">Industry Insights </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="button button--primary button--lg w-100">Enquire Now</a>
+                        <a href="./contact.html" class="button button--primary button--lg w-100">Enquire Now</a>
                     </li>
                 </ul>
             </div>
@@ -135,50 +146,158 @@
     <!-- navbar here end -->
 
     <main id="main-content">
-        <section class="page-header">
-            <div class="container">
-                <h1>Updates & Fun at Work</h1>
-                <p>A glimpse into the life and culture at Sadhav Offshore.</p>
+        <section class="hero position-relative"
+            style="background-image: url('assets/images/about-us-banner.jpg'); background-size: cover; background-position: center;"
+            role="region" aria-label="Gallery hero" data-aos="fade-up">
+            <div class="hero__overlay position-absolute w-100 h-100" aria-hidden="true"></div>
+            <div class="container position-relative z-index-1 h-100 d-flex align-items-center">
+                <div class="row justify-content-center text-center">
+                    <div class="col-12 col-lg-10 col-xl-12">
+                        <h1 class="hero__title display-4">Project Gallery</h1>
+                        <p class="hero__subtitle lead mb-5">
+                            A curated look at our vessels, offshore operations, dry-dock & slipway work, and marine
+                            workshops—captured across India’s coasts.
+                        </p>
+                    </div>
+                </div>
             </div>
+            <nav class="breadcrumb breadcrumb--banner" aria-label="Breadcrumb">
+                <div class="container">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li><span aria-current="page">Gallery</span></li>
+                    </ol>
+                </div>
+            </nav>
         </section>
 
-        <section class="section">
+
+        <section>
             <div class="container">
                 <div class="gallery-grid">
-                    <!-- TODO: Populate with actual images -->
-                    <a href="#" class="gallery-item">
-                        <img src="https://placehold.co/600x400/0A2540/ffffff?text=Event+1" alt="Description of image 1">
-                    </a>
-                    <a href="#" class="gallery-item">
-                        <img src="https://placehold.co/600x400/0E7490/ffffff?text=Event+2" alt="Description of image 2">
-                    </a>
-                    <a href="#" class="gallery-item">
-                        <img src="https://placehold.co/600x400/FF6A00/ffffff?text=Team+Photo" alt="Description of image 3">
-                    </a>
-                    <a href="#" class="gallery-item">
-                        <img src="https://placehold.co/600x400/4B5563/ffffff?text=On-site" alt="Description of image 4">
-                    </a>
-                     <a href="#" class="gallery-item">
-                        <img src="https://placehold.co/600x400/111827/ffffff?text=Activity" alt="Description of image 5">
-                    </a>
-                     <a href="#" class="gallery-item">
-                        <img src="https://placehold.co/600x400/E5E7EB/4B5563?text=Celebration" alt="Description of image 6">
-                    </a>
+                    <!-- Vessel Construction -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
+                        <img src="assets/images/gallery/Boat-Building-Services-(2).webp" alt="Vessel Construction">
+                        <div class="gallery-caption">
+                            <h3>Vessel Construction</h3>
+                        </div>
+                    </div>
+
+                    <!-- Graving Dry Dock -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/images/gallery/Dry-Dock-_-Ship-Repair-Services-(2).webp"
+                            alt="Graving Dry Dock">
+                        <div class="gallery-caption">
+                            <h3>Graving Dry Dock <span>Paradip</span></h3>
+                        </div>
+                    </div>
+
+                    <!-- Ship Repair -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
+                        <img src="assets/images/gallery/Ship-Repair-Services.webp" alt="Ship Repair">
+                        <div class="gallery-caption">
+                            <h3>Ship Repair</h3>
+                        </div>
+                    </div>
+
+                    <!-- Integrated Dry Dock -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/images/gallery/Gallery-Integrated-Dry-Dock-Ship-Repair-Facility-Paradip.webp"
+                            alt="Integrated Dry Dock">
+                        <div class="gallery-caption">
+                            <h3>Integrated Dry Dock & Ship Repair facility</h3>
+                        </div>
+                    </div>
+
+                    <!-- Kongsberg Waterjet Services -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
+                        <img src="assets/images/gallery/OEM-Partnerships--Service-Team-training-in-Sweden-on-Kamewa-Waterjets.webp"
+                            alt="Kongsberg Waterjet Services">
+                        <div class="gallery-caption">
+                            <h3>Kongsberg Waterjet Services <span>OEM Representation</span></h3>
+                        </div>
+                    </div>
+
+                    <!-- Offshore Oil & Gas -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/images/gallery/Offshore-Oil-_-Gas-Field-Services.webp"
+                            alt="Offshore Oil & Gas">
+                        <div class="gallery-caption">
+                            <h3>Offshore Oil & Gas <span>Field Services</span></h3>
+                        </div>
+                    </div>
+
+                    <!-- Offshore Cranes -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
+                        <img src="assets/images/gallery/Offshore-Cranes-Operations-_-Maintenance.webp"
+                            alt="Offshore Cranes">
+                        <div class="gallery-caption">
+                            <h3>Offshore Cranes <span>Operations & Maintenance</span></h3>
+                        </div>
+                    </div>
+
+                    <!-- Coastguard Interceptor Boats -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/images/gallery/Ship-Building-47-Interceptor-Boats-for-L_T-Shipyard.webp"
+                            alt="Coastguard Interceptor Boats">
+                        <div class="gallery-caption">
+                            <h3>Vessel Construction <span>Coastguard Interceptor Boats</span></h3>
+                        </div>
+                    </div>
+
+                    <!-- Ship Building at MDL -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
+                        <img src="assets/images/gallery/Shipbuilding-Services-Construction-of-P15A-at-MDL.webp"
+                            alt="Ship Building at MDL">
+                        <div class="gallery-caption">
+                            <h3>Ship Building Services <span>Construction of P15A at MDL</span></h3>
+                        </div>
+                    </div>
+
+                    <!-- Foreign Flagged Ships -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/images/gallery/paradip%20dru%20dock.webp" alt="Foreign Flagged Ships">
+                        <div class="gallery-caption">
+                            <h3>Foreign Flagged Ships <span>Repaired in Paradip</span></h3>
+                        </div>
+                    </div>
+
+                    <!-- Launching at MDL -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
+                        <img src="assets/images/gallery/Ship-Building-Services-Launching-of-INS-VIshakhapatnam-P15B-at-MDL.webp"
+                            alt="Launching at MDL">
+                        <div class="gallery-caption">
+                            <h3>Ship Building Services <span>Launching at MDL</span></h3>
+                        </div>
+                    </div>
+
+                    <!-- Naval OPV at GSL -->
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/images/gallery/Ship-Building-Services-Naval-OPV-built-at-GSL.webp"
+                            alt="Naval OPV at GSL">
+                        <div class="gallery-caption">
+                            <h3>Ship Building Services <span>Naval OPV built at GSL</span></h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-      
-    <section class="section cta-section">
+    <section class="cta-section cto-sect" data-aos="fade-up">
         <div class="container text-center animate-on-scroll">
-            <h2 class="cta-section__title">Ready to Start Your Next Project?</h2>
-            <p class="cta-section__subtitle">Let's discuss how our expertise can bring your vision to life.</p>
-            <a href="rfq.html" class="button button--primary button--lg">Request a Quote</a>
+            <h2 class="cta-section__title">Like What You See?</h2>
+            <p class="cta-section__subtitle">
+                Turn this gallery into your next project—share your scope and timeline and we’ll reply with a clear,
+                no-obligation estimate.
+            </p>
+            <a href="contact-us.html#quote" class="goto-contact-page-with-context button button--secondary button--lg"
+                aria-label="Request a project quote">Request a Quote</a>
         </div>
     </section>
 
-   <!-- Footer -->
+
+  <!-- Footer -->
     <footer class="site-footer bg-primary">
         <!-- Footer Top -->
         <div class="footer-top">
@@ -188,11 +307,13 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-widget pe-lg-5" data-aos="fade-up">
                             <a href="/" class="d-inline-block">
-                                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore"
-                                    class="img-fluid footer-logo">
+                                <img src="./assets/images/sadhavlogo.svg" alt="Sadhav Offshore"
+                                    class="img-fluid footer-logo" />
                             </a>
-                            <p class="mb-4 footer-about">Pioneering offshore solutions with a commitment to excellence,
-                                safety, and environmental responsibility since 1992.</p>
+                            <p class="mb-4 footer-about">
+                                Pioneering offshore solutions with a commitment to excellence,
+                                safety, and environmental responsibility since 1992.
+                            </p>
                             <div class="social-links d-flex gap-3">
                                 <a href="#" class="social-icon" aria-label="Facebook">
                                     <i class="fab fa-facebook-f"></i>
@@ -215,12 +336,12 @@
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="100">
                             <h5 class="footer-title">Quick Links</h5>
                             <ul class="footer-links">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Partners</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="./about.html">About Us</a></li>
+                                <li><a href="./services.html">Services</a></li>
+                                <li><a href="./project.html">Projects</a></li>
+                                <li><a href="./partners.html">Partners</a></li>
+                                <li><a href="./careers.html">Careers</a></li>
+                                <li><a href="./gallery.html">Gallery </a></li>
                             </ul>
                         </div>
                     </div>
@@ -230,11 +351,10 @@
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="200">
                             <h5 class="footer-title">Our Services</h5>
                             <ul class="footer-links">
-                                <li><a href="#">Offshore Support Vessels</a></li>
-                                <li><a href="#">Subsea Operations</a></li>
-                                <li><a href="#">Marine Construction</a></li>
-                                <li><a href="#">Marine Survey & Inspection</a></li>
-                                <li><a href="#">Crew Management</a></li>
+                                <li><a href="./services/dry-dock.html">Dry Dock & Ship Repair</a></li>
+                                <li><a href="./services/Vessel-Construction.html">Vessel Construction</a></li>
+                                <li><a href="./services/Offshore-Engineering.html">Offshore Engineering</a></li>
+                                <li><a href="./services/OEM-Tie-Ups.html">OEM Services</a></li>
                             </ul>
                         </div>
                     </div>
@@ -246,7 +366,8 @@
                             <address class="footer-contact">
                                 <div class="contact-item">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span>123 Offshore Avenue, Mumbai,<br>Maharashtra 400001, India</span>
+                                    <span>123 Offshore Avenue, Mumbai,<br />Maharashtra 400001,
+                                        India</span>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
@@ -255,10 +376,6 @@
                                 <div class="contact-item">
                                     <i class="fas fa-envelope"></i>
                                     <a href="mailto:info@sadhavoffshore.com">info@sadhavoffshore.com</a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-clock"></i>
-                                    <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
                                 </div>
                             </address>
                         </div>
@@ -272,13 +389,15 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <p class="copyright">&copy; <span id="current-year"></span> Sadhav Offshore. All Rights
-                            Reserved.</p>
+                        <p class="copyright">
+                            &copy;<span id="current-year"></span> Sadhav Offshore. All
+                            Rights Reserved.
+                        </p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <ul class="footer-legal-links">
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="./privacy.html">Privacy Policy</a></li>
+                            <li><a href="./terms.html">Terms of Service</a></li>
                             <!-- <li><a href="sitemap.html">Sitemap</a></li> -->
                         </ul>
                     </div>
@@ -286,6 +405,22 @@
             </div>
         </div>
     </footer>
+
+
     <button class="back-to-top" title="Back to top" aria-label="Back to top">&uarr;</button>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800, // Animation duration in milliseconds
+            once: true, // Whether animation should happen only once - while scrolling down
+            offset: 50, // Offset (in px) from the original trigger point
+            easing: 'ease-in-out', // Default easing for AOS animations
+            delay: 100, // Default delay for all elements
+        });
+    </script>
 </body>
+
 </html>

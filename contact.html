@@ -38,7 +38,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Initialize AOS after DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             AOS.init({
                 duration: 800,
                 easing: 'ease-in-out',
@@ -78,66 +78,42 @@
         .tab-btn-active:hover {
             color: white !important;
         }
+
+        .text-primary {
+            color: var(--sadhav-blue);
+        }
+
+        .tab-btn {
+            border: 1px solid var(--sadhav-blue);
+            /* width: 70px; */
+        }
+
+        .tab-btn:hover {
+            background: var(--sadhav-blue);
+            color: white;
+        }
+        .location-tab-section iframe{
+            height: 350px;
+        }
     </style>
 </head>
 
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="site-header" id="site-header">
-        <div class="container-fluid px-4 container">
-            <div class="d-flex justify-content-between align-items-center w-100">
-                <div class="d-flex align-items-center">
-                    <a href="/" class="site-header__logo" aria-label="Sadhav Offshore - Home">
-                        <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
-                    </a>
-                </div>
-                <div class="d-flex align-items-center">
-                    <nav class="site-header__nav" aria-label="Main Navigation">
-                        <button class="site-header__menu-toggle" aria-expanded="false" aria-controls="main-menu"
-                            aria-label="Toggle menu">
-                            <span class="hamburger">
-                                <span class="hamburger__line"></span>
-                                <span class="hamburger__line"></span>
-                                <span class="hamburger__line"></span>
-                            </span>
-                        </button>
-                        <div class="site-header__menu-wrapper">
-                            <button class="site-header__close-menu" aria-label="Close menu">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                            <ul class="site-header__menu" id="main-menu">
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Partners</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#" aria-current="page">Contact</a></li>
-                                <li class="mobile-only"><a href="#"
-                                        class="button button--primary button--lg w-100">Enquire Now</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <!-- navbar here start  -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="./index.html">
-                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
+                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px" />
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="menu-btn">
+                    <span class="bar top"></span>
+                    <span class="bar middle"></span>
+                    <span class="bar bottom"></span>
+                </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav gap-2">
@@ -147,11 +123,23 @@
                             About Us
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./about.html#our-story">About Sadhav Offshore </a></li>
-                            <li><a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a></li>
-                            <li><a class="dropdown-item" href="./about.html#">corporate ethics</a></li>
-                            <li><a class="dropdown-item" href="./about.html#management-team">management team</a></li>
-                            <li><a class="dropdown-item" href="./about.html#">our group companies </a></li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#our-story">About Sadhav Offshore
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#corporate-ethics">Corporate Ethics</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#management-team">Management Team</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#group-companies">Group Companies
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -160,24 +148,30 @@
                             Services
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair </a>
+                            <li>
+                                <a class="dropdown-item" href="./services.html">All Services
+                                </a>
                             </li>
-                            <li><a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel
-                                    Construction</a></li>
-                            <li><a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore
-                                    Engineering</a></li>
-                            <li><a class="dropdown-item" href="./services/OEM-Tie-Ups.html">Services</a></li>
+                            <li>
+                                <a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel
+                                    Construction</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore
+                                    Engineering</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/OEM-Tie-Ups.html">OEM Services</a>
+                            </li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./contact.html">Contact us</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="./careers.html">Career</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./partners.html">Partners</a>
+                        <a class="nav-link" href="project.html">Projects</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
@@ -185,19 +179,40 @@
                             Infra
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock
-                                </a></li>
-                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Slipway">Paradip Slipway
-                                </a></li>
-                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Drydock">Paradip Drydock
-                                </a></li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Paradip-Slipway">Paradip Slipway
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Paradip-Drydock">Paradip Drydock
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" href="./partners.html">Partners</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact us</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Insights
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./blog.html#all-articles">Articles & Features </a></li>
+                            <li><a class="dropdown-item" href="./blog.html#case-studies">Case Studies </a></li>
+                            <li><a class="dropdown-item" href="./blog.html#industry-insights">Industry Insights </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="button button--primary button--lg w-100">Enquire Now</a>
+                        <a href="./contact.html" class="button button--primary button--lg w-100">Enquire Now</a>
                     </li>
                 </ul>
             </div>
@@ -276,19 +291,25 @@
 
         <section class="py-5 py-lg-7" id="contact-section">
             <div class="container">
-                <div class="row g-5">
+                <div class="row g-5 align-items-stretch">
                     <div class="col-lg-6" data-aos="fade-right">
                         <div class="contact-form-wrapper">
                             <h2 class="mb-4">We’d Love to Hear From You!</h2>
                             <p class="text-muted mb-4">Fill out the form and our team will get back to you within 24
                                 hours.</p>
-                            <form id="contact-form" class="contact-form" action="forms/contact.php" method="POST">
+                            <!-- ... everything before the form stays same ... -->
+
+                            <form id="contact-form" class="contact-form" action="forms/test_mail.php" method="POST"
+                                novalidate>
+                                <div id="form-messages" class="mb-3" style="display: none;"></div>
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="name" name="name"
-                                                placeholder="Your Name" required>
+                                                placeholder="Your Name" required minlength="2" maxlength="100">
                                             <label for="name">Your Name</label>
+                                            <div class="invalid-feedback">Please enter a valid name (2-100 characters)
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -296,140 +317,239 @@
                                             <input type="email" class="form-control" id="email" name="email"
                                                 placeholder="Email Address" required>
                                             <label for="email">Email Address</label>
+                                            <div class="invalid-feedback">Please enter a valid email address</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="subject" name="subject"
-                                        placeholder="Subject" required>
+                                        placeholder="Subject" required minlength="5" maxlength="200">
                                     <label for="subject">Subject</label>
+                                    <div class="invalid-feedback">Subject must be between 5 and 200 characters</div>
                                 </div>
                                 <div class="form-floating">
                                     <textarea class="form-control" id="message" name="message"
-                                        placeholder="Your Message" required></textarea>
+                                        placeholder="Your Message" required minlength="10" maxlength="2000"></textarea>
                                     <label for="message">Your Message</label>
+                                    <div class="invalid-feedback">Message must be between 10 and 2000 characters</div>
                                 </div>
                                 <button type="submit" class="button button--primary button--lg w-100 mt-2">
                                     <span class="me-2">Send Message</span>
                                 </button>
                             </form>
+
+                            <script>
+                                document.getElementById('contact-form').addEventListener('submit', async function (e) {
+                                    e.preventDefault();
+
+                                    const form = e.target;
+                                    const submitBtn = form.querySelector('button[type="submit"]');
+                                    const originalBtnText = submitBtn.innerHTML;
+                                    const formData = new FormData(form);
+                                    const formMessages = document.getElementById('form-messages');
+                                    formMessages.style.display = 'none';
+
+                                    // Show loading state
+                                    submitBtn.disabled = true;
+                                    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+
+                                    try {
+                                        const response = await fetch(form.action, {
+                                            method: 'POST',
+                                            body: formData,
+                                            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                                        });
+
+                                        const data = await response.json();
+
+                                        if (data.success) {
+                                            form.reset();
+                                            // Redirect if a redirect URL is given; otherwise show message
+                                            if (data.redirect) {
+                                                window.location.href = data.redirect;
+                                            } else {
+                                                formMessages.textContent = data.message || 'Message sent successfully!';
+                                                formMessages.className = 'alert alert-success';
+                                                formMessages.style.display = 'block';
+                                            }
+                                        } else {
+                                            formMessages.textContent = data.message || 'Failed to send message. Please try again.';
+                                            formMessages.className = 'alert alert-danger';
+                                            formMessages.style.display = 'block';
+                                        }
+                                    } catch (error) {
+                                        console.error('Error:', error);
+                                        formMessages.textContent = 'An error occurred. Please try again.';
+                                        formMessages.className = 'alert alert-danger';
+                                        formMessages.style.display = 'block';
+                                    } finally {
+                                        submitBtn.disabled = false;
+                                        submitBtn.innerHTML = originalBtnText;
+                                    }
+                                });
+                            </script>
+
                         </div>
                     </div>
 
-                    <div class="col-lg-6" data-aos="fade-left">
-
-
-
-                        <div class="contact-info-wrapper">
-                            <div
-                                class="tab-btn-wrapper my-3 py-1 d-flex align-item-center gap-1 justify-content-center pt-0 mt-0">
-                                <label for="location-mumbaiofficeaddress"
-                                    class="btn tab-btn tab-btn-active">Mumbai</label>
-                                <!-- <label for="location-mumbaiRegisteredAddress" class="btn tab-btn">Mumbai(HO) Registered Address</label> -->
-                                <label for="location-vizag" class="btn tab-btn">Vizag</label>
-                                <label for="location-paradip" class="btn tab-btn">Paradip</label>
-                                <label for="location-dubai" class="btn tab-btn">Dubai (UAE)</label>
-                            </div>
-
-                            <div class="contact-map contact-map-active location-mumbaiofficeaddress">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8495505896844!2d72.82647477497899!3d19.13597348208097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e1!3m2!1sen!2sin!4v1756721506674!5m2!1sen!2sin"
-                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                            <div class="contact-map location-mumbaiRegisteredAddress">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8495505896844!2d72.82647477497899!3d19.13597348208097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e1!3m2!1sen!2sin!4v1756721506674!5m2!1sen!2sin"
-                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                            <div class="contact-map location-vizag">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.6059816428624!2d83.3022518732761!3d17.71354090932223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39438b36406215%3A0x6211dec3d846eb71!2sKrishna%20towers!5e1!3m2!1sen!2sin!4v1756723697677!5m2!1sen!2sin"
-                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                            <div class="contact-map location-paradip">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56914.92362641041!2d86.61586644666407!3d20.28597769868818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1a4dca02ad8ff5%3A0xf0adaafede26ed0a!2sCT%26GST%20ENFORCEMENT%20UNIT%20PARADEEP!5e1!3m2!1sen!2sin!4v1756723896728!5m2!1sen!2sin"
-                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                            <div class="contact-map location-dubai">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8495505896844!2d72.82647477497899!3d19.13597348208097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e1!3m2!1sen!2sin!4v1756721506674!5m2!1sen!2sin"
-                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-
-                        </div>
+                    <div class="col-lg-6 rounded" data-aos="fade-left">
+                        
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8495505896844!2d72.82647477497899!3d19.13597348208097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e1!3m2!1sen!2sin!4v1756721506674!5m2!1sen!2sin"
+                            width="100%" height="450" style="border:0; border-radius: 16px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 
 
-        <section class="location-tab-section">
+        <section class="location-tab-section section">
             <div class="container">
-                <div class="tab-btn-wrapper my-3 py-1 d-flex align-item-center gap-1 justify-content-center">
-                    <label for="location-mumbaiofficeaddress" class="btn tab-btn tab-btn-active">Mumbai</label>
-                    <!-- <label for="location-mumbaiRegisteredAddress" class="btn tab-btn">Mumbai(HO) Registered Address</label> -->
-                    <label for="location-vizag" class="btn tab-btn">Vizag</label>
-                    <label for="location-paradip" class="btn tab-btn">Paradip</label>
-                    <label for="location-dubai" class="btn tab-btn">Dubai (UAE)</label>
-                </div>
-                <div class="tab-content-wrapper py-3">
-                    <div class="tab-content col-5 m-auto text-center tab-content-active"
-                        id="location-mumbaiofficeaddress">
-                        <h1 class="tab-content-item tab-content-item-name">
-                            Mumbai Office Address
-                        </h1>
-                        <p class="tab-content-item tab-content-item-address">
-                            618, Laxmi Plaza, New Link Road, Andheri West, Mumbai - 400053 Landline - 22-4000 33 55
-                        </p>
-                        <p class="tab-content-item tab-content-item-contact-number"></p>
+                <div class="contact-info-wrapper">
+                    <div
+                        class="tab-btn-wrapper my-3 py-1 d-flex align-item-center gap-1 justify-content-center pt-0 mt-0">
+                        <label for="location-mumbaiofficeaddress" class="btn tab-btn tab-btn-active">Mumbai</label>
+                        <!-- <label for="location-mumbaiRegisteredAddress" class="btn tab-btn">Mumbai(HO) Registered Address</label> -->
+                        <label for="location-vizag" class="btn tab-btn">Vizag</label>
+                        <label for="location-paradip" class="btn tab-btn">Paradip</label>
+                        <label for="location-dubai" class="btn tab-btn">Dubai (UAE)</label>
                     </div>
 
-                    <div class="tab-content col-5 m-auto text-center" id="location-mumbaiRegisteredAddress">
-                        <h1 class="tab-content-item tab-content-item-name">
-                            Mumbai(HO) Registered Address
-                        </h1>
-                        <p class="tab-content-item tab-content-item-address">
-                            "Carnac Bunder, 5th floor, 521, 3/4, Loha Bhavan, P Dmello Road,
-                            Chinchbunder, Mumbai, Maharashtra, 400009"
-                        </p>
-                        <p class="tab-content-item tab-content-item-contact-number"></p>
+                    <!-- Mumbai Office -->
+                    <div class="contact-map contact-map-active location-mumbaiofficeaddress">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 text-center mb-4">
+                                    <div class="address-box p-4 rounded-3 d-inline-block">
+                                        <h5 class="fw-bold mb-2">Mumbai Office</h5>
+                                        <p class="mb-1">618, Laxmi Plaza, New Link Road,</p>
+                                        <p class="mb-1">Andheri West, Mumbai - 400053</p>
+                                        <p class="mb-0">
+                                            <i class="fas fa-phone-alt me-2"></i>+91 22 4000 3355
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8495505896844!2d72.82647477497899!3d19.13597348208097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e1!3m2!1sen!2sin!4v1756721506674!5m2!1sen!2sin"
+                                        width="100%" height="400" style="border:0;border-radius: 16px;"
+                                        allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="tab-content col-5 m-auto text-center" id="location-vizag">
-                        <h1 class="tab-content-item tab-content-item-name">
-                            Vizag
-                        </h1>
-                        <p class="tab-content-item tab-content-item-address">
-                            404, Krishna Towers, Yellammathota, Jagadamba, Visakhapatnam,Andhra Pradesh- 530020
-                        </p>
-                        <p class="tab-content-item tab-content-item-contact-number"></p>
+                    <!-- Mumbai Registered Address -->
+                    <div class="contact-map location-mumbaiRegisteredAddress">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 text-center mb-4">
+                                    <div class="address-box p-4 rounded-3 d-inline-block">
+                                        <h5 class="fw-bold mb-2">Mumbai (Registered Office)</h5>
+                                        <p class="mb-1">Carnac Bunder, 5th floor, 521, 3/4, Loha Bhavan,</p>
+                                        <p class="mb-1">P Dmello Road, Chinchbunder, Mumbai - 400009</p>
+                                        <p class="mb-0">
+                                            <i class="fas fa-phone-alt me-2"></i>+91 22 4000 3355
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.8495505896844!2d72.82647477497899!3d19.13597348208097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63cbeee0e6d%3A0x12a82aa047731925!2sSadhav%20Shipping%20Ltd!5e1!3m2!1sen!2sin!4v1756721506674!5m2!1sen!2sin"
+                                        width="100%" height="400" style="border:0;border-radius: 16px;"
+                                        allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="tab-content col-5 m-auto text-center" id="location-paradip">
-                        <h1 class="tab-content-item tab-content-item-name">
-                            Paradip
-                        </h1>
-                        <p class="tab-content-item tab-content-item-address">
-                            Unit No. 12, Trade Center, “V” Point, Paradip,Odisha - 754142
-                        </p>
-                        <p class="tab-content-item tab-content-item-contact-number"></p>
+                    <!-- Vizag Office -->
+                    <div class="contact-map location-vizag">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 text-center mb-4">
+                                    <div class="address-box p-4 rounded-3 d-inline-block">
+                                        <h5 class="fw-bold mb-2">Vizag Office</h5>
+                                        <p class="mb-1">404, Krishna Towers, Yellammathota,</p>
+                                        <p class="mb-1">Jagadamba, Visakhapatnam, Andhra Pradesh - 530020</p>
+                                        <p class="mb-0">
+                                            <i class="fas fa-phone-alt me-2"></i>+91 22 4000 3355
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.6059816428624!2d83.3022518732761!3d17.71354090932223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39438b36406215%3A0x6211dec3d846eb71!2sKrishna%20towers!5e1!3m2!1sen!2sin!4v1756723697677!5m2!1sen!2sin"
+                                        width="100%" height="400" style="border:0;border-radius: 16px;"
+                                        allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tab-content col-5 m-auto text-center" id="location-dubai">
-                        <h1 class="tab-content-item tab-content-item-name">
-                            Dubai (UAE) - Subsidiary
-                        </h1>
-                        <p class="tab-content-item tab-content-item-address">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate aut illo officiis
-                            architecto a provident laudantium, beatae libero modi sequi sint rem itaque id neque!
-                            Voluptates sunt animi odit ut?
-                        </p>
-                        <p class="tab-content-item tab-content-item-contact-number">Contact No: +971 52 839 2745</p>
+
+                    <!-- Paradip Office -->
+                    <div class="contact-map location-paradip">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 text-center mb-4">
+                                    <div class="address-box p-4 rounded-3 d-inline-block">
+                                        <h5 class="fw-bold mb-2">Paradip Office</h5>
+                                        <p class="mb-1">Unit No. 12, Trade Center, "V" Point,</p>
+                                        <p class="mb-1">Paradip, Odisha - 754142</p>
+                                        <p class="mb-0">
+                                            <i class="fas fa-phone-alt me-2"></i>+91 22 4000 3355
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56914.92362641041!2d86.61586644666407!3d20.28597769868818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1a4dca02ad8ff5%3A0xf0adaafede26ed0a!2sCT%26GST%20ENFORCEMENT%20UNIT%20PARADEEP!5e1!3m2!1sen!2sin!4v1756723896728!5m2!1sen!2sin"
+                                        width="100%" height="400" style="border:0;border-radius: 16px;"
+                                        allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dubai Office -->
+                    <div class="contact-map location-dubai">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 text-center mb-4">
+                                    <div class="address-box p-4 rounded-3 d-inline-block">
+                                        <h5 class="fw-bold mb-2">Dubai Office (UAE)</h5>
+                                        <p class="mb-1">Business Bay,</p>
+                                        <p class="mb-1">Dubai, United Arab Emirates</p>
+                                        <p class="mb-0">
+                                            <i class="fas fa-phone-alt me-2"></i>+971 52 839 2745
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.489451924101!2d55.27118431500945!3d25.19759898389661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0x45e5f5f4ef6f5d9a!2sBusiness%20Bay%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                                        width="100%" height="400" style="border:0;border-radius: 16px;"
+                                        allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -497,9 +617,10 @@
         <div class="container text-center animate-on-scroll">
             <h2 class="cta-section__title">Ready to Start Your Next Project?</h2>
             <p class="cta-section__subtitle">Let's discuss how our expertise can bring your vision to life.</p>
-            <a href="rfq.html" class="button button--secondary button--lg">Request a Quote</a>
+            <a href="./contact.html" class="goto-contact-page-with-contextbutton button--secondary button--lg">Request a Quote</a>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="site-footer bg-primary">
@@ -538,9 +659,9 @@
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="100">
                             <h5 class="footer-title">Quick Links</h5>
                             <ul class="footer-links">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="./projects.html">Projects</a></li>
+                                <li><a href="./about.html">About Us</a></li>
+                                <li><a href="./services.html">Services</a></li>
+                                <li><a href="./project.html">Projects</a></li>
                                 <li><a href="./partners.html">Partners</a></li>
                                 <li><a href="./careers.html">Careers</a></li>
                                 <li><a href="./contact.html">Contact</a></li>
@@ -553,11 +674,12 @@
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="200">
                             <h5 class="footer-title">Our Services</h5>
                             <ul class="footer-links">
-                                <li><a href="#">Offshore Support Vessels</a></li>
-                                <li><a href="#">Subsea Operations</a></li>
-                                <li><a href="#">Marine Construction</a></li>
-                                <li><a href="#">Marine Survey & Inspection</a></li>
-                                <li><a href="#">Crew Management</a></li>
+                                <li><a href="./services.html#offshore-support-vessels">Offshore Support Vessels</a></li>
+                                <li><a href="./services.html#subsea-operations">Subsea Operations</a></li>
+                                <li><a href="./services.html#marine-construction">Marine Construction</a></li>
+                                <li><a href="./services.html#marine-survey-&-inspection">Marine Survey & Inspection</a>
+                                </li>
+                                <li><a href="./services.html#crew-management">Crew Management</a></li>
                             </ul>
                         </div>
                     </div>
@@ -595,13 +717,13 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <p class="copyright">&copy; <span id="current-year"></span> Sadhav Offshore. All Rights
+                        <p class="copyright">&copy;<span id="current-year"></span> Sadhav Offshore. All Rights
                             Reserved.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <ul class="footer-legal-links">
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="./privacy.html">Privacy Policy</a></li>
+                            <li><a href="./terms.html">Terms of Service</a></li>
                             <!-- <li><a href="sitemap.html">Sitemap</a></li> -->
                         </ul>
                     </div>
@@ -612,66 +734,6 @@
 
     <button class="back-to-top" title="Back to top" aria-label="Back to top">&uarr;</button>
 
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const form = e.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            const formData = new FormData(form);
-
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
-
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    if (data.redirect) {
-                        window.location.href = data.redirect;
-                    } else {
-                        alert(data.message || 'Message sent successfully!');
-                        form.reset();
-                    }
-                } else {
-                    alert(data.message || 'Failed to send message. Please try again.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('An error occurred. Please try again.');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-            }
-        });
-
-        // Hook up all radios to update the address block
-
-        const radios = document.querySelectorAll('.loc-input');
-        const cityEl = document.getElementById('city');
-        const addrEl = document.getElementById('address');
-
-        function updateAddress(radio) {
-            cityEl.textContent = radio.dataset.city;
-            addrEl.textContent = radio.dataset.address;
-        }
-
-        radios.forEach(r => {
-            r.addEventListener('change', e => updateAddress(e.target));
-            // Allow Enter/Space on label to work via native label behavior
-        });
-
-        // On load, ensure the checked one is shown
-        const initial = document.querySelector('.loc-input:checked');
-        if (initial) updateAddress(initial);
-    </script>
 </body>
 
 </html>

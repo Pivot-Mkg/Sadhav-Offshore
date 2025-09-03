@@ -1,36 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | Sadhav Offshore</title>
-     <!-- Bootstrap 5.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <meta name="description" content="Read the Terms of Service for Sadhav Offshore.">
-    
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/layout.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/utilities.css">
-    <script src="assets/js/main.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thank You | Sadhav Offshore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
+    <link rel="stylesheet" href="./assets/css/utilities.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        section {
+            margin: 30px 0px;
+        }
+    </style>
+
 </head>
+
 <body>
-      <!-- navbar here start  -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="./index.html">
-                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
+                <img src="./assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="menu-btn">
+                    <span class="bar top"></span>
+                    <span class="bar middle"></span>
+                    <span class="bar bottom"></span>
+                </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav gap-2">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             About Us
                         </a>
@@ -48,15 +62,16 @@
                             Services
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair </a></li>
-                            <li><a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel Construction</a></li>
-                            <li><a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore Engineering</a></li>
-                            <li><a class="dropdown-item" href="./services/OEM-Tie-Ups.html">Services</a></li>
+                            <li><a class="dropdown-item" href="#">Dry Dock & Ship Repair </a></li>
+                            <li><a class="dropdown-item" href="#">Vessel Construction</a></li>
+                            <li><a class="dropdown-item" href="#">Offshore Engineering</a></li>
+                            <li><a class="dropdown-item" href="#">Services</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./contact.html">Contact us</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="./careers.html">Career</a>
                     </li>
@@ -69,9 +84,12 @@
                             Infra
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock </a></li>
-                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Slipway">Paradip Slipway </a></li>
-                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Drydock">Paradip Drydock </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock
+                                </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Slipway">Paradip Slipway
+                                </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Drydock">Paradip Drydock
+                                </a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -84,79 +102,178 @@
             </div>
         </div>
     </nav>
-    <!-- navbar here end -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <header class="site-header" id="site-header">
-        <div class="container-fluid px-4 container">
-            <div class="d-flex justify-content-between align-items-center w-100">
-                <div class="d-flex align-items-center">
-                    <a href="/" class="site-header__logo" aria-label="Sadhav Offshore - Home">
-                        <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
-                    </a>
-                </div>
-                <div class="d-flex align-items-center">
-                    <nav class="site-header__nav" aria-label="Main Navigation">
-                        <button class="site-header__menu-toggle" aria-expanded="false" aria-controls="main-menu"
-                            aria-label="Toggle menu">
-                            <span class="hamburger">
-                                <span class="hamburger__line"></span>
-                                <span class="hamburger__line"></span>
-                                <span class="hamburger__line"></span>
-                            </span>
-                        </button>
-                        <div class="site-header__menu-wrapper">
-                            <button class="site-header__close-menu" aria-label="Close menu">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                            <ul class="site-header__menu" id="main-menu">
-                                <li><a href="about.html" >About</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Partners</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#" >Blog</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li class="mobile-only"><a href="#"
-                                        class="button button--primary button--lg w-100">Enquire Now</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
+    <section class="legal container" id="terms">
+        <header class="mb-4">
+            <h1>Terms &amp; Conditions</h1>
+            <p class="text-muted">Last updated: 01 Sep 2025 • These terms govern use of this website and, where stated,
+                the provision of our offshore/marine services.</p>
+        </header>
 
-    <main id="main-content">
-        <section class="page-header">
-            <div class="container">
-                <h1>Terms of Service</h1>
-            </div>
+        <nav aria-label="Terms navigation" class="mb-4">
+            <ul>
+                <li><a href="#t-scope">1. Scope & Acceptance</a></li>
+                <li><a href="#t-defs">2. Definitions</a></li>
+                <li><a href="#t-website">3. Website Use</a></li>
+                <li><a href="#t-quotes">4. Quotes, Orders & Scheduling</a></li>
+                <li><a href="#t-access">5. Access, HSE & Permits</a></li>
+                <li><a href="#t-cargo">6. Cargo, DG & Documentation</a></li>
+                <li><a href="#t-delays">7. Delays, Weather & Force Majeure</a></li>
+                <li><a href="#t-inspection">8. Inspection, Warranty & Acceptance</a></li>
+                <li><a href="#t-fees">9. Fees, Taxes & Payment</a></li>
+                <li><a href="#t-cancel">10. Cancellation</a></li>
+                <li><a href="#t-ip">11. Intellectual Property</a></li>
+                <li><a href="#t-liability">12. Liability & Indemnity</a></li>
+                <li><a href="#t-ethics">13. Anti-Bribery & Compliance</a></li>
+                <li><a href="#t-law">14. Governing Law & Disputes</a></li>
+                <li><a href="#t-changes">15. Changes to Terms</a></li>
+                <li><a href="#t-contact">16. Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="t-scope">
+            <h4>1. Scope &amp; Acceptance</h4>
+            <p>By accessing <strong>sadhav.com</strong> (“Site”) or engaging Sadhav for offshore logistics, crew
+                transfer, ship repair, dry-dock/slipway and workshop services (“Services”), you agree to these Terms. If
+                you are entering into these Terms on behalf of an entity, you represent that you have authority to bind
+                that entity.</p>
         </section>
 
-        <section class="section">
-            <div class="container" style="max-width: 800px; margin: 0 auto;">
-                <p>TODO: Add your terms of service content here.</p>
-            </div>
+        <section id="t-defs">
+            <h4>2. Definitions</h4>
+            <ul>
+                <li><strong>Customer</strong>: the person or entity requesting Services.</li>
+                <li><strong>Work Order</strong>: written confirmation (including email/PO) specifying scope, schedule
+                    and price.</li>
+                <li><strong>HSE</strong>: health, safety and environment requirements applicable at ports, yards and
+                    offshore assets.</li>
+                <li><strong>Vessel/Yard</strong>: any vessel, barge or craft; and any facility used for dry-dock,
+                    slipway or repairs.</li>
+            </ul>
         </section>
 
-    </main>
-      
-    <section class="section cta-section">
-        <div class="container text-center animate-on-scroll">
-            <h2 class="cta-section__title">Ready to Start Your Next Project?</h2>
-            <p class="cta-section__subtitle">Let's discuss how our expertise can bring your vision to life.</p>
-            <a href="rfq.html" class="button button--primary button--lg">Request a Quote</a>
-        </div>
+        <section id="t-website">
+            <h4>3. Website Use</h4>
+            <p>You may browse the Site for information and to submit enquiries. You must not misuse the Site (attempting
+                to breach security, scraping at scale, injecting malware, or infringing IP). All content, trademarks and
+                media on the Site are owned by Sadhav or its licensors and may not be reproduced without permission.</p>
+        </section>
+
+        <section id="t-quotes">
+            <h4>4. Quotes, Orders &amp; Scheduling</h4>
+            <ul>
+                <li>Quotes are typically valid for <strong>30 days</strong> unless stated otherwise and are subject to
+                    availability, port conditions and statutory approvals.</li>
+                <li>Work starts when a <strong>Work Order</strong> is issued and all pre-requisites (permits, access,
+                    documentation) are satisfied.</li>
+                <li>Schedules are planned in windows; changes due to weather, port traffic or safety will be
+                    communicated promptly.</li>
+            </ul>
+        </section>
+
+        <section id="t-access">
+            <h4>5. Access, HSE &amp; Permits</h4>
+            <ul>
+                <li>Customer must provide accurate particulars (vessel data, drawings, location) and ensure safe access,
+                    hot/cold work permissions, and site induction as required.</li>
+                <li>Both parties shall comply with applicable <strong>ISPS</strong>, port and yard rules. Mandatory PPE
+                    (helmets, vests, gloves, etc.) is required for all personnel.</li>
+                <li>Any specialized certifications (e.g., confined space, DG handling) must be disclosed in advance.
+                </li>
+            </ul>
+        </section>
+
+        <section id="t-cargo">
+            <h4>6. Cargo, Dangerous Goods &amp; Documentation</h4>
+            <ul>
+                <li>Customer is responsible for correct classification, packing, manifests and MSDS for cargo and
+                    dangerous goods.</li>
+                <li>We may refuse items that are unsafe, illegal, improperly declared or non-compliant with HSE
+                    requirements.</li>
+            </ul>
+        </section>
+
+        <section id="t-delays">
+            <h4>7. Delays, Weather &amp; Force Majeure</h4>
+            <p>Neither party is liable for delay or non-performance caused by events beyond reasonable control,
+                including but not limited to weather, sea state, port congestion, strikes, war, epidemics, or government
+                action. Standby/demurrage charges may apply per the Work Order.</p>
+        </section>
+
+        <section id="t-inspection">
+            <h4>8. Inspection, Warranty &amp; Acceptance</h4>
+            <ul>
+                <li>Completed work will be offered for inspection/sea trial where relevant. Acceptance occurs upon
+                    sign-off or commercial use, whichever is earlier.</li>
+                <li>Repair workmanship warranty is limited to the specific scope and duration stated in the Work Order.
+                    Normal wear, misuse, or third-party modifications are excluded.</li>
+            </ul>
+        </section>
+
+        <section id="t-fees">
+            <h4>9. Fees, Taxes &amp; Payment</h4>
+            <ul>
+                <li>Prices exclude taxes, duties and port charges unless stated. Invoices are payable per the Work Order
+                    (e.g., milestones/advance/on completion).</li>
+                <li>Overtime, standby, consumables and variations requested by Customer will be billed at agreed rates.
+                </li>
+                <li>Late payments may attract interest as permitted by law.</li>
+            </ul>
+        </section>
+
+        <section id="t-cancel">
+            <h4>10. Cancellation</h4>
+            <p>Cancellation or rescheduling by Customer within specified windows may incur charges for mobilization,
+                permits, third-party bookings and lost slot time, as detailed in the Work Order.</p>
+        </section>
+
+        <section id="t-ip">
+            <h4>11. Intellectual Property</h4>
+            <p>All Sadhav methods, drawings and documentation remain Sadhav’s IP. Customer retains ownership of its data
+                and vessel drawings. Each party grants the other a limited license to use shared materials solely for
+                performing the Services.</p>
+        </section>
+
+        <section id="t-liability">
+            <h4>12. Liability &amp; Indemnity</h4>
+            <p>To the maximum extent permitted by law, neither party is liable for indirect or consequential loss (loss
+                of profit, downtime, or business). Sadhav’s aggregate liability arising from the Services is limited to
+                the Fees paid for the specific Work Order. This clause does not limit liability for death/personal
+                injury caused by proven negligence or for fraud.</p>
+        </section>
+
+        <section id="t-ethics">
+            <h4>13. Anti-Bribery &amp; Compliance</h4>
+            <p>Both parties shall comply with applicable anti-bribery and anti-corruption laws and shall not offer,
+                give, solicit or accept any bribe or improper advantage.</p>
+        </section>
+
+        <section id="t-law">
+            <h4>14. Governing Law &amp; Disputes</h4>
+            <p>These Terms are governed by the laws of India. Courts at <strong>Mumbai</strong> shall have exclusive
+                jurisdiction.</p>
+        </section>
+
+        <section id="t-changes">
+            <h4>15. Changes to Terms</h4>
+            <p>We may update these Terms periodically. Material changes will be posted on this page with a new “Last
+                updated” date.</p>
+        </section>
+
+        <section id="t-contact">
+            <h4>16. Contact</h4>
+            <address>
+                Sadhav Group, 618 Laxmi Plaza, New Link Road, Andheri West, Mumbai 400053, India<br>
+                Tel: <a href="tel:+912240003355">+91-22-4000 33 55</a> • Email: <a
+                    href="mailto:shipping@sadhav.com">shipping@sadhav.com</a>, <a
+                    href="mailto:offshore@sadhav.com">offshore@sadhav.com</a>
+            </address>
+        </section>
+
+        <!-- <p class="text-muted mt-4" style="font-size:0.9rem;">This template is provided for general information and is
+            not legal advice. Please consult counsel to adapt for your specific operations.</p> -->
     </section>
 
-
-    <!-- Footer -->
+  <!-- Footer -->
     <footer class="site-footer bg-primary">
         <!-- Footer Top -->
         <div class="footer-top">
@@ -166,11 +283,13 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-widget pe-lg-5" data-aos="fade-up">
                             <a href="/" class="d-inline-block">
-                                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore"
-                                    class="img-fluid footer-logo">
+                                <img src="./assets/images/sadhavlogo.svg" alt="Sadhav Offshore"
+                                    class="img-fluid footer-logo" />
                             </a>
-                            <p class="mb-4 footer-about">Pioneering offshore solutions with a commitment to excellence,
-                                safety, and environmental responsibility since 1992.</p>
+                            <p class="mb-4 footer-about">
+                                Pioneering offshore solutions with a commitment to excellence,
+                                safety, and environmental responsibility since 1992.
+                            </p>
                             <div class="social-links d-flex gap-3">
                                 <a href="#" class="social-icon" aria-label="Facebook">
                                     <i class="fab fa-facebook-f"></i>
@@ -193,12 +312,12 @@
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="100">
                             <h5 class="footer-title">Quick Links</h5>
                             <ul class="footer-links">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Partners</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="./about.html">About Us</a></li>
+                                <li><a href="./services.html">Services</a></li>
+                                <li><a href="./project.html">Projects</a></li>
+                                <li><a href="./partners.html">Partners</a></li>
+                                <li><a href="./careers.html">Careers</a></li>
+                                <li><a href="./gallery.html">Gallery </a></li>
                             </ul>
                         </div>
                     </div>
@@ -208,11 +327,10 @@
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="200">
                             <h5 class="footer-title">Our Services</h5>
                             <ul class="footer-links">
-                                <li><a href="#">Offshore Support Vessels</a></li>
-                                <li><a href="#">Subsea Operations</a></li>
-                                <li><a href="#">Marine Construction</a></li>
-                                <li><a href="#">Marine Survey & Inspection</a></li>
-                                <li><a href="#">Crew Management</a></li>
+                                <li><a href="./services/dry-dock.html">Dry Dock & Ship Repair</a></li>
+                                <li><a href="./services/Vessel-Construction.html">Vessel Construction</a></li>
+                                <li><a href="./services/Offshore-Engineering.html">Offshore Engineering</a></li>
+                                <li><a href="./services/OEM-Tie-Ups.html">OEM Services</a></li>
                             </ul>
                         </div>
                     </div>
@@ -224,7 +342,8 @@
                             <address class="footer-contact">
                                 <div class="contact-item">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span>123 Offshore Avenue, Mumbai,<br>Maharashtra 400001, India</span>
+                                    <span>123 Offshore Avenue, Mumbai,<br />Maharashtra 400001,
+                                        India</span>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
@@ -233,10 +352,6 @@
                                 <div class="contact-item">
                                     <i class="fas fa-envelope"></i>
                                     <a href="mailto:info@sadhavoffshore.com">info@sadhavoffshore.com</a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-clock"></i>
-                                    <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
                                 </div>
                             </address>
                         </div>
@@ -250,13 +365,15 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <p class="copyright">&copy; <span id="current-year"></span> Sadhav Offshore. All Rights
-                            Reserved.</p>
+                        <p class="copyright">
+                            &copy;<span id="current-year"></span> Sadhav Offshore. All
+                            Rights Reserved.
+                        </p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <ul class="footer-legal-links">
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="./privacy.html">Privacy Policy</a></li>
+                            <li><a href="./terms.html">Terms of Service</a></li>
                             <!-- <li><a href="sitemap.html">Sitemap</a></li> -->
                         </ul>
                     </div>
@@ -264,6 +381,14 @@
             </div>
         </div>
     </footer>
-    <button class="back-to-top" title="Back to top" aria-label="Back to top">&uarr;</button>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- jQuery (required for Owl Carousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>

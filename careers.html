@@ -173,75 +173,45 @@
 
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <header class="site-header" id="site-header">
-        <div class="container-fluid px-4 container">
-            <div class="d-flex justify-content-between align-items-center w-100">
-                <div class="d-flex align-items-center">
-                    <a href="/" class="site-header__logo" aria-label="Sadhav Offshore - Home">
-                        <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
-                    </a>
-                </div>
-                <div class="d-flex align-items-center">
-                    <nav class="site-header__nav" aria-label="Main Navigation">
-                        <button class="site-header__menu-toggle" aria-expanded="false" aria-controls="main-menu"
-                            aria-label="Toggle menu">
-                            <span class="hamburger">
-                                <span class="hamburger__line"></span>
-                                <span class="hamburger__line"></span>
-                                <span class="hamburger__line"></span>
-                            </span>
-                        </button>
-                        <div class="site-header__menu-wrapper">
-                            <button class="site-header__close-menu" aria-label="Close menu">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                            <ul class="site-header__menu" id="main-menu">
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Partners</a></li>
-                                <li><a href="#" aria-current="page">Careers</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li class="mobile-only"><a href="#"
-                                        class="button button--primary button--lg w-100">Enquire Now</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-
-   <!-- navbar here start  -->
+ <!-- navbar here start  -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="./index.html">
-                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
+                <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px" />
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="menu-btn">
+                    <span class="bar top"></span>
+                    <span class="bar middle"></span>
+                    <span class="bar bottom"></span>
+                </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav gap-2">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             About Us
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./about.html#our-story">About Sadhav Offshore </a></li>
-                            <li><a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a></li>
-                            <li><a class="dropdown-item" href="./about.html#">corporate ethics</a></li>
-                            <li><a class="dropdown-item" href="./about.html#management-team">management team</a></li>
-                            <li><a class="dropdown-item" href="./about.html#">our group companies </a></li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#our-story">About Sadhav Offshore
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#corporate-ethics">Corporate Ethics</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#management-team">Management Team</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#group-companies">Group Companies
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -250,21 +220,30 @@
                             Services
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair </a></li>
-                            <li><a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel Construction</a></li>
-                            <li><a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore Engineering</a></li>
-                            <li><a class="dropdown-item" href="./services/OEM-Tie-Ups.html">Services</a></li>
+                            <li>
+                                <a class="dropdown-item" href="./services.html">All Services
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel
+                                    Construction</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore
+                                    Engineering</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/OEM-Tie-Ups.html">OEM Services</a>
+                            </li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./contact.html">Contact us</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="./careers.html">Career</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./partners.html">Partners</a>
+                        <a class="nav-link" href="project.html">Projects</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
@@ -272,16 +251,40 @@
                             Infra
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock </a></li>
-                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Slipway">Paradip Slipway </a></li>
-                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Drydock">Paradip Drydock </a></li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Paradip-Slipway">Paradip Slipway
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Paradip-Drydock">Paradip Drydock
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" href="./partners.html">Partners</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact us</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Insights
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./blog.html#all-articles">Articles & Features </a></li>
+                            <li><a class="dropdown-item" href="./blog.html#case-studies">Case Studies </a></li>
+                            <li><a class="dropdown-item" href="./blog.html#industry-insights">Industry Insights </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="button button--primary button--lg w-100">Enquire Now</a>
+                        <a href="./contact.html" class="button button--primary button--lg w-100">Enquire Now</a>
                     </li>
                 </ul>
             </div>
@@ -380,28 +383,28 @@
                         <!-- <h2 class="mb-4">Apply for a Position</h2>
                         <p class="text-muted mb-5">Fill out the form and our team will review your application.</p> -->
 
-                        <form id="jobApplicationForm" class="contact-form d-flex flex-column h-100" novalidate>
+                        <form id="jobApplicationForm" class="contact-form d-flex flex-column h-100" action="forms/career.php" method="POST" novalidate>
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="firstName" placeholder="First Name"
+                                        <input type="text" class="form-control" id="firstName" name="name" placeholder="First Name"
                                             required>
-                                        <label for="firstName">First Name <span class="text-danger">*</span></label>
+                                        <label for="firstName">Full Name <span class="text-danger">*</span></label>
                                         <div class="invalid-feedback">Please enter your first name.</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="lastName" placeholder="Last Name"
-                                            required>
-                                        <label for="lastName">Last Name <span class="text-danger">*</span></label>
-                                        <div class="invalid-feedback">Please enter your last name.</div>
+                                        <input type="number" class="form-control" id="experience" name="experience" placeholder="Years of Experience"
+                                            min="0" max="50">
+                                        <label for="experience">Years of Experience</label>
+                                        <div class="invalid-feedback">Please enter valid experience.</div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Email Address"
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"
                                             required>
                                         <label for="email">Email <span class="text-danger">*</span></label>
                                         <div class="invalid-feedback">Please enter a valid email address.</div>
@@ -409,7 +412,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="tel" class="form-control" id="phone" placeholder="Phone Number"
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number"
                                             required>
                                         <label for="phone">Phone <span class="text-danger">*</span></label>
                                         <div class="invalid-feedback">Please enter your phone number.</div>
@@ -418,7 +421,7 @@
 
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <select class="form-select" id="position" required>
+                                        <select class="form-select" id="position" name="position" required>
                                             <option value="" selected disabled></option>
                                             <option value="marine-engineer">Marine Engineer</option>
                                             <option value="naval-architect">Naval Architect</option>
@@ -511,7 +514,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+ <!-- Footer -->
     <footer class="site-footer bg-primary">
         <!-- Footer Top -->
         <div class="footer-top">
@@ -548,12 +551,12 @@
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="100">
                             <h5 class="footer-title">Quick Links</h5>
                             <ul class="footer-links">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Partners</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="./about.html">About Us</a></li>
+                                <li><a href="./services.html">Services</a></li>
+                                <li><a href="./project.html">Projects</a></li>
+                                <li><a href="./partners.html">Partners</a></li>
+                                <li><a href="./careers.html">Careers</a></li>
+                                <li><a href="./contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -562,12 +565,12 @@
                     <div class="col-6 col-md-6 col-lg-3">
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="200">
                             <h5 class="footer-title">Our Services</h5>
-                            <ul class="footer-links">
-                                <li><a href="#">Offshore Support Vessels</a></li>
-                                <li><a href="#">Subsea Operations</a></li>
-                                <li><a href="#">Marine Construction</a></li>
-                                <li><a href="#">Marine Survey & Inspection</a></li>
-                                <li><a href="#">Crew Management</a></li>
+                             <ul class="footer-links">
+                                <li><a href="./services.html#offshore-support-vessels">Offshore Support Vessels</a></li>
+                                <li><a href="./services.html#subsea-operations">Subsea Operations</a></li>
+                                <li><a href="./services.html#marine-construction">Marine Construction</a></li>
+                                <li><a href="./services.html#marine-survey-&-inspection">Marine Survey & Inspection</a></li>
+                                <li><a href="./services.html#crew-management">Crew Management</a></li>
                             </ul>
                         </div>
                     </div>
@@ -605,13 +608,13 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <p class="copyright">&copy; <span id="current-year"></span> Sadhav Offshore. All Rights
+                        <p class="copyright">&copy;<span id="current-year"></span> Sadhav Offshore. All Rights
                             Reserved.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <ul class="footer-legal-links">
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="./privacy.html">Privacy Policy</a></li>
+                            <li><a href="./terms.html">Terms of Service</a></li>
                             <!-- <li><a href="sitemap.html">Sitemap</a></li> -->
                         </ul>
                     </div>
@@ -619,6 +622,7 @@
             </div>
         </div>
     </footer>
+
 
     <button class="back-to-top" title="Back to top" aria-label="Back to top">&uarr;</button>
     <!-- Success Modal -->
@@ -645,27 +649,44 @@
     </div>
 
     <script>
-        // Form validation
-        (function () {
-            'use strict'
+        document.getElementById('jobApplicationForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
 
-            var form = document.getElementById('jobApplicationForm');
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            const formData = new FormData(form);
 
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault();
-                    event.stopPropagation();
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    form.reset(); // Reset form first
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    } else {
+                        alert(data.message || 'Application submitted successfully!');
+                    }
                 } else {
-                    event.preventDefault();
-                    // In a real application, you would submit the form data to your server here
-                    var successModal = new bootstrap.Modal(document.getElementById('applicationSuccessModal'));
-                    successModal.show();
-                    form.reset();
+                    alert(data.message || 'Failed to submit application. Please try again.');
                 }
-
-                form.classList.add('was-validated');
-            }, false);
-        })();
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        });
     </script>
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

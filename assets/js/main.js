@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initBackToTop();
     initFooterYear();
     initTestimonialSlider();
-    initAjaxForms();
     initLazyLoad();
     initProjectFilters();
     fetchAndInjectCsrfToken();
@@ -323,77 +322,6 @@ function initTestimonialSlider() {
     });
 }
 
-/** 6. AJAX Form Submission */
-function initAjaxForms() {
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => handleFormSubmit(e, 'forms/contact.php', '#form-notifications'));
-    }
-
-    const jobForm = document.getElementById('job-apply-form');
-    if (jobForm) {
-        jobForm.addEventListener('submit', (e) => handleFormSubmit(e, 'forms/job-apply.php', '#job-form-notifications'));
-    }
-
-    const rfqForm = document.getElementById('rfq-form');
-    if (rfqForm) {
-        rfqForm.addEventListener('submit', (e) => handleFormSubmit(e, 'forms/rfq.php', '#rfq-form-notifications'));
-    }
-}
-
-async function handleFormSubmit(e, endpoint, notificationsSelector) {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-    const notifications = document.querySelector(notificationsSelector);
-    const submitButton = form.querySelector('button[type="submit"]');
-
-    notifications.innerHTML = '';
-    clearErrors(form);
-
-    if (!validateForm(form)) {
-        return;
-    }
-
-    const originalButtonText = submitButton.textContent;
-    submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
-
-    try {
-        const response = await fetch(endpoint, {
-            method: 'POST',
-            body: formData,
-        });
-
-        const result = await response.json();
-
-        if (result.status === 'ok') {
-            displayMessage('success', result.message || 'Your submission was successful!', notifications);
-            form.reset();
-            fetchAndInjectCsrfToken(); // Refresh token after successful submission
-        } else {
-            if (result.errors) {
-                Object.keys(result.errors).forEach(key => {
-                    const field = form.querySelector(`[name="${key}"]`);
-                    if (field) showError(field.closest('.form__group'), result.errors[key]);
-                });
-                 displayMessage('error', result.message || 'Please correct the errors below.', notifications);
-            } else {
-                 displayMessage('error', result.message || 'An unexpected error occurred. Please try again.', notifications);
-            }
-            if (result.refresh_token) {
-                fetchAndInjectCsrfToken(); // Refresh token on validation failure
-            }
-        }
-    } catch (error) {
-        displayMessage('error', 'A network error occurred. Please check your connection and try again.', notifications);
-    } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
-    }
-}
-
-
 /** 7. Lazy Image Loading */
 function initLazyLoad() {
     const lazyImages = document.querySelectorAll('.lazy-image');
@@ -500,74 +428,72 @@ function initScrollAnimations() {
     }
 }
 
-/** 11. Animated Stat Counters */
+/** 11. Animated Stat Counters (always add '+') */
 function initStatCounters() {
-    // Target elements with data-target attribute that are direct children of stat items
     const counters = document.querySelectorAll('[data-target]');
-    if (counters.length === 0) return;
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counter = entry.target;
-                const targetValue = counter.getAttribute('data-target');
-                const isNumeric = /^\d+\+?$/.test(targetValue);
-
-                // Create h2 element if it doesn't exist
-                let h2 = counter.querySelector('h2');
-                if (!h2) {
-                    h2 = document.createElement('h2');
-                    counter.innerHTML = ''; // Clear existing content
-                    counter.appendChild(h2);
-                }
-
-                if (isNumeric) {
-                    // Handle both numbers and numbers with '+' sign
-                    const hasPlus = targetValue.includes('+');
-                    const target = parseInt(targetValue, 10);
-                    let current = 0;
-                    const duration = 2000; // 2 seconds
-                    const startTime = performance.now();
-
-                    const updateCounter = (timestamp) => {
-                        const elapsed = timestamp - startTime;
-                        const progress = Math.min(elapsed / duration, 1);
-                        
-                        current = Math.min(target * progress, target);
-                        h2.textContent = Math.floor(current) + (hasPlus ? '+' : '');
-                        
-                        if (progress < 1) {
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            h2.textContent = target + (hasPlus ? '+' : '');
-                        }
-                    };
-                    
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    h2.textContent = targetValue;
-                }
-                
-                observer.unobserve(counter);
+    if (!counters.length) return;
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+  
+        const counter = entry.target;
+        const targetValue = counter.getAttribute('data-target')?.trim() || '';
+        const isNumeric = /^\d+(\.\d+)?$/.test(targetValue); // digits (optional decimal)
+  
+        // Ensure an <h2> exists for the animated value
+        let h2 = counter.querySelector('h2');
+        if (!h2) {
+          h2 = document.createElement('h2');
+          counter.innerHTML = '';
+          counter.appendChild(h2);
+        }
+  
+        if (isNumeric) {
+          const target = parseFloat(targetValue);
+          const duration = 2000; // ms
+          const startTime = performance.now();
+  
+          const updateCounter = (now) => {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const value = Math.floor(target * progress);
+            h2.textContent = value + '+';
+  
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              // Snap to final value with '+'
+              h2.textContent = (Number.isInteger(target) ? target : target.toFixed(0)) + '+';
             }
-        });
-    }, { 
-        threshold: 0.8,
-        rootMargin: '0px 0px -50px 0px' // Start animation a bit before element comes into view
+          };
+  
+          requestAnimationFrame(updateCounter);
+        } else {
+          // Non-numeric targets: show as-is (no forced '+')
+          h2.textContent = targetValue;
+        }
+  
+        observer.unobserve(counter);
+      });
+    }, {
+      threshold: 0.8,
+      rootMargin: '0px 0px -50px 0px'
     });
-
+  
+    // Initialize each counter with 0+
     counters.forEach(counter => {
-        // Create h2 for the initial zero value
-        const h2 = document.createElement('h2');
-        h2.textContent = '0' + (counter.getAttribute('data-target').includes('+') ? '+' : '');
-        counter.innerHTML = ''; // Clear existing content
-        counter.appendChild(h2);
-        
-        // Store the original text to restore if needed
-        counter.setAttribute('data-original', h2.textContent);
-        observer.observe(counter);
+      const h2 = document.createElement('h2');
+      const targetValue = counter.getAttribute('data-target')?.trim() || '';
+      const isNumeric = /^\d+(\.\d+)?$/.test(targetValue);
+      h2.textContent = isNumeric ? '0+' : targetValue; // only force '+' for numeric
+      counter.innerHTML = '';
+      counter.appendChild(h2);
+  
+      counter.setAttribute('data-original', h2.textContent);
+      observer.observe(counter);
     });
-}
+  }
+  
 
 /** 12. Service Carousel */
 function initServiceCarousel() {
@@ -587,7 +513,7 @@ function initServiceCarousel() {
             dots: true,
             dotsEach: true,
             lazyLoad: false,
-            autoplay: true,
+            autoplay: false,
             center: false,
             autoWidth: false,
             responsiveClass: true,
@@ -625,7 +551,7 @@ function initServiceCarousel() {
                 992: {
                     items: 3,
                     margin: 20,
-                    stagePadding: 15,
+                    stagePadding: 0,
                     nav: true,
                     dots: true,
                     center: false,
@@ -745,9 +671,9 @@ $(document).ready(function () {
     $(window).on("resize", handleDropdowns);
 
     // Custom toggler for mobile collapse
-    $(".navbar-toggler").off("click").on("click", function () {
-        $("#navbarNavDropdown").slideToggle();
-    });
+    // $(".navbar-toggler").off("click").on("click", function () {
+    //     $("#navbarNavDropdown").slideToggle();
+    // });
 });
 
 
@@ -761,6 +687,53 @@ $(document).ready(function () {
 //   }
 // });
 
-
 // navbar js end
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.hash) {
+    const id = window.location.hash.substring(1);
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // navbar height
+      const bodyTop = document.body.getBoundingClientRect().top;
+      const elementTop = element.getBoundingClientRect().top;
+      const elementPosition = elementTop - bodyTop;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  }
+});
+
+
+// Select all <a> inside dropdown items
+const items = document.querySelectorAll("li a.dropdown-item");
+
+// Convert NodeList to array and map text content
+const texts = Array.from(items).map(a => {
+  let text = a.textContent.trim();
+  // Make only first letter uppercase, rest lowercase
+  return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+});
+
+// Join into string form
+const result = texts.join(", ");
+
+console.log(result);
+
+// goto contact page with context 
+$(document).ready(function () {
+    // Get current page name from URL
+    var path = window.location.pathname;
+    var pageName = path.substring(path.lastIndexOf('/') + 1); // e.g. index.html
+
+    // Append it to the href of the target anchor
+    $(".goto-contact-page-with-context").each(function () {
+        var baseHref = $(this).attr("href").split("?")[0]; // keep only base URL
+        $(this).attr("href", baseHref + "?prevPage=" + encodeURIComponent(pageName));
+    });
+});

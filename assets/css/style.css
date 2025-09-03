@@ -115,6 +115,7 @@
 /* sticky nav start */
 .navbar {
   transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.scrolled {
@@ -151,3 +152,68 @@ body {
   color: white;
 }
 /* navbar css end */
+
+html {
+  scroll-behavior: smooth; /* smooth scroll effect */
+}
+
+:target {
+  scroll-margin-top: 80px; /* adjust this value = your navbar height */
+}
+
+
+/* Remove Bootstrap default background icon */
+.navbar-toggler-icon {
+  background-image: none !important;
+}
+
+/* Wrapper */
+.menu-btn {
+  display: inline-block;
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  position: relative;
+}
+
+/* Bars */
+.menu-btn .bar {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #000; /* change color */
+  background-color: #a3a3a3; /* change color */
+  transition: all 0.4s ease;
+}
+
+.menu-btn .bar.top {
+  top: 0;
+}
+.menu-btn .bar.middle {
+  top: 9px;
+}
+.menu-btn .bar.bottom {
+  bottom: 0;
+}
+
+/* Animate when expanded (button NOT collapsed) */
+.navbar-toggler:not(.collapsed) .bar.top {
+  transform: rotate(45deg);
+  top: 9px;
+}
+.navbar-toggler:not(.collapsed) .bar.middle {
+  opacity: 0;
+}
+.navbar-toggler:not(.collapsed) .bar.bottom {
+  transform: rotate(-45deg);
+  bottom: 9px;
+}
+
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none!important;
+}
