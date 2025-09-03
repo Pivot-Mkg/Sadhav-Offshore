@@ -132,22 +132,4 @@
 
 
 /* navbar css start */
-body {
-  padding-top: 96px!important;
-}
-
-.navbar {
-  position: fixed!important;
-  top: 0%;
-  left: 0%;
-  right: 0%;
-  z-index: 999!important;
-  background: white;
-}
-
-
-.dropdown-item:focus {
-  background: #003f87!important;
-  color: white;
-}
-/* navbar css end */
+/* navbar css start */

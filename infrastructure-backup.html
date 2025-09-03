@@ -1,28 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Sadhav Offshore</title>
-    <!-- Bootstrap 5.3 CSS -->
+    <title>Infrastructure | Sadhav Offshore</title>
+     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <meta name="description"
-        content="Explore the comprehensive offshore engineering, subsea, and ship repair services offered by Sadhav Offshore.">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <meta name="description" content="Explore Sadhav Offshore's state-of-the-art infrastructure, including our floating drydock and slipway facilities.">
+    
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/utilities.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="assets/js/main.js" defer></script>
 </head>
-
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+   <header class="site-header" id="site-header">
+        <div class="container-fluid px-4 container">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <div class="d-flex align-items-center">
+                    <a href="/" class="site-header__logo" aria-label="Sadhav Offshore - Home">
+                        <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
+                    </a>
+                </div>
+                <div class="d-flex align-items-center">
+                    <nav class="site-header__nav" aria-label="Main Navigation">
+                        <button class="site-header__menu-toggle" aria-expanded="false" aria-controls="main-menu"
+                            aria-label="Toggle menu">
+                            <span class="hamburger">
+                                <span class="hamburger__line"></span>
+                                <span class="hamburger__line"></span>
+                                <span class="hamburger__line"></span>
+                            </span>
+                        </button>
+                        <div class="site-header__menu-wrapper">
+                            <button class="site-header__close-menu" aria-label="Close menu">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <ul class="site-header__menu" id="main-menu">
+                                <li><a href="about.html" >About</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Projects</a></li>
+                                <li><a href="#">Partners</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#" >Blog</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li class="mobile-only"><a href="#"
+                                        class="button button--primary button--lg w-100">Enquire Now</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
        <!-- navbar here start  -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
@@ -92,146 +134,61 @@
         </div>
     </nav>
     <!-- navbar here end -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="site-header" id="site-header">
-        <div class="container-fluid px-4 container">
-            <div class="d-flex justify-content-between align-items-center w-100">
-                <div class="d-flex align-items-center">
-                    <a href="/" class="site-header__logo" aria-label="Sadhav Offshore - Home">
-                        <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px;">
-                    </a>
-                </div>
-                <div class="d-flex align-items-center">
-                    <nav class="site-header__nav" aria-label="Main Navigation">
-                        <button class="site-header__menu-toggle" aria-expanded="false" aria-controls="main-menu"
-                            aria-label="Toggle menu">
-                            <span class="hamburger">
-                                <span class="hamburger__line"></span>
-                                <span class="hamburger__line"></span>
-                                <span class="hamburger__line"></span>
-                            </span>
-                        </button>
-                        <div class="site-header__menu-wrapper">
-                            <button class="site-header__close-menu" aria-label="Close menu">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                            <ul class="site-header__menu" id="main-menu">
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="#" aria-current="page">Services</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Partners</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li class="mobile-only"><a href="#"
-                                        class="button button--primary button--lg w-100">Enquire Now</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-
+    
     <main id="main-content">
-        <section class="hero position-relative"
-            style="background-image: url('assets/images/offshore-service-page-banner.png'); background-size: cover; background-position: center;">
-            <div class="hero__overlay position-absolute w-100 h-100"></div>
-            <div class="container position-relative z-index-1 h-100 d-flex align-items-center">
-                <div class="row justify-content-center text-center">
-                    <div class="col-12 col-lg-10 col-xl-12">
-                        <h1 class="hero__title display-4">Operational Excellence at Sea</h1>
-                        <p class="hero__subtitle lead mb-5">Our journey, our values, and our commitment to the future.
-                        </p>
-                    </div>
-                </div>
+        <section class="page-header animate-on-scroll">
+            <div class="container">
+                <h1>Our Infrastructure</h1>
+                <p>The backbone of our operations, enabling us to deliver superior results.</p>
             </div>
-            <nav class="breadcrumb breadcrumb--banner">
-                <div class="container">
-                    <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li><span aria-current="page">Services</span></li>
-                    </ol>
-                </div>
-            </nav>
         </section>
 
-        <section class="section py-5 py-lg-7" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+        <section class="section">
             <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="section__title">Our Services</h2>
-                    <p class="section__subtitle">Comprehensive offshore and marine solutions tailored to your needs</p>
+                <!-- Floating Drydock -->
+                <div class="grid grid--2-cols-even animate-on-scroll" style="margin-bottom: var(--space-16);">
+                    <div>
+                        <h2>Floating Drydock "ABHI"</h2>
+                        <p>TODO: General description of the floating drydock and its strategic importance.</p>
+                        <ul>
+                            <li><strong>Lifting Capacity:</strong> TODO</li>
+                            <li><strong>Length Overall:</strong> TODO</li>
+                            <li><strong>Breadth:</strong> TODO</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x400/e5e7eb/4b5563?text=Floating+Drydock" alt="Photo of the floating drydock" style="border-radius: var(--border-radius-md);">
+                    </div>
                 </div>
-                <div class="grid grid--3-cols">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="assets/images/services/dry-docking.jpg" alt="Offshore Logistics & Support">
-                            <div class="service-card__overlay"></div>
-                        </div>
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">Dry Dock & Ship Repair</h3>
-                            <p>Specialized dry docking and repair services ensuring vessel safety, reliability,
-                                efficiency.</p>
-                            <a href="services/dry-dock.html" class="service-card__link">Discover Our Solutions</a>
-                        </div>
+
+                <!-- Paradip Slipway -->
+                 <div class="grid grid--2-cols-even animate-on-scroll">
+                     <div>
+                        <img src="https://placehold.co/600x400/e5e7eb/4b5563?text=Paradip+Slipway" alt="Photo of the Paradip slipway" style="border-radius: var(--border-radius-md);">
                     </div>
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="assets/images/services/vessel-construction.jpg" alt="Marine Logistics">
-                            <div class="service-card__overlay"></div>
-                        </div>
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">Vessel Construction</h3>
-                            <p>Designing and constructing robust vessels with advanced technology and superior
-                                craftsmanship.</p>
-                            <a href="services/vessel-construction.html" class="service-card__link">Discover Our Solutions</a>
-                        </div>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="assets/images/offshore-support.jpg" alt="Project Management">
-                            <div class="service-card__overlay"></div>
-                        </div>
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">Offshore Engineering</h3>
-                            <p>End-to-end offshore engineering support delivering innovative, safe, and efficient marine
-                                solutions.</p>
-                            <a href="services/offshore-engineering.html" class="service-card__link">Discover Our Solutions</a>
-                        </div>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="assets/images/services/offshore OEM tie-ups.jpg" alt="Coastal Logistics">
-                            <div class="service-card__overlay"></div>
-                        </div>
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">OEM Tie-Ups</h3>
-                            <p>Trusted OEM collaborations providing genuine parts, reliable support, and seamless marine
-                                integration.</p>
-                            <a href="services/oem-tie-ups.html" class="service-card__link">Discover Our Solutions</a>
-                        </div>
+                    <div>
+                        <h2>Paradip Slipway</h2>
+                        <p>TODO: General description of the slipway facility at Paradip Port.</p>
+                         <ul>
+                            <li><strong>Capacity:</strong> TODO</li>
+                            <li><strong>Primary Use:</strong> TODO</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
     </main>
-
-    <section class="cta-section cto-sect">
+    
+    <section class="section cta-section">
         <div class="container text-center animate-on-scroll">
-            <h2 class="cta-section__title">Looking for Offshore Service Expertise?</h2>
-            <p class="cta-section__subtitle">Partner with us for reliable ship repair, construction, and marine
-                solutions.</p>
-            <a href="#" class="button button--secondary button--lg">Explore Our Services</a>
+            <h2 class="cta-section__title">Ready to Start Your Next Project?</h2>
+            <p class="cta-section__subtitle">Let's discuss how our expertise can bring your vision to life.</p>
+            <a href="rfq.html" class="button button--primary button--lg">Request a Quote</a>
         </div>
     </section>
 
-    <!-- Footer -->
+   <!-- Footer -->
     <footer class="site-footer bg-primary">
         <!-- Footer Top -->
         <div class="footer-top">
@@ -341,5 +298,4 @@
     </footer>
     <button class="back-to-top" title="Back to top" aria-label="Back to top">&uarr;</button>
 </body>
-
 </html>

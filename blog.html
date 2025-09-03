@@ -1,26 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog & Case Studies | Sadhav Offshore</title>
-     <!-- Bootstrap 5.3 CSS -->
+    <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <meta name="description" content="Read the latest insights, news, and case studies from the experts at Sadhav Offshore.">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <meta name="description"
+        content="Read the latest insights, news, and case studies from the experts at Sadhav Offshore.">
     <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/utilities.css">
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js" defer></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <style>
+        /* Custom tab styling */
+        .nav-tabs {
+            border: none;
+            gap: 1rem;
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background-color: var(--sadhav-blue);
+            color: #fff !important;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: var(--sadhav-blue);
+            color: #fff !important;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-tabs .nav-link:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+    </style>
 </head>
+
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-   <header class="site-header" id="site-header">
+
+    <header class="site-header" id="site-header">
         <div class="container-fluid px-4 container">
             <div class="d-flex justify-content-between align-items-center w-100">
                 <div class="d-flex align-items-center">
@@ -47,7 +94,7 @@
                                 </svg>
                             </button>
                             <ul class="site-header__menu" id="main-menu">
-                                <li><a href="about.html" >About</a></li>
+                                <li><a href="about.html">About</a></li>
                                 <li><a href="#">Services</a></li>
                                 <li><a href="#">Projects</a></li>
                                 <li><a href="#">Partners</a></li>
@@ -64,7 +111,8 @@
             </div>
         </div>
     </header>
-   <!-- navbar here start  -->
+
+    <!-- navbar here start  -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="./index.html">
@@ -77,7 +125,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav gap-2">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             About Us
                         </a>
@@ -92,13 +140,16 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            OEM Services
+                            Services
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair </a></li>
-                            <li><a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel Construction</a></li>
-                            <li><a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore Engineering</a></li>
-                            <li><a class="dropdown-item" href="./services/OEM-Tie-Ups.html">OEM Services</a></li>
+                            <li><a class="dropdown-item" href="./services/dry-dock.html">Dry Dock & Ship Repair </a>
+                            </li>
+                            <li><a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel
+                                    Construction</a></li>
+                            <li><a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore
+                                    Engineering</a></li>
+                            <li><a class="dropdown-item" href="./services/OEM-Tie-Ups.html">Services</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -117,9 +168,12 @@
                             Infra
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./infrastructure.html#">Floting Dry Dock </a></li>
-                            <li><a class="dropdown-item" href="./infrastructure.html#">Paradip Slipway </a></li>
-                            <li><a class="dropdown-item" href="./infrastructure.html#">Paradip Drydock </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock
+                                </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Slipway">Paradip Slipway
+                                </a></li>
+                            <li><a class="dropdown-item" href="./infrastructure.html#Paradip-Drydock">Paradip Drydock
+                                </a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -134,61 +188,214 @@
     </nav>
     <!-- navbar here end -->
 
-    <main id="main-content">
-        <section class="page-header animate-on-scroll">
-            <div class="container">
-                <h1>Insights & Case Studies</h1>
-                <p>Industry analysis, company news, and in-depth project case studies.</p>
+    <!-- Blog Page Content -->
+    <main class="main-content">
+        <section class="hero position-relative"
+            style="background-image: url('assets/images/about-us-banner.jpg'); background-size: cover; background-position: center;"
+            role="region" aria-label="Blog landing hero">
+            <div class="hero__overlay position-absolute w-100 h-100" aria-hidden="true"></div>
+            <div class="container position-relative z-index-1 h-100 d-flex align-items-center">
+                <div class="row justify-content-center text-center">
+                    <div class="col-12 col-lg-10 col-xl-12">
+                        <h1 class="hero__title display-4">Sadhav Insights</h1>
+                        <p class="hero__subtitle lead mb-5">
+                            Expert articles, project stories, and updates on offshore logistics, ship repair, and
+                            maritime operations—grounded in real work across India’s coasts.
+                        </p>
+                    </div>
+                </div>
             </div>
+            <nav class="breadcrumb breadcrumb--banner" aria-label="Breadcrumb">
+                <div class="container">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li><span aria-current="page">Blog</span></li>
+                    </ol>
+                </div>
+            </nav>
         </section>
 
-        <section class="section">
-            <div class="container animate-on-scroll">
-                <div class="grid grid--3-cols">
-                    <!-- TODO: Populate with actual articles -->
-                    <div class="article-card card">
-                        <a href="blog-article.html" class="article-card__image-link">
-                            <img src="https://placehold.co/400x250/0a2540/ffffff?text=Subsea" alt="Abstract image of subsea robotics">
-                        </a>
-                        <div class="article-card__content">
-                            <h3 class="card__title"><a href="blog-article.html">The Future of Subsea Robotics</a></h3>
-                            <p>Exploring the impact of autonomous underwater vehicles (AUVs) in modern offshore operations.</p>
-                            <a href="blog-article.html" class="card__link">Read More</a>
+
+        <!-- Tabs Navigation -->
+        <div class="container py-4">
+            <ul class="nav nav-tabs justify-content-center border-0" id="blogTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
+                        type="button" role="tab" aria-controls="all" aria-selected="true">
+                        All Articles
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="case-studies-tab" data-bs-toggle="tab" data-bs-target="#case-studies"
+                        type="button" role="tab" aria-controls="case-studies" aria-selected="false">
+                        Case Studies
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="insights-tab" data-bs-toggle="tab" data-bs-target="#insights"
+                        type="button" role="tab" aria-controls="insights" aria-selected="false">
+                        Industry Insights
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content py-4" id="blogTabsContent">
+            <!-- All Articles Tab -->
+            <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                <div class="container">
+                    <div class="grid grid--3-cols">
+                        <!-- Article 1 -->
+                        <div class="card project-item-card" data-aos="fade-up" data-aos-delay="100">
+                            <img src="assets/images/offshore-engineering.webp" alt="Offshore Engineering"
+                                class="project-item-card__image">
+                            <div class="project-item-card__content">
+                                <h3 class="card__title">Emerging Trends in Offshore Engineering</h3>
+                                <p>Exploring the latest innovations and technologies shaping the future of offshore
+                                    engineering and construction.</p>
+                                <a href="blog-article.html" class="card__link">Read More</a>
+                            </div>
                         </div>
-                    </div>
-                     <div class="article-card card">
-                        <a href="blog-article.html" class="article-card__image-link">
-                           <img src="https://placehold.co/400x250/0E7490/ffffff?text=Port" alt="Abstract image of a busy port">
-                        </a>
-                        <div class="article-card__content">
-                            <h3 class="card__title"><a href="blog-article.html">Navigating Port Congestion</a></h3>
-                            <p>Strategies and technologies Sadhav is employing to enhance efficiency in busy port environments.</p>
-                            <a href="blog-article.html" class="card__link">Read More</a>
+                        <!-- Article 2 -->
+                        <div class="card project-item-card" data-aos="fade-up" data-aos-delay="200">
+                            <img src="assets/images/offshore-support.jpg" alt="Offshore Support Services"
+                                class="project-item-card__image">
+                            <div class="project-item-card__content">
+                                <h3 class="card__title">Sustainable Practices in Offshore Operations</h3>
+                                <p>How Sadhav Offshore is leading the way in environmentally responsible offshore
+                                    operations.</p>
+                                <a href="blog-article.html" class="card__link">Read More</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="article-card card">
-                        <a href="blog-article.html" class="article-card__image-link">
-                             <img src="https://placehold.co/400x250/FF6A00/ffffff?text=Safety" alt="Abstract image representing safety">
-                        </a>
-                        <div class="article-card__content">
-                            <h3 class="card__title"><a href="blog-article.html">Safety Spotlight: A Culture of Prevention</a></h3>
-                            <p>A deep dive into our proactive safety protocols that protect our people, clients, and the environment.</p>
-                            <a href="blog-article.html" class="card__link">Read More</a>
+
+                        <!-- Article 3 -->
+                        <div class="card project-item-card" data-aos="fade-up" data-aos-delay="300">
+                            <img src="assets/images/Subsea-Pipeline.jpg" alt="Subsea Pipeline"
+                                class="project-item-card__image">
+                            <div class="project-item-card__content">
+                                <h3 class="card__title">Emergency Repair in the North Sea</h3>
+                                <p>A detailed look at our rapid response to a critical subsea pipeline repair operation.
+                                </p>
+                                <a href="case-study-detail.html" class="card__link">View Case Study</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-    </main>
-    
-    <section class="section cta-section">
-        <div class="container text-center animate-on-scroll">
-            <h2 class="cta-section__title">Ready to Start Your Next Project?</h2>
-            <p class="cta-section__subtitle">Let's discuss how our expertise can bring your vision to life.</p>
-            <a href="rfq.html" class="button button--primary button--lg">Request a Quote</a>
+            <!-- Case Studies Tab -->
+            <div class="tab-pane fade" id="case-studies" role="tabpanel" aria-labelledby="case-studies-tab">
+                <div class="container">
+                    <div class="grid grid--3-cols">
+                        <!-- Case Study 1 -->
+                        <div class="card project-item-card" data-aos="fade-up" data-aos-delay="100">
+                            <img src="assets/images/infra/Floting-Dry-Dock.jpg" alt="Floating Dry Dock"
+                                class="project-item-card__image">
+                            <div class="project-item-card__content">
+                                <h3 class="card__title">Deepwater Rig Installation</h3>
+                                <p>How we successfully executed a complex deepwater rig installation in challenging
+                                    conditions.</p>
+                                <a href="case-study-detail.html" class="card__link">View Case Study</a>
+                            </div>
+                        </div>
+
+                        <!-- Case Study 2 -->
+                        <div class="card project-item-card" data-aos="fade-up" data-aos-delay="200">
+                            <img src="assets/images/Platform-Supply.jpg" alt="Platform Supply"
+                                class="project-item-card__image">
+                            <div class="project-item-card__content">
+                                <h3 class="card__title">Subsea Pipeline Repair</h3>
+                                <p>Our innovative approach to repairing a damaged subsea pipeline in record time.</p>
+                                <a href="case-study-detail.html" class="card__link">View Case Study</a>
+                            </div>
+                        </div>
+
+                        <!-- Case Study 3 -->
+                        <div class="card project-item-card" data-aos="fade-up" data-aos-delay="300">
+                            <img src="assets/images/marine-construction.jpg" alt="Marine Construction"
+                                class="project-item-card__image">
+                            <div class="project-item-card__content">
+                                <h3 class="card__title">Harbor Construction Project</h3>
+                                <p>Successfully completing a major harbor construction project ahead of schedule.</p>
+                                <a href="case-study-detail.html" class="card__link">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Industry Insights Tab -->
+            <div class="tab-pane fade" id="insights" role="tabpanel" aria-labelledby="insights-tab">
+                <div class="container">
+                    <div class="grid grid--3-cols">
+                        <!-- Insight 1 -->
+                        <div class="card project-item-card" data-aos="fade-up" data-aos-delay="100">
+                            <img src="assets/images/our-story-1.jpeg" alt="Our Story"
+                                class="project-item-card__image">
+                            <div class="project-item-card__content">
+                                <h3 class="card__title">The Future of Offshore Wind Energy</h3>
+                                <p>Exploring the growth potential and technological advancements in offshore wind
+                                    energy.</p>
+                                <a href="blog-article.html" class="card__link">Read More</a>
+                            </div>
+                        </div>
+
+                        <!-- Insight 2 -->
+                        <div class="card project-item-card" data-aos="fade-up" data-aos-delay="200">
+                            <img src="assets/images/our-story-2.png" alt="Our Journey"
+                                class="project-item-card__image">
+                            <div class="project-item-card__content">
+                                <h3 class="card__title">Innovations in Offshore Safety</h3>
+                                <p>How new technologies are making offshore operations safer than ever before.</p>
+                                <a href="blog-article.html" class="card__link">Read More</a>
+                            </div>
+                        </div>
+
+                        <!-- Insight 3 -->
+                        <div class="card project-item-card" data-aos="fade-up" data-aos-delay="300">
+                            <img src="assets/images/mission.jpg" alt="Our Mission"
+                                class="project-item-card__image">
+                            <div class="project-item-card__content">
+                                <h3 class="card__title">Digital Transformation in Maritime</h3>
+                                <p>The impact of digital technologies on the maritime and offshore industries.</p>
+                                <a href="blog-article.html" class="card__link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </main>
+
+    <!-- Initialize AOS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        });
+    </script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Your existing scripts -->
+    <script src="assets/js/main.js" defer></script>
+
+    <section class="py-5 py-lg-7 text-white cto-sect">
+        <div class="container text-center" data-aos="fade-up">
+          <h2>Need Offshore Support Now?</h2>
+          <p>Talk to our marine team for a fast, practical plan—offshore logistics, crew transfer, repairs, or yard slots. Clear scope, zero fluff.</p>
+          <div class="cta-buttons">
+            <a href="contact-us.html" class="button button--secondary" aria-label="Talk to an expert about offshore and marine services">Talk to an Expert</a>
+          </div>
+        </div>
+      </section>
+      
 
     <!-- Footer -->
     <footer class="site-footer bg-primary">
@@ -300,4 +507,5 @@
     </footer>
     <button class="back-to-top" title="Back to top" aria-label="Back to top">&uarr;</button>
 </body>
+
 </html>
