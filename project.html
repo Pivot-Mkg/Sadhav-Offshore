@@ -20,6 +20,10 @@
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/base.css">
@@ -159,8 +163,9 @@
             <a class="navbar-brand" href="./index.html">
                 <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px" />
             </a>
-               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="menu-btn">
                     <span class="bar top"></span>
                     <span class="bar middle"></span>
@@ -181,6 +186,9 @@
                             </li>
                             <li>
                                 <a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./csr.html">CSR</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="./about.html#corporate-ethics">Corporate Ethics</a>
@@ -228,11 +236,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Infra
+                           Infrastructure
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock
+                                <a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floating Dry Dock
                                 </a>
                             </li>
                             <li>
@@ -264,7 +272,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="./contact.html" class="button button--primary button--lg w-100">Enquire Now</a>
+                        <a href="./contact.html" class="button button--primary button--lg w-100">Contact us</a>
                     </li>
                 </ul>
             </div>
@@ -365,25 +373,57 @@
 
 
         </section>
+
+        <section class="cta-section">
+            <div class="container text-center animate-on-scroll">
+                <h2 class="section__title">Key milestone</h2>
+            </div>
+        </section>
         <!-- left side image section  -->
-        <section id="MV-Sagardeep-II-at-Visakhapa" class="py-3" style="background: rgba(0, 63, 135, 0.05);" id="Paradip-Slipway">
+        <section id="MV-Sagardeep-II-at-Visakhapa" class="py-3" style="background: rgba(0, 63, 135, 0.05);"
+            id="Paradip-Slipway">
+
             <div class="container">
                 <!-- paradip dry dock -->
                 <div class="row mb-5 mt-5 align-items-center">
-                    <div class="col-lg-6 d-md-none mb-4" data-aos="fade-left">
-                        <img src="./assets/images/projects/MV-Sagardeep-II-at-Visakhapatnam.png" alt="Dry Docking Services"
-                            class="img-fluid rounded shadow">
-                    </div>
                     <div class="col-lg-6 d-none d-md-block" data-aos="fade-right">
-                        <img src="./assets/images/projects/MV-Sagardeep-II-at-Visakhapatnam.png" alt="Dry Docking Services"
-                            class="img-fluid rounded shadow">
+                        <!-- Slider main container -->
+                        <div class="swiper">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/projects/MV-Sagardeep-II-at-Visakhapatnam.png"
+                                        alt="Dry Docking Services" class="img-fluid rounded shadow">
+                                </div>
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/sagardeep/sagardeep-II.jpeg"
+                                        alt="Dry Docking Services" class="img-fluid rounded shadow">
+                                </div>
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/sagardeep/sagardeep.jpeg"
+                                        alt="Dry Docking Services" class="img-fluid rounded shadow">
+                                </div>
+                            </div>
+                            <!-- If we need pagination -->
+                            <!-- <div class="swiper-pagination"></div> -->
+                            <!-- If we need navigation buttons -->
+                            <!-- <div class="swiper-button-prev"></div> -->
+                            <!-- <div class="swiper-button-next"></div> -->
+                            <!-- If we need scrollbar -->
+                        </div>
                     </div>
                     <div class="col-lg-6" data-aos="fade-left">
                         <h2 class="mb-4"> MV Sagardeep II at Visakhapatnam </h2>
                         <p>
-                            Sadhav Offshore Engineering Pvt. Ltd. proudly announces the successful completion of Dry Dock & Afloat Repairs of MV Sagardeep II at Visakhapatnam.
-After 8 months of extensive hull, machinery, and system upgrades, the 25-year-old vessel cleared sea trials at 11.2 Kts.
-This milestone was achieved by our teams across Paradip, Vizag, Mumbai & Goa with partners Ras Tek Pvt. Ltd. and Akshay Control, led by Comdt. Suneel Pathak (Retd.).
+                            Sadhav Offshore Engineering Pvt. Ltd. proudly announces the successful completion of Dry
+                            Dock & Afloat Repairs of MV Sagardeep II at Visakhapatnam.
+                            After 8 months of extensive hull, machinery, and system upgrades, the 25-year-old vessel
+                            cleared sea trials at 11.2 Kts.
+                            This milestone was achieved by our teams across Paradip, Vizag, Mumbai & Goa with partners
+                            Ras Tek Pvt. Ltd. and Akshay Control, led by Comdt. Suneel Pathak (Retd.).
                         </p>
                     </div>
                 </div>
@@ -402,8 +442,9 @@ This milestone was achieved by our teams across Paradip, Vizag, Mumbai & Goa wit
                     <div class="col-lg-6" data-aos="fade-right">
                         <h2 class="mb-4">ICGS Meera Behn</h2>
                         <p>
-                            <h6>Sadhav Signs MoU with RNEL's New Owners, Marks 1st Docking at Pipavav Post-NCLT</h6>
-                            Sadhav Offshore begins operations at the Pipavav Shipyard with the successful dry docking of ICGS Rajratan, opening a new chapter in India's ship repair and construction sector.
+                        <h6>Sadhav Signs MoU with RNEL's New Owners, Marks 1st Docking at Pipavav Post-NCLT</h6>
+                        Sadhav Offshore begins operations at the Pipavav Shipyard with the successful dry docking of
+                        ICGS Rajratan, opening a new chapter in India's ship repair and construction sector.
                         </p>
                     </div>
                     <div class="col-lg-6 d-none d-md-block" data-aos="fade-left">
@@ -413,7 +454,7 @@ This milestone was achieved by our teams across Paradip, Vizag, Mumbai & Goa wit
                 </div>
             </div>
         </section>
-         <!-- left side image section  -->
+        <!-- left side image section  -->
         <section itemid="ICGS-Rajratan" class="py-3" style="background: rgba(0, 63, 135, 0.05);" id="Paradip-Slipway">
             <div class="container">
                 <!-- paradip dry dock -->
@@ -429,14 +470,16 @@ This milestone was achieved by our teams across Paradip, Vizag, Mumbai & Goa wit
                     <div class="col-lg-6" data-aos="fade-left">
                         <h2 class="mb-4">ICGS Rajratan </h2>
                         <p>
-                            Sadhav successfully completes the first drydocking, trials, and delivery of a ship at RNEL Pipavav Shipyard after several years, showcasing unmatched efficiency and quality.
-                            The team has now commenced drydocking repairs of ICGS Meera Behn under its MoU with Reliance Naval Engineering Ltd (Swan Energy) at Pipavav, Gujarat.
+                            Sadhav successfully completes the first drydocking, trials, and delivery of a ship at RNEL
+                            Pipavav Shipyard after several years, showcasing unmatched efficiency and quality.
+                            The team has now commenced drydocking repairs of ICGS Meera Behn under its MoU with Reliance
+                            Naval Engineering Ltd (Swan Energy) at Pipavav, Gujarat.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-         <!-- right side image section  -->
+        <!-- right side image section  -->
         <section id="ICGS-Abheek">
             <div class="container" id="">
                 <!-- floating dry dock -->
@@ -449,7 +492,8 @@ This milestone was achieved by our teams across Paradip, Vizag, Mumbai & Goa wit
                         <h2 class="mb-4">ICGS Abheek</h2>
                         <h6>Sailing Strong for the Nation</h6>
                         <p>
-                           This Independence Day, we celebrate the early completion of ICGS Abheek's refit a testament to our team's resilience and commitment to keeping India's guardians ever-ready.
+                            we celebrate the early completion of ICGS Abheek's refit a testament to our team's
+                            resilience and commitment to keeping India's guardians ever-ready.
                         </p>
                     </div>
                     <div class="col-lg-6 d-none d-md-block" data-aos="fade-left">
@@ -465,13 +509,14 @@ This milestone was achieved by our teams across Paradip, Vizag, Mumbai & Goa wit
             <div class="container text-center " data-aos="fade-up">
                 <h2 class="mb-4">Ready to Schedule Your Dry Docking?</h2>
                 <p class="lead mb-4">Contact us today to discuss your vessel's maintenance needs.</p>
-                <a href="./contact.html" class="goto-contact-page-with-context button button--secondary button--lg">Get a Quote</a>
+                <a href="./contact.html" class="goto-contact-page-with-context button button--secondary button--lg">Get
+                    a Quote</a>
             </div>
         </section>
-
     </main>
 
-    <!-- Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ <!-- Footer -->
     <footer class="site-footer bg-primary">
         <!-- Footer Top -->
         <div class="footer-top">
@@ -515,7 +560,8 @@ This milestone was achieved by our teams across Paradip, Vizag, Mumbai & Goa wit
                                 <li><a href="./project.html">Projects</a></li>
                                 <li><a href="./partners.html">Partners</a></li>
                                 <li><a href="./careers.html">Careers</a></li>
-                                <li><a href="./gallery.html">Gallery </a></li>
+                               <li><a href="./gallery.html">Project Gallery </a></li>
+                                 <li><a href="./celebrations-gallery.html">Company Gallery </a></li>
                             </ul>
                         </div>
                     </div>
@@ -581,7 +627,6 @@ This milestone was achieved by our teams across Paradip, Vizag, Mumbai & Goa wit
     </footer>
 
 
-
     <button class="back-to-top" title="Back to top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -625,6 +670,34 @@ This milestone was achieved by our teams across Paradip, Vizag, Mumbai & Goa wit
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl);
         });
+    </script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            speed: 800,
+            
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            });
     </script>
 </body>
 

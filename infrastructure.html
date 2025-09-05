@@ -20,6 +20,8 @@
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- swiper js CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/base.css">
@@ -155,15 +157,16 @@
 </head>
 
 <body>
-    
- <!-- navbar here start  -->
+
+    <!-- navbar here start  -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="./index.html">
                 <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px" />
             </a>
-               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="menu-btn">
                     <span class="bar top"></span>
                     <span class="bar middle"></span>
@@ -184,6 +187,9 @@
                             </li>
                             <li>
                                 <a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./csr.html">CSR</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="./about.html#corporate-ethics">Corporate Ethics</a>
@@ -231,11 +237,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Infra
+                            Infrastructure
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock
+                                <a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floating Dry Dock
                                 </a>
                             </li>
                             <li>
@@ -267,7 +273,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="./contact.html" class="button button--primary button--lg w-100">Enquire Now</a>
+                        <a href="./contact.html" class="button button--primary button--lg w-100">Contact us</a>
                     </li>
                 </ul>
             </div>
@@ -307,11 +313,34 @@
                 <!-- floating dry dock -->
                 <div class="row mb-5 mt-5 align-items-center">
                     <div class="col-lg-6 d-md-none mb-4" data-aos="fade-left">
-                        <img src="./assets/images/infra/Floting-Dry-Dock.jpg" alt="Dry Docking Services"
-                            class="img-fluid rounded shadow">
+                        <!-- Slider main container -->
+                        <div class="swiper">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/infra/Floating-Dry-Dock.jpg" alt="Dry Docking Services"
+                                        class="img-fluid rounded shadow">
+                                </div>
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/sagardeep/sagardeep-II.jpeg" alt="Dry Docking Services"
+                                        class="img-fluid rounded shadow">
+                                </div>
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/sagardeep/sagardeep.jpeg" alt="Dry Docking Services"
+                                        class="img-fluid rounded shadow">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6" data-aos="fade-right">
                         <h2 class="mb-4">Floating Dry Dock</h2>
+                        <p>
+                            Sadhav signs agreement with Mumbai Port for setting up a Floating Dock at Bombay and give
+                            order to Artson Ltd (A Tata Enterprise) for the construction.
+                        </p>
                         <ul class="list-unstyled">
                             <li class="mb-2"><i class="fas fa-check-circle me-2"></i>
                                 Length - 130 Meter
@@ -328,12 +357,31 @@
                         </ul>
                     </div>
                     <div class="col-lg-6 d-none d-md-block" data-aos="fade-left">
-                        <img src="./assets/images/infra/Floting-Dry-Dock.jpg" alt="Dry Docking Services"
-                            class="img-fluid rounded shadow">
+                        <!-- Slider main container -->
+                        <div class="swiper">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/infra/Floating-Dry-Dock.jpg" alt="Dry Docking Services"
+                                        class="img-fluid rounded shadow">
+                                </div>
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/sagardeep/sagardeep-II.jpeg" alt="Dry Docking Services"
+                                        class="img-fluid rounded shadow">
+                                </div>
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/sagardeep/sagardeep.jpeg" alt="Dry Docking Services"
+                                        class="img-fluid rounded shadow">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
             <section class="py-3" style="background: rgba(0, 63, 135, 0.05);" id="Paradip-Slipway">
                 <div class="container">
                     <!-- paradip dry dock -->
@@ -374,8 +422,9 @@
                 <!-- Paradip Drydock -->
                 <div class="row mb-5 mt-5 align-items-center">
                     <div class="col-lg-6 d-md-none mb-4" data-aos="fade-left">
-                        <img src="./assets/images/infra/Paradip-Drydock.webp" alt="Dry Docking Services"
-                            class="img-fluid rounded shadow">
+                        <!-- <img src="./assets/images/infra/Paradip-Drydock.webp" alt="Dry Docking Services"
+                            class="img-fluid rounded shadow"> -->
+                        <video src="assets/images/Dry_dock_ship_repair.mp4" class="img-fluid rounded shadow"></video>
                     </div>
                     <div class="col-lg-6" data-aos="fade-right">
                         <h2 class="mb-4">Paradip Drydock</h2>
@@ -401,8 +450,11 @@
                         </ul>
                     </div>
                     <div class="col-lg-6 d-none d-md-block" data-aos="fade-left">
-                        <img src="./assets/images/infra/Paradip-Drydock.webp" alt="Dry Docking Services"
-                            class="img-fluid rounded shadow">
+                        <!-- <img src="./assets/images/infra/Paradip-Drydock.webp" alt="Dry Docking Services"
+                            class="img-fluid rounded shadow"> -->
+                        <video src="assets/images/Dry_dock_ship_repair.mp4" autoplay loop muted
+                            class="img-fluid rounded shadow"></video>
+
                     </div>
                 </div>
             </div>
@@ -413,7 +465,8 @@
             <div class="container text-center " data-aos="fade-up">
                 <h2 class="mb-4">Ready to Schedule Your Dry Docking?</h2>
                 <p class="lead mb-4">Contact us today to discuss your vessel's maintenance needs.</p>
-                <a href="./contact.html" class="goto-contact-page-with-context button button--secondary button--lg">Get a Quote</a>
+                <a href="./contact.html" class="goto-contact-page-with-context button button--secondary button--lg">Get
+                    a Quote</a>
             </div>
         </section>
 
@@ -462,7 +515,8 @@
                                 <li><a href="./project.html">Projects</a></li>
                                 <li><a href="./partners.html">Partners</a></li>
                                 <li><a href="./careers.html">Careers</a></li>
-                                <li><a href="./gallery.html">Gallery </a></li>
+                               <li><a href="./gallery.html">Project Gallery </a></li>
+                                 <li><a href="./celebrations-gallery.html">Company Gallery </a></li>
                             </ul>
                         </div>
                     </div>
@@ -570,6 +624,35 @@
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            speed: 800,
+
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
         });
     </script>
 </body>

@@ -49,12 +49,44 @@
         }
     </style>
     <script>
-        $(document).ready(function(){
-            $(".navbar-toggler").click(function(){
+        $(document).ready(function () {
+            $(".navbar-toggler").click(function () {
                 $("#navbarNavDropdown").slideToggle()
             })
         })
     </script>
+
+    <style>
+        .team-profile {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            place-items: center;
+            gap: 1em;
+            margin-bottom: 1em;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .team-profile {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0;
+                text-align: center !important;
+            }
+
+            .team-card-mobile h5,
+            p {
+                text-align: center !important;
+            }
+        }
+
+        .team-card-mobile {
+            padding: 6px !important;
+        }
+
+        .swiper-slide {
+            padding: 4px !important;
+        }
+    </style>
 
 </head>
 
@@ -67,8 +99,9 @@
             <a class="navbar-brand" href="./index.html">
                 <img src="assets/images/sadhavlogo.svg" alt="Sadhav Offshore Logo" style="height: 70px" />
             </a>
-               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="menu-btn">
                     <span class="bar top"></span>
                     <span class="bar middle"></span>
@@ -89,6 +122,9 @@
                             </li>
                             <li>
                                 <a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./csr.html">CSR</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="./about.html#corporate-ethics">Corporate Ethics</a>
@@ -140,7 +176,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floting Dry Dock
+                                <a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floating Dry Dock
                                 </a>
                             </li>
                             <li>
@@ -172,7 +208,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="./contact.html" class="button button--primary button--lg w-100">Enquire Now</a>
+                        <a href="./contact.html" class="button button--primary button--lg w-100">Contact us</a>
                     </li>
                 </ul>
             </div>
@@ -256,33 +292,43 @@
                         <div class="p-4 rounded-3 w-100 h-100 d-flex flex-column justify-content-center"
                             style="background: rgba(0,63,135,0.05);">
                             <h3 class="mb-3">Our Mission</h3>
-                            <p class="mb-3">Deliver safe, reliable offshore and marine services that meet client needs
-                                while promoting excellence and responsibility.</p>
+                            <p class="mb-3">
+                                We shall do so with foundations built to last and serving the greater benefit of the
+                                Company and the Society with grounded values and corporate ethics.
+                            </p>
 
                             <!-- Four concise info boxes (2 rows x 2 cols) -->
                             <div class="row g-3 mt-3">
                                 <div class="col-6">
                                     <div class="p-3 bg-white rounded-2 shadow-sm h-100">
-                                        <h6 class="mb-1">Safety</h6>
-                                        <p class="mb-0 small text-muted">Priority in every operation.</p>
+                                        <h6 class="mb-1">Strong Foundations</h6>
+                                        <p class="mb-0 small text-muted">
+                                            Built to last
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="p-3 bg-white rounded-2 shadow-sm h-100">
-                                        <h6 class="mb-1">Operations</h6>
-                                        <p class="mb-0 small text-muted">Efficient project delivery.</p>
+                                        <h6 class="mb-1">Societal Benefit</h6>
+                                        <p class="mb-0 small text-muted">
+                                            Serving community and company alike
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="p-3 bg-white rounded-2 shadow-sm h-100">
-                                        <h6 class="mb-1">Innovation</h6>
-                                        <p class="mb-0 small text-muted">Practical technology-led solutions.</p>
+                                        <h6 class="mb-1">Values</h6>
+                                        <p class="mb-0 small text-muted">
+                                            Guided by grounded principles
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="p-3 bg-white rounded-2 shadow-sm h-100">
-                                        <h6 class="mb-1">Sustainability</h6>
-                                        <p class="mb-0 small text-muted">Environmental responsibility.</p>
+                                        <h6 class="mb-1">Ethics</h6>
+                                        <p class="mb-0 small text-muted">
+                                            Driven by integrity and responsibility
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -296,33 +342,39 @@
                         <div class="p-4 rounded-3 w-100 h-100 d-flex flex-column justify-content-center"
                             style="background: rgba(0,63,135,0.05);">
                             <h3 class="mb-3">Our Vision</h3>
-                            <p class="mb-3">Be the trusted partner for maritime services worldwide, known for expertise,
-                                efficiency, and sustainability.</p>
+                            <p class="mb-3">
+                                Our quest is to provide unparalleled services to exceed our customers’ satisfaction and
+                                to put our Nation and our Company on the World Map of Maritime Services.
+                            </p>
 
                             <!-- Four concise info boxes (2 rows x 2 cols) -->
                             <div class="row g-3 mt-3">
                                 <div class="col-6">
                                     <div class="p-3 bg-white rounded-2 shadow-sm h-100">
-                                        <h6 class="mb-1">Global</h6>
-                                        <p class="mb-0 small text-muted">Wide geographic coverage.</p>
+                                        <h6 class="mb-1">Excellence</h6>
+                                        <p class="mb-0 small text-muted">
+                                            Delivering services beyond expectations
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="p-3 bg-white rounded-2 shadow-sm h-100">
-                                        <h6 class="mb-1">Partnerships</h6>
-                                        <p class="mb-0 small text-muted">Strong industry ties.</p>
+                                        <h6 class="mb-1">Nation First</h6>
+                                        <p class="mb-0 small text-muted">
+                                            Contributing to India's maritime leadership
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="p-3 bg-white rounded-2 shadow-sm h-100">
-                                        <h6 class="mb-1">People</h6>
-                                        <p class="mb-0 small text-muted">Skilled and supported teams.</p>
+                                        <h6 class="mb-1">Global Recognition</h6>
+                                        <p class="mb-0 small text-muted">Putting Sadhav on the world map</p>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="p-3 bg-white rounded-2 shadow-sm h-100">
-                                        <h6 class="mb-1">Digital</h6>
-                                        <p class="mb-0 small text-muted">Smart, data-driven work.</p>
+                                        <h6 class="mb-1">Customer Focus</h6>
+                                        <p class="mb-0 small text-muted">Ensuring satisfaction and trust</p>
                                     </div>
                                 </div>
                             </div>
@@ -426,11 +478,11 @@
                             <p>Sadhav Shipping, founded in 1996, owns and operates more than 25 marine vessels across
                                 multiple sectors, providing reliable solutions and quality service in the Indian
                                 maritime trade.</p>
-                            <a href="ssl.html" class="card__link">Read More</a>
+                            <a href="https://www.sadhav.com/ssl.html" class="card__link">Read More</a>
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="card project-item-card">
+                    <!-- <div class="card project-item-card">
                         <img data-src="assets/images/offshore-engineering.webp"
                             alt="Sadhav Offshore Engineering Pvt. Ltd" class="lazy-image project-item-card__image">
                         <div class="project-item-card__content">
@@ -440,7 +492,7 @@
                                 efficiency and reliability.</p>
                             <a href="soec.html" class="card__link">Read More</a>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Card 3 -->
                     <div class="card project-item-card">
                         <img data-src="assets/images/Emergency-Drydocking.jpg" alt="Sadhav Drydocks Pvt. Ltd."
@@ -450,7 +502,7 @@
                             <p>Sadhav Drydocks serves as the group’s investment arm, leading the development of an
                                 integrated dry dock and ship repair complex in Paradip, Odisha, to strengthen India’s
                                 maritime infrastructure.</p>
-                            <a href="sdpl.html" class="card__link">Read More</a>
+                            <a href="https://www.sadhav.com/sdpl.html" class="card__link">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -467,142 +519,214 @@
 
                 <!-- Slider main container -->
                 <div class="swiper team-swiper">
-                    <!-- Additional required wrapper -->
-                    <!-- Swiper Wrapper -->
                     <div class="swiper-wrapper">
+
                         <!-- item 1 -->
                         <div class="swiper-slide">
                             <div class="team-card-mobile">
-                                <div class="team-card__photo">
-                                    <img src="assets/images/team/capt.-kamalkant-choudhury.webp"
-                                        alt="Captain Kamalkant Choudhury" class="img-fluid rounded-circle">
+                                <div class="team-profile text-left">
+                                    <div class="team-card__photo">
+                                        <img src="assets/images/team/capt.-kamalkant-choudhury.webp"
+                                            alt="Captain Kamalkant Choudhury" class="img-fluid rounded-circle col">
+                                    </div>
+                                    <div class="info text-left">
+                                        <h5 class="mt-3 mb-1 caption-item caption-item-name col">
+                                            Captain Kamalkant Choudhury
+                                        </h5>
+                                        <p class="small text-muted mb-3 caption-item caption-item-role">
+                                            Chairman & Managing Director, Sadhav Offshore Engineering Pvt. Ltd.
+                                        </p>
+                                    </div>
                                 </div>
-                                <h5 class="mt-3 mb-1 caption-item caption-item-name">
-                                    Captain Kamalkant Choudhury
-                                </h5>
                                 <p class="small text-muted mb-3 caption-item caption-item-role">
-                                    Chairman & Managing Director, Sadhav Offshore Engineering Pvt. Ltd.
+                                    Master Mariner and a Management Graduate from NMIMS, Capt. Choudhury is a Gold
+                                    Medalist Fellow of Narottam Morajee Institiute of Shipping. He worked with the
+                                    Mercantile Marine Dept. and ONGC prior to founding the Sadhav Group. Capt. Choudhury
+                                    enjoys industry wide goodwill and credibility developed through the years. Apart
+                                    from professional engagements, Capt. Choudhury is the President of Shraddha
+                                    Foundation (our CSR arm), working selflessly for the cancer patients. He is also a
+                                    devoted seeker having completed a two year residential spiritual course in Chinmaya
+                                    Mission.
                                 </p>
                                 <div class="d-flex justify-content-center gap-2 caption-item caption-item-social">
-                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn"><i
-                                            class="fab fa-linkedin-in"></i></a>
-
+                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+
                         <!-- item 2 -->
                         <div class="swiper-slide">
                             <div class="team-card-mobile">
-                                <div class="team-card__photo">
-                                    <img src="assets/images/team/devahuti.webp" alt="Devahuti Choudhury"
-                                        class="img-fluid rounded-circle">
+                                <div class="team-profile text-left">
+                                    <div class="team-card__photo">
+                                        <img src="assets/images/team/devahuti.webp" alt="Devahuti Choudhury"
+                                            class="img-fluid rounded-circle col">
+                                    </div>
+                                    <div class="info text-left">
+                                        <h5 class="mt-3 mb-1 caption-item caption-item-name col">
+                                            Devahuti Choudhury
+                                        </h5>
+                                        <p class="small text-muted mb-3 caption-item caption-item-role">
+                                            Director, Sadhav Offshore Engineering Pvt. Ltd
+                                        </p>
+                                    </div>
                                 </div>
-                                <h5 class="mt-3 mb-1 caption-item caption-item-name">Devahuti Choudhury</h5>
                                 <p class="small text-muted mb-3 caption-item caption-item-role">
                                     Director, Sadhav Offshore Engineering Pvt. Ltd
                                 </p>
                                 <div class="d-flex justify-content-center gap-2 caption-item caption-item-social">
-                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn"><i
-                                            class="fab fa-linkedin-in"></i></a>
-
+                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+
                         <!-- item 3 -->
                         <div class="swiper-slide">
                             <div class="team-card-mobile">
-                                <div class="team-card__photo">
-                                    <img src="assets/images/team/mr.baniksir.webp" alt="Mr. S S Banik"
-                                        class="img-fluid rounded-circle">
+                                <div class="team-profile text-left">
+                                    <div class="team-card__photo">
+                                        <img src="assets/images/team/mr.baniksir.webp" alt="Mr. S S Banik"
+                                            class="img-fluid rounded-circle col">
+                                    </div>
+                                    <div class="info text-left">
+                                        <h5 class="mt-3 mb-1 caption-item caption-item-name col">
+                                            Mr. S S Banik
+                                        </h5>
+                                        <p class="small text-muted mb-3 caption-item caption-item-role">
+                                            Executive Director, Finance
+                                        </p>
+                                    </div>
                                 </div>
-                                <h5 class="mt-3 mb-1 caption-item caption-item-name">Mr. S S Banik</h5>
                                 <p class="small text-muted mb-3 caption-item caption-item-role">
                                     Executive Director, Finance
                                 </p>
                                 <div class="d-flex justify-content-center gap-2 caption-item caption-item-social">
-                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn"><i
-                                            class="fab fa-linkedin-in"></i></a>
-
+                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+
                         <!-- item 4 -->
                         <div class="swiper-slide">
                             <div class="team-card-mobile">
-                                <div class="team-card__photo">
-                                    <img src="assets/images/team/kiran-chitnis.webp" alt="Mr. Kiran Chitnis"
-                                        class="img-fluid rounded-circle">
+                                <div class="team-profile text-left">
+                                    <div class="team-card__photo">
+                                        <img src="assets/images/team/kiran-chitnis.webp" alt="Mr. Kiran Chitnis"
+                                            class="img-fluid rounded-circle col">
+                                    </div>
+                                    <div class="info text-left">
+                                        <h5 class="mt-3 mb-1 caption-item caption-item-name col">
+                                            Mr. Kiran Chitnis
+                                        </h5>
+                                        <p class="small text-muted mb-3 caption-item caption-item-role">
+                                            Sr. Vice President, Oil & Gas and Ship Building Services
+                                        </p>
+                                    </div>
                                 </div>
-                                <h5 class="mt-3 mb-1 caption-item caption-item-name">Mr. Kiran Chitnis </h5>
                                 <p class="small text-muted mb-3 caption-item caption-item-role">
                                     Sr. Vice President, Oil & Gas and Ship Building Services
                                 </p>
                                 <div class="d-flex justify-content-center gap-2 caption-item caption-item-social">
-                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn"><i
-                                            class="fab fa-linkedin-in"></i></a>
-
+                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+
                         <!-- item 5 -->
                         <div class="swiper-slide">
                             <div class="team-card-mobile">
-                                <div class="team-card__photo">
-                                    <img src="assets/images/team/" alt="Comdt. Susant Kumar Mishra "
-                                        class="img-fluid rounded-circle">
+                                <div class="team-profile text-left">
+                                    <div class="team-card__photo">
+                                        <img src="assets/images/team/" alt="Comdt. Susant Kumar Mishra"
+                                            class="img-fluid rounded-circle col">
+                                    </div>
+                                    <div class="info text-left">
+                                        <h5 class="mt-3 mb-1 caption-item caption-item-name col">
+                                            Comdt. Susant Kumar Mishra
+                                        </h5>
+                                        <p class="small text-muted mb-3 caption-item caption-item-role">
+                                            Vice President, Drydock & Ship Repair
+                                        </p>
+                                    </div>
                                 </div>
-                                <h5 class="mt-3 mb-1 caption-item caption-item-name">Comdt. Susant Kumar Mishra </h5>
                                 <p class="small text-muted mb-3 caption-item caption-item-role">
-                                    Vice President, Drydock & ship repair
+                                    Vice President, Drydock & Ship Repair
                                 </p>
                                 <div class="d-flex justify-content-center gap-2 caption-item caption-item-social">
-                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn"><i
-                                            class="fab fa-linkedin-in"></i></a>
-
+                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+
                         <!-- item 6 -->
                         <div class="swiper-slide">
                             <div class="team-card-mobile">
-                                <div class="team-card__photo">
-                                    <img src="assets/images/team/Sanyasi_Rao.webp" alt="Mr. K. Sanyasi Rao"
-                                        class="img-fluid rounded-circle">
+                                <div class="team-profile text-left">
+                                    <div class="team-card__photo">
+                                        <img src="assets/images/team/Sanyasi_Rao.webp" alt="Mr. K. Sanyasi Rao"
+                                            class="img-fluid rounded-circle col">
+                                    </div>
+                                    <div class="info text-left">
+                                        <h5 class="mt-3 mb-1 caption-item caption-item-name col">
+                                            Mr. K. Sanyasi Rao
+                                        </h5>
+                                        <p class="small text-muted mb-3 caption-item caption-item-role">
+                                            Sr. General Manager, Dry Dock & Ship Repair and POC, Sadhav Kongsberg
+                                            Waterjet Services
+                                        </p>
+                                    </div>
                                 </div>
-                                <h5 class="mt-3 mb-1 caption-item caption-item-name">Mr. K. Sanyasi Rao </h5>
                                 <p class="small text-muted mb-3 caption-item caption-item-role">
                                     Sr. General Manager, Dry Dock & Ship Repair and POC, Sadhav Kongsberg Waterjet
                                     Services
                                 </p>
                                 <div class="d-flex justify-content-center gap-2 caption-item caption-item-social">
-                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn"><i
-                                            class="fab fa-linkedin-in"></i></a>
-
+                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+
                         <!-- item 7 -->
                         <div class="swiper-slide">
                             <div class="team-card-mobile">
-                                <div class="team-card__photo">
-                                    <img src="assets/images/team/" alt="  Cdr. Allu Appala Narasayya, In Retd. "
-                                        class="img-fluid rounded-circle">
+                                <div class="team-profile text-left">
+                                    <div class="team-card__photo">
+                                        <img src="assets/images/team/" alt="Cdr. Allu Appala Narasayya, In Retd."
+                                            class="img-fluid rounded-circle col">
+                                    </div>
+                                    <div class="info text-left">
+                                        <h5 class="mt-3 mb-1 caption-item caption-item-name col">
+                                            Cdr. Allu Appala Narasayya, In Retd.
+                                        </h5>
+                                        <p class="small text-muted mb-3 caption-item caption-item-role">
+                                            Sr. General Manager, Ship Repair
+                                        </p>
+                                    </div>
                                 </div>
-                                <h5 class="mt-3 mb-1 caption-item caption-item-name">
-                                    Cdr. Allu Appala Narasayya, In Retd.
-                                </h5>
                                 <p class="small text-muted mb-3 caption-item caption-item-role">
                                     Sr. General Manager, Ship Repair
                                 </p>
                                 <div class="d-flex justify-content-center gap-2 caption-item caption-item-social">
-                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn"><i
-                                            class="fab fa-linkedin-in"></i></a>
-
+                                    <a class="btn btn-sm btn-dark rounded-circle" href="#" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
 
                 <!-- If we need pagination -->
@@ -814,7 +938,8 @@
             <p>Get in touch with our team to discuss your offshore and marine service needs.</p>
             <div class="cta-buttons">
                 <!-- <a href="contact.html" class="button button--primary">Contact Us</a> -->
-                <a href="./contact.html" class="goto-contact-page-with-context button button--secondary">Our Services</a>
+                <a href="./contact.html" class="goto-contact-page-with-context button button--secondary">Our
+                    Services</a>
             </div>
         </div>
     </section>
@@ -863,7 +988,8 @@
                                 <li><a href="./project.html">Projects</a></li>
                                 <li><a href="./partners.html">Partners</a></li>
                                 <li><a href="./careers.html">Careers</a></li>
-                                <li><a href="./gallery.html">Gallery </a></li>
+                                <li><a href="./gallery.html">Project Gallery </a></li>
+                                 <li><a href="./celebrations-gallery.html">Company Gallery </a></li>
                             </ul>
                         </div>
                     </div>
@@ -930,7 +1056,7 @@
 
 
     <button class="back-to-top" title="Back to top" aria-label="Back to top">&uarr;</button>
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const teamSwiper = new Swiper('.team-swiper', {
             // Optional parameters
@@ -950,11 +1076,11 @@
                     spaceBetween: 0
                 },
                 1024: {
-                    slidesPerView: 3.5,
+                    slidesPerView: 3,
                     spaceBetween: 0
                 },
                 1440: {
-                    slidesPerView: 4.5,
+                    slidesPerView: 3,
                     spaceBetween: 0
                 },
             },
