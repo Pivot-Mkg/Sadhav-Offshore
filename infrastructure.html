@@ -153,6 +153,12 @@
                 background-color: transparent;
             }
         }
+
+        /* 60vh  */
+        .hero-video-section {
+            height: 60vh;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -275,7 +281,7 @@
 
 
     <main id="main-content">
-        <section class="hero position-relative"
+        <section class="hero position-relative d-none"
             style="background-image: url('./assets/images/services/Dry\ Dock\ &\ Ship\ Repair-banner.jpg'); background-size: cover; background-position: center;">
             <div class="hero__overlay position-absolute w-100 h-100"></div>
             <div class="container position-relative z-index-1 h-100 d-flex align-items-center">
@@ -297,6 +303,12 @@
                 </div>
             </nav>
         </section>
+
+        <div class="hero-video-section">
+            <div class="video-wrapper">
+                <video src="assets/images/Dry_dock_ship_repair.mp4" autoplay="" loop="" muted="" class="hero-video"></video>
+            </div>
+        </div>
 
         <!-- Main Content -->
         <section>

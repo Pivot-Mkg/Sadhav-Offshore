@@ -1,3 +1,7 @@
+:root {
+  --sadhav-primary-color:#1467b3;
+}
+
 .team-swiper-pagination {
   position: static;
 }
@@ -216,4 +220,8 @@ html {
     text-decoration: none;
     outline: 0;
     box-shadow: none!important;
+}
+
+.sadhav-primary-color {
+  color: #1467b3!important;
 }

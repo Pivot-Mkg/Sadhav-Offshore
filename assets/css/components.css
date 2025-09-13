@@ -746,10 +746,11 @@
 }
 
 .logo-carousel img {
-  height: 80px;
-  margin: 0 var(--space-8);
-  opacity: 0.88;
-  transition: opacity var(--transition-base);
+    height: 120px;
+    margin: 0 var(--space-8);
+    opacity: 0.88;
+    transition: opacity var(--transition-base);
+    width: auto;
 }
 
 .logo-carousel:hover .logo-carousel__track {
