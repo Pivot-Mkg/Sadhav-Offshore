@@ -438,6 +438,7 @@ function initStatCounters() {
         if (!entry.isIntersecting) return;
   
         const counter = entry.target;
+        const symbol = counter.getAttribute("symbol")
         const targetValue = counter.getAttribute('data-target')?.trim() || '';
         const isNumeric = /^\d+(\.\d+)?$/.test(targetValue); // digits (optional decimal)
   
@@ -457,13 +458,15 @@ function initStatCounters() {
           const updateCounter = (now) => {
             const progress = Math.min((now - startTime) / duration, 1);
             const value = Math.floor(target * progress);
-            h2.textContent = value + '+';
+            // h2.textContent = value + '+';
+            h2.textContent = value + symbol;
   
             if (progress < 1) {
               requestAnimationFrame(updateCounter);
             } else {
               // Snap to final value with '+'
-              h2.textContent = (Number.isInteger(target) ? target : target.toFixed(0)) + '+';
+              h2.textContent = (Number.isInteger(target) ? target : target.toFixed(0)) + symbol;
+              
             }
           };
   
