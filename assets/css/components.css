@@ -722,7 +722,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  -webkit-mask-image: linear-gradient(
+  /* -webkit-mask-image: linear-gradient(
     to right,
     transparent,
     black 20%,
@@ -735,7 +735,7 @@
     black 20%,
     black 80%,
     transparent
-  );
+  ); */
 }
 
 .logo-carousel__track {
