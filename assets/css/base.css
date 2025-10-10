@@ -240,3 +240,7 @@ address {
     font-size: 1.25rem;
   }
 }
+
+.cta-section p {
+  display: none;
+}
