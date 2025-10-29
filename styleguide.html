@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide | Sadhav Offshore</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .styleguide-section { padding: 2rem; border-bottom: 1px solid var(--color-border); }
+        .swatch { width: 100px; height: 100px; border-radius: 0.25rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .swatch-group { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .swatch-item { text-align: center; }
+    </style>
+</head>
+<body>
+ <!-- navbar here start  -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <img src="assets/images/sadhavlogo.png" alt="Sadhav Offshore Logo" style="height: 70px" />
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="menu-btn">
+                    <span class="bar top"></span>
+                    <span class="bar middle"></span>
+                    <span class="bar bottom"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="./about.html#our-story">About Sadhav Offshore</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#our-mission">Mission and Vision</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./csr.html">CSR</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#corporate-ethics">Corporate Ethics</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#management-team">Management Team</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./about.html#group-companies">Group Companies</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="./services.html"> All Services </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/dry-dock.html"> Dry Dock & Ship Repair</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/Vessel-Construction.html">Vessel Construction</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/Offshore-Engineering.html">Offshore Engineering</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./services/OEM-Tie-Ups.html">OEM Services</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="./project.html">MV Sagardeep II</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./project.html">PB Sarathi</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./project.html">FRP Boat</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./project.html">Ghagra 6 Pontoon Barge</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Infrastructure
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Floating-DryDock">Floating Dry Dock
+                                </a>
+                            </li>
+                            <li class="d-none">
+                                <a class="dropdown-item" href="./infrastructure.html#Paradip-Slipway">Paradip Dry Dock &
+                                    Slipway Infra
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Paradip-Slipway">Paradip Slipway
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Paradip-Drydock">Paradip Drydock</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#Jettys">Jettys</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./infrastructure.html#MarineWorkshops">Marine Workshops</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Partners
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="./partners.html">Kongsberg Waterjet Services </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./partners.html">Adria Winches</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./partners.html">Swan Defence and Heavy Industries Limited</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Updates
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="./news.html">News</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="investor-updates.html">Investor Updates</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./awards-and-recognition.html">Awards and Recongition</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./contact.html" class="button button--primary button--lg w-100">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar here end -->
+    <main>
+        <section class="styleguide-section">
+            <div class="container">
+                <h2>Colors</h2>
+                <div class="swatch-group">
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--sadhav-blue);"></div>
+                        <p>--sadhav-blue<br>#003F87</p>
+                    </div>
+                     <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--sadhav-red);"></div>
+                        <p>--sadhav-red<br>#E30613</p>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--sadhav-light-blue);"></div>
+                        <p>--sadhav-light-blue<br>#B3E4F9</p>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--color-gray-900);"></div>
+                        <p>--color-gray-900<br>#111827</p>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--color-gray-600);"></div>
+                        <p>--color-gray-600<br>#4B5563</p>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--color-gray-200);"></div>
+                        <p>--color-gray-200<br>#E5E7EB</p>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background-color: var(--color-gray-50);"></div>
+                        <p>--color-gray-50<br>#F8FAFC</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="styleguide-section">
+            <div class="container">
+                <h2>Typography</h2>
+                <h1 style="font-family: var(--font-heading);">Heading 1 (Manrope / Montserrat)</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <p style="font-family: var(--font-body);">Body Text (Inter): Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+                <a href="#">This is a link</a>
+            </div>
+        </section>
+        
+        <section class="styleguide-section">
+            <div class="container">
+                <h2>Buttons</h2>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <button class="button">Default Button</button>
+                    <button class="button button--primary">Primary Button</button>
+                    <button class="button button--secondary">Secondary Button</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="styleguide-section">
+            <div class="container">
+                 <h2>Cards</h2>
+                <div class="grid grid--3-cols">
+                    <div class="card">
+                        <h3 class="card__title">Card Title</h3>
+                        <p>This is a standard card component used for summarizing content like services or blog posts.</p>
+                        <a href="#" class="card__link">Learn More</a>
+                    </div>
+                     <div class="card">
+                        <h3 class="card__title">Another Card</h3>
+                        <p>It provides a consistent look and feel across different sections of the website.</p>
+                        <a href="#" class="card__link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
