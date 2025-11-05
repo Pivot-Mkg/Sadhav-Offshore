@@ -226,3 +226,14 @@ html {
   color: #1467b3!important;
 }
 
+:root { --header-h: 130px; }   /* adjust to your navbar height */
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+
+/* Extra-safe offset for hash targets (handles browsers that ignore scroll-padding on hash) */
+:target::before {
+  content: "";
+  display: block;
+  height: var(--header-h);
+  margin-top: calc(-1 * var(--header-h));
+}
+
