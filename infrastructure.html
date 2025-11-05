@@ -199,6 +199,14 @@
             }
         }
 
+        .swiper-slide {
+            padding: 0%;
+        }
+
+        .image-slider {
+            margin-top: 3em;
+        }
+
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
@@ -423,31 +431,30 @@
             <div class="tab-container">
                 <div class="tab tab-primary" id="FloatingDryDock">
                     <div class="container" id="Floating-DryDock">
-                        <!-- floating dry dock -->
-                        <div class="row mb-5 mt-5 align-items-center">
-                            <div class="col-lg-6 d-md-none mb-4">
-                                <!-- Slider main container -->
-                                <div class="swiper">
+                        <!-- image slider  -->
+                          <div class="swiper image-slider">
                                     <!-- Additional required wrapper -->
                                     <div class="swiper-wrapper">
                                         <!-- Slides -->
                                         <div class="swiper-slide">
-                                            <img src="./assets/images/infra/Floating-Dry-Dock.jpg"
+                                            <img src="./assets/images/floating-dry-dock-1.jpeg"
                                                 alt="Dry Docking Services" class="img-fluid rounded shadow">
                                         </div>
                                         <!-- Slides -->
                                         <div class="swiper-slide">
-                                            <img src="./assets/images/sagardeep/sagardeep-II.jpeg"
+                                            <img src="./assets/images/floating-dry-dock-2.jpeg"
                                                 alt="Dry Docking Services" class="img-fluid rounded shadow">
                                         </div>
                                         <!-- Slides -->
                                         <div class="swiper-slide">
-                                            <img src="./assets/images/sagardeep/sagardeep.jpeg"
+                                            <img src="./assets/images/floating-dry-dock-3.jpeg"
                                                 alt="Dry Docking Services" class="img-fluid rounded shadow">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                         
+                        <!-- floating dry dock -->
+                        <div class="row mb-5 mt-5 align-items-center">
                             <div class="col-lg-6" >
                                 <h2 class="mb-4">Floating Dry Dock</h2>
                                 <p>
@@ -475,30 +482,17 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-lg-6 d-none d-md-block">
-                                <!-- Slider main container -->
-                                <div class="swiper">
-                                    <!-- Additional required wrapper -->
-                                    <div class="swiper-wrapper">
-                                        <!-- Slides -->
-                                        <div class="swiper-slide">
-                                            <img src="./assets/images/floating-dry-dock-1.jpeg"
-                                                alt="Dry Docking Services" class="img-fluid rounded shadow">
-                                        </div>
-                                        <!-- Slides -->
-                                        <div class="swiper-slide">
-                                            <img src="./assets/images/floating-dry-dock-2.jpeg"
-                                                alt="Dry Docking Services" class="img-fluid rounded shadow">
-                                        </div>
-                                        <!-- Slides -->
-                                        <div class="swiper-slide">
-                                            <img src="./assets/images/floating-dry-dock-3.jpeg"
-                                                alt="Dry Docking Services" class="img-fluid rounded shadow">
-                                        </div>
-                                    </div>
+                            <div class="col-lg-6 d-md-block">
+                               <!-- video container  -->
+                                <div class="video-wrapper">
+                                    <video width="100%" height="auto" muted autoplay>
+                                        <source src="./assets/videos/FDD 3D Video.mp4" type="video/mp4">
+                                        <!-- Your browser does not support the video tag. -->
+                                    </video>
                                 </div>
                             </div>
                         </div>
+                       
                     </div>
                 </div>
                 <div class="tab" id="ParadipDryDockSlipwayInfra">
@@ -844,34 +838,27 @@
     });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        loop: true,
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
-        speed: 800,
-
-
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-    });
+  const imageSlider = new Swiper('.image-slider', {
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    speed: 800,
+    breakpoints: {
+      320: { slidesPerView: 1, spaceBetween: 10 },
+      480: { slidesPerView: 1, spaceBetween: 10 },
+      640: { slidesPerView: 1, spaceBetween: 10 },
+      720: { slidesPerView: 2, spaceBetween: 10 },
+      900: { slidesPerView: 2, spaceBetween: 10 },
+      1024: { slidesPerView: 3, spaceBetween: 10 }
+    }
+    // No pagination/navigation/scrollbar since those elements aren't in the HTML
+  });
 </script>
+
 </body>
 
 </html>
