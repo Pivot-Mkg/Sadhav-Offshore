@@ -1,7 +1,6 @@
 <?php
-require_once '../vendor/autoload.php';
+require_once __DIR__ . '/mailer.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 session_start();
@@ -27,7 +26,9 @@ function respondWithError($message) {
         sendJson(false, $message);
     } else {
         $_SESSION['form_error'] = $message;
-        header('Location: ' . $_SERVER['HTTP_REFERER'] . '#contact-section');
+        // HTTP_REFERER is absent on plenty of requests; fall back to the page.
+        $back = $_SERVER['HTTP_REFERER'] ?? '/contact.html';
+        header('Location: ' . $back . '#contact-section');
         exit;
     }
 }
@@ -84,30 +85,15 @@ if (
     respondWithError('Your message appears to be spam');
 }
 
-// Try MAil
-$mail = new PHPMailer(true);
+if (!mailer_is_configured()) {
+    error_log('contact.php: SMTP password not set in forms/config.php');
+    respondWithError('Message could not be sent. Please try again later.');
+}
+
+$mail = null;
 try {
-
-    $mail->SMTPDebug = 2; // Enable verbose debug output
-    $mail->Debugoutput = function($str, $level) {
-        error_log("PHPMailer Debug level $level; message: $str");
-    };
-    // debug 
-
-
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'pivotmkg@gmail.com';
-    $mail->Password = 'jfot fxdn ezvo zsct'; // make sure this is secure
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
-
-    $mail->setFrom('pivotmkg@gmail.com', 'Sadhav Offshore');
-    $mail->addAddress('aakash@pivotmkg.com');
+    $mail = mailer_new();
     $mail->addReplyTo($email, $name);
-
-    $mail->isHTML(true);
     $mail->Subject = 'Contact Form Submission - ' . $subject;
 
     $html_message = '
@@ -155,6 +141,6 @@ try {
     respondWithSuccess('Message sent successfully!', '/thank-you.html');
 
 } catch (Exception $e) {
-    error_log('Mailer Error: ' . $mail->ErrorInfo);
+    error_log('contact.php mailer error: ' . ($mail ? $mail->ErrorInfo : $e->getMessage()));
     respondWithError('Message could not be sent. Please try again later.');
 }

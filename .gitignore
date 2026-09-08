@@ -1,0 +1,13 @@
+# Live mail credentials - never commit. Copy config.php.sample to config.php
+# on the server and fill it in there.
+forms/config.php
+
+# FTP / deployment credentials
+.env
+
+# Source archives. One of these was served from the web root once already and
+# leaked the SMTP password - keep them out of the repo.
+*.zip
+
+# macOS junk
+.DS_Store

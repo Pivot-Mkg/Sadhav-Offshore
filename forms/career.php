@@ -1,8 +1,6 @@
 <?php
-require_once '../vendor/autoload.php';
+require_once __DIR__ . '/mailer.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 header('Content-Type: application/json');
@@ -81,23 +79,25 @@ if (
     exit;
 }
 
-$mail = new PHPMailer(true);
+if (!mailer_is_configured()) {
+    error_log('career.php: SMTP password not set in forms/config.php');
+    echo json_encode(['success' => false, 'message' => 'We could not submit your application right now. Please try again later.']);
+    exit;
+}
+
+$mail = null;
 
 try {
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'pivotmkg@gmail.com';
-    $mail->Password = 'jfot fxdn ezvo zsct';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
-
-    $mail->setFrom('pivotmkg@gmail.com', 'Sadhav Offshore');
-    $mail->addAddress('aakash@pivotmkg.com');
+    $mail = mailer_new();
     $mail->addReplyTo($email, $name);
-
-    $mail->isHTML(true);
     $mail->Subject = 'Career Application - ' . $position;
+
+    // Attach the CV. Required, and validated by mailer_attach_upload().
+    $resumeError = mailer_attach_upload($mail, 'resume', true, 'resume', RESUME_ALLOWED_EXT, RESUME_MAX_BYTES);
+    if ($resumeError !== null) {
+        echo json_encode(['success' => false, 'message' => $resumeError]);
+        exit;
+    }
 
     $html_message = '
 <!DOCTYPE html>
@@ -170,5 +170,6 @@ try {
 
     echo json_encode(['success' => true, 'redirect' => 'thank-you.html']);
 } catch (Exception $e) {
-    echo json_encode(['success' => false, 'message' => 'Error: ' . $e->getMessage()]);
+    error_log('career.php mailer error: ' . ($mail ? $mail->ErrorInfo : $e->getMessage()));
+    echo json_encode(['success' => false, 'message' => 'Your application could not be sent. Please try again later.']);
 }
