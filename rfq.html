@@ -199,7 +199,7 @@
 
         <section class="section">
             <div class="container animate-on-scroll" style="max-width: 800px; margin: 0 auto;">
-                <form id="rfq-form" class="form" novalidate>
+                <form id="rfq-form" class="form" action="forms/rfq.php" method="POST" enctype="multipart/form-data" novalidate>
                     <input type="hidden" name="csrf_token" value="">
                     <div id="rfq-form-notifications"></div>
 
@@ -381,5 +381,55 @@
 
 
     <button class="back-to-top" title="Back to top" aria-label="Back to top">&uarr;</button>
+
+    <script>
+        document.getElementById('rfq-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            const notes = document.getElementById('rfq-form-notifications');
+            const formData = new FormData(form);
+
+            notes.style.display = 'none';
+            notes.textContent = '';
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    form.reset();
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                        return;
+                    }
+                    notes.textContent = data.message || 'Your request has been sent.';
+                    notes.className = 'alert alert-success';
+                    notes.style.display = 'block';
+                } else {
+                    notes.textContent = data.message || 'Failed to send your request. Please try again.';
+                    notes.className = 'alert alert-danger';
+                    notes.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                notes.textContent = 'An error occurred. Please try again.';
+                notes.className = 'alert alert-danger';
+                notes.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        });
+    </script>
 </body>
 </html>
