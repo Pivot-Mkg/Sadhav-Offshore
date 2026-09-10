@@ -86,60 +86,14 @@ try {
         rfq_fail($attachError);
     }
 
-    $rows = [
-        'Contact Name' => $name,
-        'Email'        => $email,
-        'Company'      => $company,
-        'Service'      => $service,
-        'Timeline'     => $timeline !== '' ? $timeline : 'Not specified',
-    ];
-
-    $fields = '';
-    foreach ($rows as $label => $value) {
-        $fields .= '
-            <div class="field">
-                <div class="label">' . htmlspecialchars($label) . '</div>
-                <div class="value">' . htmlspecialchars($value) . '</div>
-            </div>';
-    }
-
-    $mail->Body = '
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="color-scheme" content="light">
-    <meta name="supported-color-schemes" content="light">
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #2c3e50; background: #ffffff; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 0 auto; background: #ffffff; }
-        .header { background: linear-gradient(135deg, #003f87 0%, #0056b3 100%); color: #ffffff; padding: 30px 20px; text-align: center; }
-        .logo { font-size: 24px; font-weight: bold; margin-bottom: 10px; }
-        .content { background: #ffffff; padding: 40px 30px; }
-        .field { margin-bottom: 25px; }
-        .label { font-weight: 600; color: #003f87; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-        .value { padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #003f87; color: #2c3e50; }
-        .footer { background: #f8f9fa; color: #6c757d; padding: 20px; text-align: center; font-size: 12px; border-top: 1px solid #e9ecef; }
-        .brand { color: #003f87; font-weight: bold; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">SADHAV OFFSHORE</div>
-            <div>New Request for Quote</div>
-        </div>
-        <div class="content">' . $fields . '
-            <div class="field">
-                <div class="label">Project Details</div>
-                <div class="value">' . nl2br(htmlspecialchars($details)) . '</div>
-            </div>
-        </div>
-        <div class="footer">
-            <p>This request was submitted from the <span class="brand">Sadhav Offshore</span> RFQ page</p>
-        </div>
-    </div>
-</body>
-</html>';
+    $mail->Body = mailer_render_email('New Request for Quote', [
+        'Contact Name'    => $name,
+        'Email'           => $email,
+        'Company'         => $company,
+        'Service'         => $service,
+        'Timeline'        => $timeline !== '' ? $timeline : 'Not specified',
+        'Project Details' => $details,
+    ], ['Project Details']);
 
     $mail->AltBody = "RFQ from $name ($company)\nEmail: $email\nService: $service\nTimeline: $timeline\n\nDetails:\n$details";
 

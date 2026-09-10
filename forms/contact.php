@@ -96,41 +96,12 @@ try {
     $mail->addReplyTo($email, $name);
     $mail->Subject = 'Contact Form Submission - ' . $subject;
 
-    $html_message = '
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta name="color-scheme" content="light">
-        <meta name="supported-color-schemes" content="light">
-        <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #2c3e50; background: #ffffff; margin: 0; padding: 0; }
-            .container { max-width: 600px; margin: 0 auto; background: #ffffff; }
-            .header { background: linear-gradient(135deg, #003f87 0%, #0056b3 100%); color: #ffffff; padding: 30px 20px; text-align: center; }
-            .content { padding: 30px; background: #f9f9f9; }
-            .footer { padding: 20px; text-align: center; font-size: 12px; color: #7f8c8d; background: #f1f1f1; }
-            .button { display: inline-block; padding: 10px 20px; background: #003f87; color: #ffffff; text-decoration: none; border-radius: 4px; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>New Contact Form Submission</h1>
-            </div>
-            <div class="content">
-                <p><strong>Name:</strong> ' . htmlspecialchars($name) . '</p>
-                <p><strong>Email:</strong> ' . htmlspecialchars($email) . '</p>
-                <p><strong>Subject:</strong> ' . htmlspecialchars($subject) . '</p>
-                <p><strong>Message:</strong></p>
-                <p>' . nl2br(htmlspecialchars($message)) . '</p>
-            </div>
-            <div class="footer">
-                <p>This email was sent from the contact form on Sadhav Offshore website</p>
-            </div>
-        </div>
-    </body>
-    </html>';
-
-    $mail->Body = $html_message;
+    $mail->Body = mailer_render_email('New Contact Form Submission', [
+        'Name'    => $name,
+        'Email'   => $email,
+        'Subject' => $subject,
+        'Message' => $message,
+    ], ['Message']);
     $mail->AltBody = "Name: $name\nEmail: $email\nSubject: $subject\n\nMessage:\n$message";
 
     $mail->send();
