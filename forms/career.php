@@ -99,73 +99,21 @@ try {
         exit;
     }
 
-    $html_message = '
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="color-scheme" content="light">
-    <meta name="supported-color-schemes" content="light">
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #2c3e50; background: #ffffff; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 0 auto; background: #ffffff; }
-        .header { background: linear-gradient(135deg, #003f87 0%, #0056b3 100%); color: #ffffff; padding: 30px 20px; text-align: center; }
-        .logo { font-size: 24px; font-weight: bold; margin-bottom: 10px; }
-        .content { background: #ffffff; padding: 40px 30px; }
-        .field { margin-bottom: 25px; }
-        .label { font-weight: 600; color: #003f87; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-        .value { padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #003f87; color: #2c3e50; }
-        .footer { background: #f8f9fa; color: #6c757d; padding: 20px; text-align: center; font-size: 12px; border-top: 1px solid #e9ecef; }
-        .brand { color: #003f87; font-weight: bold; }
-        .highlight { background: #e3f2fd; border-left-color: #2196f3; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">SADHAV OFFSHORE</div>
-            <div>New Career Application</div>
-        </div>
-        <div class="content">
-            <div class="field">
-                <div class="label">Applicant Name</div>
-                <div class="value">' . htmlspecialchars($name) . '</div>
-            </div>
-            <div class="field">
-                <div class="label">Email Address</div>
-                <div class="value">' . htmlspecialchars($email) . '</div>
-            </div>
-            <div class="field">
-                <div class="label">Phone Number</div>
-                <div class="value">' . htmlspecialchars($phone) . '</div>
-            </div>
-            <div class="field">
-                <div class="label">Position Applied For</div>
-                <div class="value highlight">' . htmlspecialchars($position) . '</div>
-            </div>
-            <div class="field">
-                <div class="label">Years of Experience</div>
-                <div class="value">' . htmlspecialchars($experience) . '</div>
-            </div>';
-
+    $rows = [
+        'Applicant Name'        => $name,
+        'Email Address'         => $email,
+        'Phone Number'          => $phone,
+        'Position Applied For'  => $position,
+        'Years of Experience'   => $experience,
+    ];
     if (!empty($message)) {
-        $html_message .= '
-            <div class="field">
-                <div class="label">Additional Message</div>
-                <div class="value">' . nl2br(htmlspecialchars($message)) . '</div>
-            </div>';
+        $rows['Additional Message'] = $message;
     }
 
-    $html_message .= '
-        </div>
-        <div class="footer">
-            <p>This application was submitted from the <span class="brand">Sadhav Offshore</span> careers page</p>
-            <p>© 2025 Sadhav Offshore Engineering Pvt Ltd. All rights reserved.</p>
-        </div>
-    </div>
-</body>
-</html>';
+    $mail->Body = mailer_render_email('New Career Application', $rows, ['Additional Message']);
+    $mail->AltBody = "Applicant Name: $name\nEmail: $email\nPhone: $phone\nPosition: $position\nExperience: $experience"
+        . (!empty($message) ? "\n\nAdditional Message:\n$message" : '');
 
-    $mail->Body = $html_message;
     $mail->send();
 
     echo json_encode(['success' => true, 'redirect' => 'thank-you.html']);
