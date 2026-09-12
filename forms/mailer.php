@@ -22,7 +22,7 @@ function mailer_is_configured() {
  * A PHPMailer instance wired to the SMTP settings in config.php.
  * Throws PHPMailer\PHPMailer\Exception on failure.
  */
-function mailer_new() {
+function mailer_new($to = null) {
     $mail = new PHPMailer(true);
 
     $mail->isSMTP();
@@ -42,7 +42,7 @@ function mailer_new() {
     };
 
     $mail->setFrom(MAIL_FROM, MAIL_FROM_NAME);
-    $mail->addAddress(MAIL_TO);
+    $mail->addAddress($to ?: MAIL_TO);
     $mail->isHTML(true);
 
     return $mail;

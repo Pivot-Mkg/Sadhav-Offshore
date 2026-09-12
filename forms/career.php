@@ -88,7 +88,7 @@ if (!mailer_is_configured()) {
 $mail = null;
 
 try {
-    $mail = mailer_new();
+    $mail = mailer_new(MAIL_TO_CAREER);
     $mail->addReplyTo($email, $name);
     $mail->Subject = 'Career Application - ' . $position;
 

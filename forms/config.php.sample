@@ -15,7 +15,12 @@ define('SMTP_PASS', 'REPLACE_WITH_NEW_APP_PASSWORD');
 // --- Addressing -------------------------------------------------------------
 define('MAIL_FROM', 'you@example.com');
 define('MAIL_FROM_NAME', 'Sadhav Offshore');
+
+// Per-form recipients. Fallback MAIL_TO is used if a specific one is blank.
 define('MAIL_TO', 'recipient@example.com');
+define('MAIL_TO_CONTACT', 'recipient@example.com');
+define('MAIL_TO_CAREER', 'recipient@example.com');
+define('MAIL_TO_RFQ', 'recipient@example.com');
 
 // --- Attachments ------------------------------------------------------------
 // Limits match what each form tells the visitor on the page.
